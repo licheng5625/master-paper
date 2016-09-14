@@ -1,0 +1,61 @@
+\section{Test Collection and Setup} % (fold)
+\label{cha:experiemts}
+
+% \todo{
+% 	\begin{enumerate}
+% 	  \item NYT dataset 
+% 	  \item Competitors - ia select, pm2, lm, lm+t+d , (xquad, fusion, learning to rank)
+% 	  \item adapting competitors to the 2d problem
+% 	  \item test collection -  
+% 	\end{enumerate}
+% }
+
+\subsubsection{Competitors} % (fold)
+\label{sub:subsection_name}
+
+Traditional diversity algorithms such as \textsc{Ia-Select}, \textsc{OnlyTime}, \textsc{Pm2} and \textsc{MDIV} were considered as the main competitors to our method HistDiv. We also strengthen \textsc{Ia-Select} and \textsc{Pm2} by incorporating time in the algorithm by linearinzing the aspects with the publication year of the document. The improved versions of these algorithms, called \textsc{TIa-Select} and T-\textsc{Pm2}, are also added to the list of competitors. We do not consider \textsc{xQuad} \cite{santos2010exploiting} and other diversity techniques that explicitly model subtopics as query expansions due to the absence of a reasonable query log for this time period. \textsc{MDIV} is a general framework for an n dimensional diversity problem. The 2 dimensions we consider for our experiments are document aspects and the publication year. Overall we compare our method HistDiv against the following competitors: \textsc{TIa-Select}, \textsc{Ia-Select}, \textsc{TPm2}, \textsc{Pm2}, \textsc{MDIV}, \textsc{OnlyTime} and a language model \textsc{LM} with Dirichlet smoothing as the baseline. The smoothing parameter is set to 1000.
+ 
+\subsection{Test collection} % (fold)
+\label{sub:subsection_name}
+
+
+
+%\paragraph{ Steps to build collection by soboroff: 
+% Determine the task. - Task abstraction, define relevance, define measures
+% (Now that we have a task, let’s identify a documentcollection.)
+%Identify a document collection.
+%Build topics. (Assesors explore the corpus to come up with a set of information intents. disregard topic if there are no relevant topics or more than 20 relevant docs in top 25)
+%Make relevance judgments.
+%Conduct experiments to measure the collection.}
+%
+
+
+Since there are no established test collections which we can measure the effectiveness of our retrieval model we build our own test collection. As a dataset we use the \emph{Annotated New York Times} collection~\cite{nyt} which qualifies as a news archive since it spans for 20 years, i.e., 1987 - 2007. Also, the timestamps associated with the articles are accurate and do not have to be estimated as in other web collections. 
+
+To build the test collection we followed Soboroff's tutorial \cite{soboroff2013building} and suggestions made by Costa in~\cite{costa2012evaluating}. Soboroff defines 5 basic steps to building a test collection which are as follows:
+
+\begin{itemize}
+	\item Determine the task. - Task abstraction, define relevance, define measures (covered in section~\ref{sec:hqi} and ~\ref{sec:measures})
+	\item Identify a document collection - \emph{Annotated New York Times} collection.
+	\item Build topics.
+	\item Make relevance judgments.
+	\item Conduct experiments to measure stability of the collection.
+\end{itemize}
+
+A group of experts were tasked with the creation of topics and subtopics for historical query intents given the NYT dataset. They explored the corpus with a simple keyword search interface. To form the topics the experts first described the intents verbosely and then proceeded to identify keywords that represent the user's intent. The user intents chosen are from a set of historically relevant issues related specifically to the USA and some of a more global nature due to characteristics of our news corpus. A key point to note is that topic and subtopic creation was not guided by a query log due to the unavailability of a suitable set of logs spanning this time period. To define the subtopics of each topic the experts used their prior knowledge, documents from the corpus and the history sections from relevant \emph{Wikipedia} articles. Each intent has a description, input keywords (query) and a set of subtopics. We have a total query workload of 30 topics. On average there are 6 subtopics per topic. The topics can be broadly classified into 3 types: \emph{profile queries} for entities like \texttt{Rudolph Giuliani} and \texttt{the World Trade Organisation}; history of an event like the \texttt{reunification of germany} and \texttt{team usa soccer world cup}; and controversial subjects like \texttt{gay marriage} and \texttt{sarin gas}. A key assumption made when creating subtopics is the omission of historical facts that lie outside of the 20 year time period of the NYT corpus. 
+
+The evaluations for the test collection are gathered using pooling. In general, competitiors submit runs after which a union is made of these documents to form the pool of documents to be evaluated. The key to pooling is to set a reasonable pool depth. We choose a pool depth of 100 for each topic. Evaluators were instructed to assign binary relevance judgements to topic,subtopic,document triples. For example, an assessor was asked to judge if the document $d^*$ with the headline 'Giuliani Fighting Prostate Cancer; Unsure on Senate' published on $28.4.2000$ was relevant to one or more of the manually created subtopics for the topic \emph{Rudolph Giuliani}. When judging the relevance of a document, the assessor is given the headline of the article, the body and the publication date. An article can also be relevant to more than one subtopic.
+
+Once the pools were evaluated, a standard robustness test was carried out with \textsc{Tia-SBR}$_k$ as the primary measure. We selected 25\% of the query workload at random and split them into two equal sets. We selected 50\% of the runs at random for retrieval depth 10 and calculated ranked the system runs for both sets of queries. We found that the rankings were consistent for p<=0.05.
+%[table showing how many judgements we have for each topic?]
+\subsection{Setup} % (fold)
+\label{sub:subsection_name}
+
+We chose to mine the aspects of each document using a wikipedia based annotator. By doing so, the aspects we used were possible wikiedia articles that could be linked to from the document. In our implementation aspects are mined using wikiminer\cite{wikiminer} on the first 1000 words of each article. We only use mined aspects which have a confidence rating of 0.8 or higher from wikiminer for our computations. For example, some of the aspects mined for document $d^*$ are: New York City, Hillary Rodham Clinton, Prostate cancer and Mayor of New York City. For temporal diversity we use a fixed window size of 1 year akin to \textsc{OnlyTime}, which implies $d^*_t \in w(d^*_t)$ where $w(d^*_t)=2000$. The baseline retrieval model used was a language model with a smoothing factor of 1000. Our competitors are state of the art techniques in search result diversification that we have strengthened for historical query intents. In the first phase of experiments,  we tune each competitor on a random set of 10 evaluated topics. These tuned competitors are then evaluated over the entire query workload in the final phase of experiments. We evaluated all competitors for metrics mentioned in \ref{sub:diversification_metrics} at retrieval depth $k$=10. For \textsc{Tia-NDCG} and \textsc{Tia-SBR} we set $\alpha$ to 0.5 and $\beta$ to 0.5. In all metrics we assumed equal distribution of subtopics such that $P(c|q) = \frac{1}{|C|}$. The distribution of time window weights was modeled from the collection as document bursts. For a time window $t$, $P(t|q) = \frac{|D_{t,q}|}{|D_q|}$ such that $\sum_{t} P(t|q) = 1$, where $D_{t,q}$ is the set of all documents relevant to $q$ from time window $t$ and $D_q$ is the set of all documents relevant to $q$.
+
+
+
+% \subsection{NYT dataset} % (fold)
+% \label{sub:subsection_name}
+
+% The news archive that we chose for the test collection is the New York Times 1987-2007 corpus. The dataset consists of approximately 1.8 million news articles spanning from 1987 to 2007. Every article, apart from the actual content, is anntated with taxonimical classifiers and descriptors. Each article also has a publication date that we leverage for temporal diversity.

@@ -1,0 +1,35 @@
+\BOOKMARK [0][-]{chapter*.1}{Abstract}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 2
+\BOOKMARK [0][-]{chapter.2}{Researcher engagement with Web Archives}{}% 3
+\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.2}{Web Archive research and methodology}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.3}{Characterizing web archive research}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.4}{Accessing and analyzing web archives}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.5}{Understanding researcher access requirements}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.5.1}{Setup}{section.2.5}% 9
+\BOOKMARK [2][-]{subsection.2.5.2}{Insights on research methodology}{section.2.5}% 10
+\BOOKMARK [2][-]{subsection.2.5.3}{Insights on corpus creation and web archive search}{section.2.5}% 11
+\BOOKMARK [1][-]{section.2.6}{Intelligent access to web archives}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{Historical search}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.2}{Historical Query Intent}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.3}{Time-Aware Effectiveness Measures}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.3.1}{Time-augmented Diversification Metrics}{section.3.3}% 17
+\BOOKMARK [2][-]{subsection.3.3.2}{Time-Aware Subtopic Recall}{section.3.3}% 18
+\BOOKMARK [1][-]{section.3.4}{The HistDiv Approach}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.5}{Test Collection and Setup}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.5.1}{Test collection}{section.3.5}% 21
+\BOOKMARK [2][-]{subsection.3.5.2}{Setup}{section.3.5}% 22
+\BOOKMARK [1][-]{section.3.6}{Results \046 Discussion}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.7}{Related Work}{chapter.3}% 24
+\BOOKMARK [0][-]{chapter.4}{The Historical Search System}{}% 25
+\BOOKMARK [1][-]{section.4.1}{Architecture}{chapter.4}% 26
+\BOOKMARK [2][-]{subsection.4.1.1}{Server side}{section.4.1}% 27
+\BOOKMARK [2][-]{subsection.4.1.2}{Client side}{section.4.1}% 28
+\BOOKMARK [0][-]{chapter.5}{Outlook}{}% 29
+\BOOKMARK [1][-]{section.5.1}{Conclusion}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.2}{Future Work}{chapter.5}% 31
+\BOOKMARK [0][-]{section.5.2}{Bibliography}{}% 32
+\BOOKMARK [0][-]{figure.caption.47}{List of Figures}{}% 33
+\BOOKMARK [0][-]{figure.caption.47}{List of Tables}{}% 34
+\BOOKMARK [0][-]{figure.caption.47}{List of Algorithms}{}% 35

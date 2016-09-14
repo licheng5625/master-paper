@@ -1,0 +1,16 @@
+\chapter{Kurzfassung}
+
+
+In der j\"ungsten Vergangenheit gab es zahlreiche Bem\"uhungen zuvor veröffentlichte Inhalte zu digitalisieren und elektronisch erstellte Inhalte zu erhalten. Dies f\"uhrte zu einem weit verbreitenden Anstieg großer Textdatenbest\"ande. Webarchive sind eine solche Art konstant ansteigender Textdatensammlung. Sie enthalten mehrere Versionen von Dokumenten, welche sich \"uber l\"angere Zeitr\"aume erstrecken. Dar\"uber hinaus bieten sie viele M\"oglichkeiten f\"ur historische, kulturelle und politische Analysen. Infolgedessen gibt es einen wachsenden Bedarf an Werkzeugen, die eine effiziente Suche in Webarchi\-ven und einen effizienten Zugriff auf die Daten erlauben.
+
+Der Fokus dieser Arbeit liegt auf Indexierungsverfahren, um die Arbeitslast von Text\-suche auf Webarchiven zu unterst\"utzen, wie zum Beispiel time-travel queries oder phrase queries. Zu diesem Zweck leisten wir folgende Beitr\"age:
+
+\begin{itemize}
+\item Time-travel queries sind Suchwortanfragen mit einem temporalen Pr\"adikat. Zum Beispiel liefert die Anfrage \query{mpii saarland}{06/2009} Versionen des Dokuments aus der Vergangenheit als Ergebnis. Zur effizienten Unterst\"utzung solcher Anfragen ohne die Indexgr\"oße aufzublasen, stellen wir eine neue Strategie zur Organisation von Indizes dar, so genanntes \emph{index sharding}. Des Weiteren schlagen wir Wartungsverfahren f\"ur Indizes vor, die f\"ur solch konstant wachsende Datens\"atze skalieren.
+
+\item Wir entwickeln Techniken zur Anfrageoptimierung von time-travel queries, nachstehend \emph{partition selection} genannt. Diese maximieren den Recall in jeder Phase der Anfrageverarbeitung.
+
+\item Wir stellen Indexierungsmethoden vor, die phrase queries unterst\"utzen, z. B. \kwquery{Sein oder Nichtsein, das ist hier die Frage}. Wir indexieren Sequenzen bestehend aus mehreren W\"ortern und entwerfen neue Optimierungsverfahren f\"ur die indexierten Sequenzen, um phrase queries effizient zu beantworten.
+
+\end{itemize}
+Die Performanz dieser Verfahren wird anhand von ausf\"uhrlichen Experimenten auf realen Webarchiven demonstriert.

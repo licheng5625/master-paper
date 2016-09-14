@@ -1,0 +1,226 @@
+\section{The \textsc{HistDiv} Approach}
+% \todo{
+% 	\begin{enumerate}
+% 	  \item Time based diversity - model burst explicitly - each aspect has a decay based on time
+% 	  \item Aspect based diversity - explicit aspects defined in the corpus (LDA?) - discount each burst based on aspects covered 
+% 	  \item Combining both parts
+% 	  \item greedy approx ?
+% 	\end{enumerate}
+% }
+
+% \paragraph{Aspect+Time Diversity}
+% A retrieval model suited to historical query intents should consider both time and aspects as dimensions to diversify along. Consider a query $q$ that represents a user's historical intent and set of documents $R$ relevant to $q$. Diversification algorithms seek to find the subset $S$ of size $k$ from $R$ such that this set $S$ maximize a utility function. To find the set $S$ in a reasonable amount of time a greedy approach which offers an approximation guarantee is employed. A document is added to the set $S$ by selecting the one with the maximum marginal utility at that step. The margnial utility of a document at position $i$ in $S$ depends on two factors: the relevance score of the document and the marginal utility of its aspects and how they update this score at each step of the greedy approach. The aspect margnial utility is a measure of how useful the aspects of the document are considering that the user has already seen the documents already in $S$. Most algorithms(xquad, iasel, tu, multidimension div) differ in the way they compute marginal utility of aspects. For IA select the marginal utility is computed as follows:
+% % ia select utility score computation
+% \begin{equation}
+% 	g(d|q, c, S) \leftarrow \left ( \sum_{c \in C(d)} U(c|q, S) V (d|q, c)  \right )
+% \end{equation}
+% where $V (d|q, c)$ is the relevance of the document to the query $q$ and aspect $c$. $U(c|q, S)$ is the marginal utility score for $c$ and is computed as follows for each step:
+% \begin{equation}
+% 	\forall c \in C(d^{*})\:,\: U(c|q, S) = \left ( 1 -V(d^{*}|q,c)) U(c|q, S / {d^{*}})) \right ) 
+% \end{equation}
+% After selecting the document $d$ with the highest value of $g(d|q, c, S)$, $U(c|q, S)$ is updated. In this way, IA select rewards documents with novel aspects. IA select clearly works only for a single dimension of diversity which lead tp the multidimension diversity approach \cite{mdiv}. This approach is a general framework for the diversification of n arbitrary dimensions. The way the dimensions are combined is reflected in the computation of the utility score g(d|q, c, S).
+
+% \begin{equation}
+% 	g(d|q, c, S) \leftarrow \alpha P(d|q) + (1-\alpha) \sum_C^{\mathbb{C}} \mu(C) V(d|S,C)
+% \end{equation}
+
+% where $\mathbb{C}$ is the set of dimensions and $\mu(C)$ is the weight of a dimension $C$ such that $\sum \mu(C) = 1$. $V(d|S,C)$ is the aspect utility of the given document for the current state of $S$ and the dimension $C$. The interesting feature of this algorithm though is the computation of the marginal utility of aspects which depends on the rank of the document given an aspect.
+
+% \begin{equation}
+% 	V(d|S,m) = \sum_c^C w_c\phi(c,S)r(d,c)
+% \end{equation}
+
+% where $w_c$ is the weight of an aspect, $\phi(c,S)$ is utility of the aspect which is calculated as follows:
+
+% \begin{equation}
+% 	w_c\phi(c,S) = \left\{\begin{matrix}
+% 1\& if \: S=\varnothing  
+% \\
+% \\
+% \prod_{d_i}^{S} (1-r(c,d_i)) \& S \neq \varnothing  
+% \end{matrix}\right.
+% \end{equation}
+
+% \begin{equation}
+% 	r(d,c) = \frac{1}{\sqrt{rank(d,c)}}
+% \end{equation}
+
+% and $rank(d,c)$ is the rank of document d in $R|c$. This method works well for the trec diversification task but it is shackled by its generality when it comes to a specific task like historical search tasks. It is desireable to not only add the time dimension to the algorithm but also model these dimensions according to the task at hand. The rank based approach treats timestamps as another set of aspects and uses the same rank based discounting in every dimension.  
+
+% \paragraph{}
+% On the other hand PM2 favors an approach that seeks to diversify documents propotional to the weight of an aspect follwing an elegant seat allocation approach. The object is not only to maximize the utility of set $S$ but also to represent the propotion of aspects in the set $R$.
+% 	However this method doesnot account for multiple dimensions let alone time. \textsc{OnlyTime} is a method that aims to diversify documents based solely on time. They introduce a decay function to discount time in a greedy algorithm similar to the methods mentioned above. Consider the document $d_{t_i}$ is selected as the next document to be added to $S$. The utility of a time period t is updated using the decay function:
+
+% \begin{equation}
+% 	\frac{1}{1+e^{-w+|t-t_i|}}
+% \end{equation}
+
+% where w is the size of the burst.
+
+In devising a retrieval model for our historical search let us look at how we can add time to the existing diversification models which explicitly model aspects. A na\"ive approach is to enrich the aspect space by adding time as aspects. Since we deal with two dimensions we can project or \emph{linearize} the temporal dimension onto the aspect dimension. Say the result set $R$ has a document $d$ with $m$ aspects $\{ a_1, \ldots, a_m \}$ and belongs to the time window $t_i$, it contributes $m$ linearized aspects denoted as $l_d = \{ a_{1,i}, \ldots, a_{m,i} \}$. Thus the overall linearized aspect-time space $l_R$ or a result set $R$ can be represented as $\cup_{d \in R}{l_d}$. Methods like \textsc{Ia-Select}~\cite{agrawal_diversifying_2009} and \textsc{Pm2}~\cite{dang_diversity_2012} can then operate on this enriched aspect-time space.
+
+\begin{algorithm}[t]
+  \small
+  \SetKwFunction{Decompose}{decompose}
+  \KwIn{$k, q, A(q) \in l_R, R(q), A(d) \in l_R, P(a|q), V (d|q, c), S=\null$}
+  \KwOut{$S$}
+
+  \nl $\forall a, U(a|q, S) = P(c|q)$
+
+  \nl\While{$|S| \leq k$}{
+     
+    \nl\For{$d \in R$}{
+      \nl$g(d|q, a, S) \leftarrow \left ( \sum_{c \: in \: A(d)} U(a|q, S) V (d|q, a)  \right )$
+    }
+
+    \nl $d^{*} \leftarrow argmax \: g(d|q, a, S)$
+
+    \nl $S \leftarrow S \cup \{d^{*}\}$
+
+    \nl $\forall a \in A(d^{*})\:,\: U(a|q, S) = \left ( 1 -V(d^{*}|q,a)) U(a|q, S / {d^{*}})) \right ) $
+  }
+
+  \nl\Return{$S$}
+
+  \BlankLine
+
+  \caption{\textsc{Temporal IA select}}
+  \vspace{-2mm}
+  \label{alg:tia-sel}
+\end{algorithm}
+
+
+\begin{algorithm}[t]
+  \small
+  \SetKwFunction{Decompose}{decompose}
+
+  \KwIn{$k, q, A(q) \in l_R, R(q), A(d) \in l_R, P(a|q), P(d|q, a), S=null$}
+  \KwOut{$S$}
+
+  \nl\For{$a_i \in\:A(S)$}{
+    \nl $quotient[i] = \frac{v_i}{2a_i + 1}$
+  }
+    
+  \nl $i^{*} \leftarrow argmax \: quotient[i]$
+
+  \nl $d^{*} \leftarrow argmax_{d_j \in R} \: \lambda * quotient[i] * P(d_j|q,a_{i^{*}})+ (1-\lambda)\sum_{i \neq i^{*}} quotient[i] * P(d_j|q,a_{i^{*}})$
+
+  \nl $S \leftarrow S \cup \{d^{*}\}$
+  
+  \nl $R \leftarrow R / \{d^{*}\}$
+  
+  \nl\For{$a_i \in\:A(d^*)$}{
+    \nl $a_{i} = a_{i} + \frac {P(d^{*}|q,a_{i})}{\sum_{a_{j}}P(d^{*}|q,a_{j})}$
+  }
+
+
+  \nl\Return{$S$}
+
+  \BlankLine
+
+  \caption{\textsc{Temporal PM2}}
+  \vspace{-2mm}
+  \label{alg:pm2}
+\end{algorithm}
+
+
+We consider these time-enriched diversification models as baselines in our experiments denoted as \textsc{Tia-Select} and \textsc{Tpm2}. The algorithms are detailed in Algorithm~\ref{alg:tia-sel} and Algorithm~\ref{alg:pm2} respectively. Both retrieval models offer different takes on diversity. \textsc{Ia-Select} is based on the assumption that if a user has seen a high quality document $d$ with aspect $a_i$ then there is no need to immediately serve the user with another document from $a_i$. \textsc{Ia-Select} uses a greedy approach to finding the set $S$ which offers an approximation guarantee. Documents are sequentially added to the result set $S$ based on the utility score $g$ of the documents at that step. The utility of a document depends on the document utility $V$ (given by the relevance score) and the aspect utility $U$ (given by the probability of an aspect in the set R $R$). The aspect utility score depends on the aspects covered already by the set $S$ at that point. If a document $d$ with a high relevance score covers an aspect $a$ which is already in S then the aspect utility of $d$ is very low and causes the overall utility of the document $g$ to be low.
+
+\textsc{Pm2} approaches the problem of diversity by proportionality. It assumes that the user's intent is to get a result set $S$ that has the same proportion of aspects as $R$. It models diversity as a parliament seat allocation problem where aspects are parties which need to be assigned to a limited number of seats. Here each aspect is given votes based on the number of documents it covers in $R$. Based on these votes, aspects are assigned a portion of the seats in parliament which is the set $S$ and the seats are placeholders for documents. They use the St. Lauge algorithm to solve the problem of proportionally assigning seats to aspects. Instead of computing utility scores for documents like \textsc{Ia-Select}, \textsc{Pm2} computes the quotient of an aspect at every step and then selects a document from the aspect with the highest quotient score. This quotient depends on the proportion of aspects already covered by $S$ at the given step as compared to the number of votes it has garnered. When a document $d$ is added to $S$ then the proportion of aspects covered in $S$ is updated instead of discounting utility like \textsc{Ia-Select}.
+
+
+%A naive approach to aspect and time diversity is to combine time and document aspects in a linear fashion. If a document has 3 aspects a,b,c and timestamp t then after linearization, the aspects are at,bt and ct. In this way, we reduce our problem to a single dimension. We strengthen our competitors by using time weighted aspects. Combining time in this way does not enforce time based diversity though. Also time is a continous variable unlike aspects which are discrete. Aspects combined with time results in time being treated like a discrete variable. (this needs more justification or it probably goes into the discussions section). We can strengthen IA-SELECT and PM2 for historical search using this linearization approach which models time in the aspects implicitly.
+
+A potential drawback with the linearized models is that newly formed aspects do not always ensure maximum coverage of the temporal and aspect space. An alternative would be to keep the dimensions separate akin to the multi-dimensional approach proposed in~\cite{mdiv}. In this general framework for the diversification of $n$ arbitrary dimensions, the utility score $g(d|q, c, S)$ computation reflects how the dimensions are combined. The marginal utility of aspects given a document $d$ is computed based on rank of $d$ for the given aspect. This approach is a general framework for the diversification of n arbitrary dimensions. The way the dimensions are combined is reflected in the computation of the utility score g(d|q, c, S).
+
+\begin{equation}
+  g(d|q, c, S) \leftarrow \alpha P(d|q) + (1-\alpha) \sum_C^{\mathbb{C}} \mu(C) V(d|S,C)
+\end{equation}
+
+where $\mathbb{C}$ is the set of dimensions and $\mu(C)$ is the weight of a dimension $C$ such that $\sum \mu(C) = 1$. $V(d|S,C)$ is the aspect utility of the given document for the current state of $S$ and the dimension $C$. The interesting feature of this algorithm though is the computation of the utility of aspects which depends on the rank of the document given an aspect.
+
+\begin{equation}
+   V(d|S,m) = \sum_c^C w_c\phi(c,S)r(d,c)
+\end{equation}
+
+where $w_c$ is the weight of an aspect, $\phi(c,S)$ is utility of the aspect which is calculated as follows:
+
+\begin{equation}
+  w_c\phi(c,S) = \left\{
+  \begin{matrix}
+    1\& if \: S=\varnothing  \\ 
+    \\
+    \prod_{d_i}^{S} (1-r(c,d_i)) \& S \neq \varnothing  
+  \end{matrix}\right.
+\end{equation}
+
+\begin{equation}
+  r(d,c) = \frac{1}{\sqrt{rank(d,c)}}
+\end{equation}
+
+and $rank(d,c)$ is the rank of document d in $R|c$. This method works well for the TREC diversification task but it is shackled by its generality when it comes to a specific task like historical search. We can naturally add time as a second dimension and use it for diversification. However, they discount each aspect in the same way which might not work well with all aspects. For example, an exponential discounting function is typically associated with time much different from 0/1 or document relevance based discounting for other \emph{non-topical} aspects. We also use this approach as a competitor referred to as \textsc{MDIV}.
+
+
+
+\begin{algorithm}[!t]
+  \small
+  \SetKwFunction{Decompose}{decompose}
+
+  \KwIn{ $k, q, A(q), R(q), T(q), V(d|q, c), S = \emptyset$}
+  \KwOut{Set S of diversified documents}
+
+  \nl$\forall c \in A(q) \: , \: \forall t \in T(q), \:\: U_aspect(c|q, S, t) = P(c|q,t)$
+
+  \nl$\forall t \in T(q), \:\: U_time(t|q,S) = P(t|q)$
+
+  \nl\While{$|S| \leq k$}
+  {
+     
+    \nl\While{$d \in R$}
+    {
+      %\nl $g(d|q, c, S) \leftarrow  \alpha V(d|q, c)+(1-\alpha)( \beta  \sum_{c}^{A(d)} U_a(c|q, S, t_d) +(1-\beta) U_t(t_d|q,S))$
+      \nl $g(d|q, S) \leftarrow  \alpha . V(d|q) \,\,+\,\, (1-\alpha).( \beta . \sum_{c}^{A(d)} U_{aspect}\,\, + \,\,(1-\beta). U_{time})$
+    }
+
+    \nl $d^{*} \leftarrow argmax_{d} \:\: g(d|q, c, S)$
+
+    \nl $S \leftarrow S \,\,\cup \,\, \{d^{*}\}$
+  }
+
+  \nl\Return{$S$}
+
+  \BlankLine
+
+  \caption{The \textsc{HistDiv} Algorithm}
+  \vspace{-2mm}
+  \label{alg:ATD}
+\end{algorithm}
+
+
+Our approach \textsc{HistDiv}(c.f. Algorithm~\ref{alg:ATD}) builds on \textsc{Mdiv}~\cite{mdiv}; however, we differ significantly in the way we model each dimension's utility. 
+
+\textsc{HistDiv} is a greedy algorithm, similar to \textsc{Ia-Select} and \textsc{Mdiv}, and retains the $(1-1/e)$ approximation guarantee due to the fact that we treat time windows also as sets. In \textsc{HistDiv} aspects are topical labels assigned to a document with equal probability. Time, on the other hand is modeled as time windows and each time window has its own probability $P(t|q) = \frac{|d_t|}{|d|} \:,\: d \in R$. Each document, as described earlier, can belong to a single window designated by its publication timestamp whereas it can have one or more aspects. Similar to~\cite{zhou2013impact} we consider that aspects are more relevant at certain periods when compared to others (especially for historical intents). Each aspect also has a span ranging from its first occurrence to its last in $R$.
+
+The importance of an aspect is measured by a utility function $U_{aspect}(c|q, S, t)$, where $c \in \mathcal{A}$, with the exception that we treat the aspect in various time windows differently. The probability of an aspect $c$ in time window $t$ is $P(c|q,t) = \frac{|d_{c,t}|}{|d_{t}|} \:,\: d \in R$. This preferential treatment of aspects is due to the usage of the decay function in the time based discounting factor $\Delta_t$ while computing utility.
+\begin{equation}
+	U_{aspect}(c|q, S, t) = P(c|q,t)  \underbrace{\prod_{d \in S} \left ( 1 - \frac{1}{1+e^{-w+|t-t_d|}} \right )}_{\Delta_t} 
+\end{equation}
+
+%Considering HQIs, we want to diversify between aspects but we also want important time periods.  To overcome this time spanning nature of aspects, we discount the aspect in the time region, modeled by a decay function, of the burst of the winner document at that step. To the best of our knowledge we are the first to propose such a time based discounting for aspect diversity algorithms.
+
+We use the decay function suggested in \textsc{OnlyTime}~\cite{lm+t+d} to discount all aspects at any time t, where $t^*$ is the timestamp of the winner document at a given step. In the time dimension, we need to be wary of discrediting a time window too heavily. Consider \textsc{OnlyTime} which produces a result set with high temporal diversity. More formally this is considered as an optimization problem of finding a set $S$that maximizes the following sum:
+
+\begin{equation}
+ \sum_{t}^{T}\left ( P(t | q).(1-\prod_{d_{i}}^{R} (1-P(R|t,t_{i}).P(R|q,d_{i}))) \right )
+\end{equation}
+
+where $P(t|q)$ is the relative importance of the time point t for the query q. $P(R|t, t_i)$ indicates the probability that a user interested in time point $t$ is satisfied with a document published at time $t_i$. Similarly, $P(R|q, d_i)$ is the probability that a user issuing the query q is satisfied with the document $d_i$. \textsc{OnlyTime} is a greedy approach to find $S$ very similar to \textsc{ia-Select} except for the discounting of utility which is based on the decay function $\Delta_t$.
+
+\textsc{OnlyTime} selects relevant documents from important bursts but discounts that burst heavily with the aforementioned decay function so as to get better temporal coverage. This approach to discounting bursts doesn't consider the fact that a single burst could consist of many diverse aspects. For example, in 2000-2001 Giuliani was divorced, diagnosed with cancer and was involved in helping New York recover from 9/11. Hence we discount the burst of the winning document $d^*$ in the time dimension by the weighted proportion of aspects covered by it denoted by $\Delta_a$ and where $D_{t}$ is the set of all documents in $R$ in time window $t$.
+
+
+\begin{equation}
+	U_{time}(t|q,S) = P(t|q)  \underbrace{\prod_{d_t \in S} \left ( 1 - \frac{|\, \cup_{ c \in A(d_t) } \: d_{c,t}\,|}{|D_{t}|} \right )}_{\Delta_a}
+\end{equation}
+
+

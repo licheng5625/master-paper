@@ -1,0 +1,339 @@
+\begin{thebibliography}{10}
+
+\bibitem{buddah}
+{Big UK Domain Data for the Arts and Humanities (BUDDAH)}.
+\newblock \url{http://buddah.projects.history.ac.uk/}.
+
+\bibitem{caliarchive}
+{California Digital Newspaper Collection}.
+\newblock \url{http://cdnc.ucr.edu/cgi-bin/cdnc}.
+
+\bibitem{nytarchive}
+{New york times archives}.
+\newblock \url{http://timesmachine.nytimes.com/browser}.
+
+\bibitem{wikiminer}
+{New york times archives}.
+\newblock \url{http://wikipedia-miner.cms.waikato.ac.nz}.
+
+\bibitem{pta}
+{Portugese Web Archive}.
+\newblock \url{http://arquivo.pt/nutchwax/}.
+
+\bibitem{ukarchive}
+{TBritish Newspaper Archive}.
+\newblock \url{http://www.britishnewspaperarchive.co.uk/}.
+
+\bibitem{socchi}
+{The 2014 Winter Olympics web archive collection}.
+\newblock \url{https://archive-it.org/collections/4200}.
+
+\bibitem{nyt}
+{The New York Times Annotated Corpus}.
+\newblock \url{http://corpus.nytimes.com}.
+
+\bibitem{wayback}
+{The Wayback Machine}.
+\newblock \url{https://archive.org/web/}.
+
+\bibitem{agrawal_diversifying_2009}
+R.~Agrawal, S.~Gollapudi, A.~Halverson, and S.~Ieong.
+\newblock Diversifying search results.
+\newblock In {\em Proceedings of the Second {ACM} International Conference on
+  Web Search and Data Mining}, {WSDM} '09, pages 5--14, New York, {NY}, {USA},
+  2009. {ACM}.
+
+\bibitem{anand_2012_index}
+A.~Anand, S.~Bedathur, K.~Berberich, and R.~Schenkel.
+\newblock Index maintenance for time-travel text search.
+\newblock In {\em Proceedings of the 35th international ACM SIGIR conference on
+  Research and development in information retrieval}, pages 235--244. ACM,
+  2012.
+
+\bibitem{lm+t+d}
+K.~Berberich and S.~Bedathur.
+\newblock Temporal diversification of search results.
+\newblock In {\em SIGIR 2013 Workshop on Time-aware Information Access (TAIA
+  2013)}, 2013.
+
+\bibitem{berberich_time_2007}
+K.~Berberich, S.~Bedathur, T.~Neumann, and G.~Weikum.
+\newblock A time machine for text search.
+\newblock In {\em Proceedings of the 30th annual international ACM SIGIR
+  conference on Research and development in information retrieval}, pages
+  519--526. ACM, 2007.
+
+\bibitem{brugger2012historical}
+N.~Br{\"u}gger.
+\newblock Historical network analysis of the web.
+\newblock {\em Social Science Computer Review}, page 0894439312454267, 2012.
+
+\bibitem{brugger2013web}
+N.~Br{\"u}gger and N.~O. Finnemann.
+\newblock The web and digital humanities: Theoretical and methodological
+  concerns.
+\newblock {\em Journal of Broadcasting \& Electronic Media}, 57(1):66--80,
+  2013.
+
+\bibitem{carbonell1998use}
+J.~Carbonell and J.~Goldstein.
+\newblock The use of mmr, diversity-based reranking for reordering documents
+  and producing summaries.
+\newblock In {\em Proceedings of the 21st annual international ACM SIGIR
+  conference on Research and development in information retrieval}, pages
+  335--336. ACM, 1998.
+
+\bibitem{Carterette:2009:PMR:1645953.1646116}
+B.~Carterette and P.~Chandar.
+\newblock Probabilistic models of ranking novel documents for faceted topic
+  retrieval.
+\newblock In {\em Proceedings of the 18th ACM Conference on Information and
+  Knowledge Management}, CIKM '09, pages 1287--1296, New York, NY, USA, 2009.
+  ACM.
+
+\bibitem{choi2012temporal}
+J.~Choi and W.~B. Croft.
+\newblock Temporal models for microblogs.
+\newblock In {\em Proceedings of the 21st ACM international conference on
+  Information and knowledge management}, pages 2491--2494. ACM, 2012.
+
+\bibitem{clarke2011nist}
+C.~Clarke, N.~Craswell, I.~Soboroff, and E.~Voorhees.
+\newblock Nist, overview of the trec2011 web track.
+\newblock In {\em Proceedings of TREC}, pages 500--295, 2011.
+
+\bibitem{clarke2009overview}
+C.~L. Clarke, N.~Craswell, and I.~Soboroff.
+\newblock Overview of the trec 2009 web track.
+\newblock Technical report, DTIC Document, 2009.
+
+\bibitem{cohen2011computational}
+S.~Cohen, J.~T. Hamilton, and F.~Turner.
+\newblock Computational journalism.
+\newblock {\em Communications of the ACM}, 54(10):66--71, 2011.
+
+\bibitem{costa2010understanding}
+M.~Costa and M.~J. Silva.
+\newblock Understanding the information needs of web archive users.
+\newblock In {\em Proc. of the 10th International Web Archiving Workshop},
+  pages 9--16, 2010.
+
+\bibitem{costa2012evaluating}
+M.~Costa and M.~J. Silva.
+\newblock Evaluating web archive search systems.
+\newblock In {\em Web Information Systems Engineering-WISE 2012}, pages
+  440--454. Springer, 2012.
+
+\bibitem{dang_term_2013}
+V.~Dang and B.~W. Croft.
+\newblock Term level search result diversification.
+\newblock In {\em Proceedings of the 36th International {ACM} {SIGIR}
+  Conference on Research and Development in Information Retrieval}, {SIGIR}
+  '13, pages 603--612, New York, {NY}, {USA}, 2013. {ACM}.
+
+\bibitem{dang_diversity_2012}
+V.~Dang and W.~B. Croft.
+\newblock Diversity by proportionality: An election-based approach to search
+  result diversification.
+\newblock In {\em Proceedings of the 35th International {ACM} {SIGIR}
+  Conference on Research and Development in Information Retrieval}, {SIGIR}
+  '12, pages 65--74, New York, {NY}, {USA}, 2012. {ACM}.
+
+\bibitem{diaz2004using}
+F.~Diaz and R.~Jones.
+\newblock Using temporal profiles of queries for precision prediction.
+\newblock In {\em SIGIR}, volume~4, pages 18--24, 2004.
+
+\bibitem{dong2010towards}
+A.~Dong, Y.~Chang, Z.~Zheng, G.~Mishne, J.~Bai, R.~Zhang, K.~Buchner, C.~Liao,
+  and F.~Diaz.
+\newblock Towards recency ranking in web search.
+\newblock In {\em Proceedings of the third ACM international conference on Web
+  search and data mining}, pages 11--20. ACM, 2010.
+
+\bibitem{mdiv}
+Z.~Dou, S.~Hu, K.~Chen, R.~Song, and J.-R. Wen.
+\newblock Multi-dimensional search result diversification.
+\newblock In {\em Proceedings of the Fourth {ACM} International Conference on
+  Web Search and Data Mining}, {WSDM} '11, pages 475--484, New York, {NY},
+  {USA}, 2011. {ACM}.
+
+\bibitem{dougherty2010researcher}
+M.~Dougherty, E.~Meyer, C.~Madsen, C.~Van~den Heuvel, A.~Thomas, and S.~Wyatt.
+\newblock Researcher engagement with web archives: State of the art.
+\newblock {\em Final Report for the JISC-funded project ‘Researcher
+  Engagement with Web Archives}, 2010.
+
+\bibitem{foot2003analyzing}
+K.~Foot, S.~M. Schneider, M.~Dougherty, M.~Xenos, and E.~Larsen.
+\newblock Analyzing linking practices: Candidate sites in the 2002 us electoral
+  web sphere.
+\newblock {\em Journal of Computer-Mediated Communication}, 8(4):0--0, 2003.
+
+\bibitem{gebeil2014memoires}
+S.~Gebeil.
+\newblock Les m{\'e}moires de l'immigration maghr{\'e}bine sur le web
+  fran{\c{c}}ais (1996-2013).
+\newblock {\em Migrations societe}, (151):165--179, 2014.
+
+\bibitem{gomes2006design}
+D.~Gomes, S.~Freitas, and M.~J. Silva.
+\newblock Design and selection criteria for a national web archive.
+\newblock In {\em Research and Advanced Technology for Digital Libraries},
+  pages 196--207. Springer, 2006.
+
+\bibitem{hale2014mapping}
+S.~Hale, T.~Yasseri, J.~Cowls, E.~T. Meyer, R.~Schroeder, and H.~Z. Margetts.
+\newblock Mapping the uk webspace: Fifteen years of british universities on the
+  web.
+\newblock {\em Proceedings of WebSci}, 2014.
+
+\bibitem{huurdeman2013sprint}
+H.~C. Huurdeman, A.~Ben-David, and T.~Sammar.
+\newblock Sprint methods for web archive research.
+\newblock In {\em Proceedings of the 5th Annual ACM Web Science Conference},
+  pages 182--190. ACM, 2013.
+
+\bibitem{joho2014ntcir}
+H.~Joho, A.~Jatowt, and R.~Blanco.
+\newblock Ntcir temporalia: a test collection for temporal information access
+  research.
+\newblock In {\em Proceedings of the companion publication of the 23rd
+  international conference on World wide web companion}, pages 845--850.
+  International World Wide Web Conferences Steering Committee, 2014.
+
+\bibitem{kanhabua2010determining}
+N.~Kanhabua and K.~N{\o}rv{\aa}g.
+\newblock Determining time of queries for re-ranking search results.
+\newblock In {\em Research and Advanced Technology for Digital Libraries},
+  pages 261--272. Springer, 2010.
+
+\bibitem{kumar2005bursty}
+R.~Kumar, J.~Novak, P.~Raghavan, and A.~Tomkins.
+\newblock On the bursty evolution of blogspace.
+\newblock {\em World Wide Web}, 8(2):159--178, 2005.
+
+\bibitem{li2003time}
+X.~Li and W.~B. Croft.
+\newblock Time-based language models.
+\newblock In {\em Proceedings of the twelfth international conference on
+  Information and knowledge management}, pages 469--475. ACM, 2003.
+
+\bibitem{liang_fusion_2014}
+S.~Liang, Z.~Ren, and M.~de~Rijke.
+\newblock Fusion helps diversification.
+\newblock In {\em Proceedings of the 37th International {ACM} {SIGIR}
+  Conference on Research \&\#38; Development in Information Retrieval}, {SIGIR}
+  '14, pages 303--312, New York, {NY}, {USA}, 2014. {ACM}.
+
+\bibitem{militello1998applied}
+L.~G. Militello and R.~J. Hutton.
+\newblock Applied cognitive task analysis (acta): A practitioner's toolkit for
+  understanding cognitive task demands.
+\newblock {\em Ergonomics}, 41(11):1618--1641, 1998.
+
+\bibitem{ecir/NguyenK14}
+T.~N. Nguyen and N.~Kanhabua.
+\newblock Leveraging dynamic query subtopics for time-aware search result
+  diversification.
+\newblock In {\em ECIR}, pages 222--234, 2014.
+
+\bibitem{palmer2008scholarship}
+C.~L. Palmer and M.~H. Cragin.
+\newblock Scholarship and disciplinary practices.
+\newblock {\em Annual review of information science and technology},
+  42(1):163--212, 2008.
+
+\bibitem{payne2008longitudinal}
+N.~Payne and M.~Thelwall.
+\newblock Longitudinal trends in academic web links.
+\newblock {\em Journal of Information Science}, 34(1):3--14, 2008.
+
+\bibitem{peetz2012adaptive}
+M.-H. Peetz, E.~Meij, M.~de~Rijke, and W.~Weerkamp.
+\newblock Adaptive temporal query modeling.
+\newblock In {\em Advances in Information Retrieval}, pages 455--458. Springer,
+  2012.
+
+\bibitem{pirolli2005sensemaking}
+P.~Pirolli and S.~Card.
+\newblock The sensemaking process and leverage points for analyst technology as
+  identified through cognitive task analysis.
+\newblock In {\em Proceedings of International Conference on Intelligence
+  Analysis}, volume~5, pages 2--4, 2005.
+
+\bibitem{rogers2013digital}
+R.~Rogers.
+\newblock {\em Digital methods}.
+\newblock MIT Press, 2013.
+
+\bibitem{ross2000changing}
+S.~Ross.
+\newblock Changing trains at wigan: Digital preservation and the future of
+  scholarship.
+\newblock 2000.
+
+\bibitem{russell1993cost}
+D.~M. Russell, M.~J. Stefik, P.~Pirolli, and S.~K. Card.
+\newblock The cost structure of sensemaking.
+\newblock In {\em Proceedings of the INTERACT'93 and CHI'93 conference on Human
+  factors in computing systems}, pages 269--276. ACM, 1993.
+
+\bibitem{santos2010exploiting}
+R.~L. Santos, C.~Macdonald, and I.~Ounis.
+\newblock Exploiting query reformulations for web search result
+  diversification.
+\newblock In {\em Proceedings of the 19th International Conference on World
+  Wide Web}, {WWW} '10, pages 881--890, New York, {NY}, {USA}, 2010. {ACM}.
+
+\bibitem{santos_intent-aware_2011}
+R.~L. Santos, C.~Macdonald, and I.~Ounis.
+\newblock Intent-aware search result diversification.
+\newblock In {\em Proceedings of the 34th International {ACM} {SIGIR}
+  Conference on Research and Development in Information Retrieval}, {SIGIR}
+  '11, pages 595--604, New York, {NY}, {USA}, 2011. {ACM}.
+
+\bibitem{schneider2004web}
+S.~M. Schneider and K.~A. Foot.
+\newblock The web as an object of study.
+\newblock {\em New media \& society}, 6(1):114--122, 2004.
+
+\bibitem{schneider200911}
+S.~M. Schneider, K.~A. Foot, and P.~Wouters.
+\newblock Chapter 11. web archiving as e-research.
+\newblock {\em e-Research: Transformation in scholarly practice}, 1:205, 2009.
+
+\bibitem{schreibman2008companion}
+S.~Schreibman, R.~Siemens, and J.~Unsworth.
+\newblock {\em A companion to digital humanities}.
+\newblock John Wiley \& Sons, 2008.
+
+\bibitem{soboroff2013building}
+I.~M. Soboroff.
+\newblock Building test collections: an interactive tutorial for students and
+  others without their own evaluation conference series.
+\newblock In {\em Proceedings of the 36th international ACM SIGIR conference on
+  Research and development in information retrieval}, pages 1132--1132. ACM,
+  2013.
+
+\bibitem{toyoda2003extracting}
+M.~Toyoda and M.~Kitsuregawa.
+\newblock Extracting evolution of web communities from a series of web
+  archives.
+\newblock In {\em Proceedings of the fourteenth ACM conference on Hypertext and
+  hypermedia}, pages 28--37. ACM, 2003.
+
+\bibitem{zhou2013impact}
+K.~Zhou, S.~Whiting, J.~M. Jose, and M.~Lalmas.
+\newblock The impact of temporal intent variability on diversity evaluation.
+\newblock In {\em Advances in Information Retrieval}, pages 820--823. Springer,
+  2013.
+
+\bibitem{zhu_learning_2014}
+Y.~Zhu, Y.~Lan, J.~Guo, X.~Cheng, and S.~Niu.
+\newblock Learning for search result diversification.
+\newblock In {\em Proceedings of the 37th International {ACM} {SIGIR}
+  Conference on Research \&\#38; Development in Information Retrieval}, {SIGIR}
+  '14, pages 293--302, New York, {NY}, {USA}, 2014. {ACM}.
+
+\end{thebibliography}

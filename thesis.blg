@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: abbrv.bst
+Database file #1: chapters/references.bib
+Repeated entry---line 1437 of file chapters/references.bib
+ : @inproceedings{costa2010understanding
+ :                                      ,
+I'm skipping whatever remains of this entry
+A bad cross reference---entry "ecir/NguyenK14"
+refers to entry "DBLP:conf/ecir/2014", which doesn't exist
+Warning--I didn't find a database entry for "nla"
+Warning--I didn't find a database entry for "DBLP:conf/ecir/2014"
+Warning--to sort, need author or key in wayback
+Warning--to sort, need author or key in pta
+Warning--to sort, need author or key in nytarchive
+Warning--to sort, need author or key in caliarchive
+Warning--to sort, need author or key in ukarchive
+Warning--to sort, need author or key in socchi
+Warning--to sort, need author or key in buddah
+Warning--to sort, need author or key in nyt
+Warning--to sort, need author or key in wikiminer
+Warning--there's a number but no volume in gebeil2014memoires
+Warning--empty journal in ross2000changing
+You've used 57 entries,
+            2118 wiz_defined-function locations,
+            799 strings with 13691 characters,
+and the built_in function-call counts, 22022 in all, are:
+= -- 2303
+> -- 853
+< -- 33
++ -- 347
+- -- 282
+* -- 1350
+:= -- 3257
+add.period$ -- 187
+call.type$ -- 57
+change.case$ -- 311
+chr.to.int$ -- 0
+cite$ -- 68
+duplicate$ -- 974
+empty$ -- 1831
+format.name$ -- 282
+if$ -- 4976
+int.to.chr$ -- 0
+int.to.str$ -- 57
+missing$ -- 49
+newline$ -- 279
+num.names$ -- 96
+pop$ -- 413
+preamble$ -- 1
+purify$ -- 255
+quote$ -- 0
+skip$ -- 797
+stack$ -- 0
+substring$ -- 1438
+swap$ -- 363
+text.length$ -- 33
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 224
+warning$ -- 11
+while$ -- 205
+width$ -- 59
+write$ -- 631
+(There were 2 error messages)

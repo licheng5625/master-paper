@@ -1,0 +1,184 @@
+\section{Model}
+
+\subsection{LM+T+D}
+
+
+\paragraph{
+	S is the set of documents of size k that you want. 
+	Here, $P(t|q)$ is defined as above and indicates the relative
+	importance of the time point t for the query q. Further,
+	$P(R|t, ti)$ indicates the probability that a user interested in
+	time point t is satisfied with a document published at time
+	ti. Similarly, $P(R|q, di)$ is the probability that a user issuing
+	the query q is satisfied with the document $d_i$.
+}
+
+\begin{equation}
+arg max_{s} \sum_{t}^{T}\left ( P(t | q).(1-\prod_{d_{i}}^{R} (1-P(R|t,t_{i}).P(R|q,d_{i}))) \right )
+\end{equation}
+
+\subsection{IA - select}
+
+\paragraph{
+	Let U(c|q, S) denote the conditional probability that the
+	query q belongs to category c, given that all documents in
+	set S fail to satisfy the user. Initially, before any document
+	is selected, U(c|q, ) = P(c|q). The algorithm selects output
+	documents one at a time. At every step, it chooses the
+	document that has the highest marginal utility, g(d|q, c, S),
+	computed as the product of the conditional distribution of
+	categories, U(c|q, S), and the quality value of the document,
+	V (d|q, c).
+}
+
+
+\begin{algorithm}[t]
+  \small
+  \SetKwFunction{Decompose}{decompose}
+
+  \KwIn{ k, q, C(q), R(q), C(d), P(c|q), V (d|q, c), S=null}
+  \KwOut{Set S of diversified documents}
+
+  \ShowLn$\forall c, U(c|q, S) = P(c|q)$
+
+  \ShowLn\While{$|S| \leq k$}{
+	   
+	  \ShowLn\For{$d \in R$}{
+	  	\ShowLn$g(d|q, c, S) \leftarrow \left ( \sum_{c \: in \: C(d)} U(c|q, S, t_d) V (d|q, c)  \right ) * T(t_d|q)$
+	  }
+
+		\ShowLn $d^{*} \leftarrow argmax \: g(d|q, c, S)$
+
+		\ShowLn $S \leftarrow S \cup \{d^{*}\}$
+
+	 	\ShowLn $\forall c \in C(d^{*})\:,\: U(c|q, S) = \left ( 1 -V(d^{*}|q,c)) U(c|q, S / {d^{*}})) \right ) $
+  }
+
+  \ShowLn\Return{$S$}
+
+  \BlankLine
+
+  \caption{\textsc{IA select}}
+  \vspace{-2mm}
+  \label{alg:ATD}
+\end{algorithm}
+
+
+\vspace{10 mm}
+
+\subsection{xQuAD}
+
+\begin{equation}
+(1-\lambda) P(d|q) + \lambda\sum_{q_{i} \: \in \: q} \left [ P(q_{i}|q).P(d|q_{i})\prod_{d_{j} \: \in \: S} 1- P(d_{j}|q_{i}) \right ]
+\end{equation}
+
+\vspace{10 mm}
+\paragraph{
+	1. document relevance, $P(d|q)$
+	2. document diversity, $P(d, S|q)$:
+	(a) sub-query generation, Q,
+	(b) sub-query importance, $P(qi|q)$,
+	(c) document coverage, P
+	$qi∈Q\: P(d|qi)$,
+	(d) document novelty,P
+	 $q_i$ in $Q| P(d|qi)>0 P(S|qi)$.
+}
+
+
+\vspace{10 mm}
+
+\subsection{PM2}
+
+\begin{algorithm}[t]
+  \small
+  \SetKwFunction{Decompose}{decompose}
+
+  \KwOut{Set S of diversified documents}
+
+  \ShowLn\For{$seats\: s_i \:in\: the\: ranked\: list \:S$}{
+
+  	\ShowLn\For{$aspects \: t_i \in T$}{
+	  	\ShowLn $quotient[i] = \frac{v_i}{2s_i + 1}$
+	  }
+
+	  \ShowLn $i^{*} \leftarrow argmax \: quotient[i]$
+
+		\ShowLn $d^{*} \leftarrow argmax_{d_j \in R} \: \lambda * quotient[i] * P(d_j|t_{i^{*}})+ (1-\lambda)\sum_{i \neq i^{*}} quotient[i] * P(d_j|t_{i^{*}})$
+
+		\ShowLn $S \leftarrow S \cup \{d^{*}\}$
+		
+		\ShowLn $R \leftarrow R / \{d^{*}\}$
+		
+		\ShowLn\For{$aspects\: t_i \in T$}{
+		  \ShowLn $s_{i} = s_{i} + \frac {P(d^{*}|t_{i})}{\sum_{t_{j}}P(d^{*}|t_{j})}$
+	  }
+
+  }
+
+  \ShowLn\Return{$S$}
+
+  \BlankLine
+
+  \caption{\textsc{PM2}}
+  \vspace{-2mm}
+  \label{alg:pm2}
+\end{algorithm}
+
+
+\vspace{10 mm}
+all si = 0
+\vspace{10 mm}
+\begin{equation}
+qt[i] = \frac{v_{i}}{2s_{i}+1}
+\end{equation}
+
+\begin{equation}
+d^{*}\leftarrow \lambda . qt[i^{*}] P(d_{j}|t_{i^{*}}) + (1 - \lambda)\sum_{ i \neq i^{*}} \left [ qt[i] . P(d_{j}|t_{i}) \right ]
+\end{equation}
+\vspace{10 mm}
+
+Update step:
+\begin{equation}
+s_{i} = s_{i} + \frac {P(d^{*}|t_{i})}{\sum_{t_{j}}P(d^{*}|t_{j})}
+\end{equation}
+
+
+
+\begin{algorithm}[t]
+  \small
+  \SetKwFunction{Decompose}{decompose}
+
+  \KwIn{ k, q, C(q), R(q), C(d), P(c|q), P(t|q), V (d|q, c), S=null}
+  \KwOut{Set S of diversified documents}
+
+  \ShowLn$\forall c \forall t U(c|q, S, t) = P(c|q,t)$
+
+  \ShowLn$T(t|q) = P(t|q)$
+
+  \ShowLn\While{$|S| \leq k$}{
+	   
+	  \ShowLn\For{$d \in R$}{
+	  	\ShowLn$g(d|q, c, S) \leftarrow \left \alpha ( \sum_{c \: in \: C(d)} U(c|q, S, t_d) V (d|q, c)  \right ) + (1-\alpha) T(t_d|q)$
+	  }
+
+		\ShowLn $d^{*} \leftarrow argmax \: g(d|q, c, S)$
+
+		\ShowLn $S \leftarrow S \cup \{d^{*}\}$
+
+		\ShowLn $\Delta_a = \sum_c^{C} I(c)*\frac{1}{1+e^{-w+|t^{*}-t_i|}}$
+
+		\ShowLn $\Delta_t = \frac{|\cup \: \#Docs(C(d^{*}))|}{|\#Docs({t^{*}})|}$
+
+	 	\ShowLn $\forall c \in C(d^{*})\:,\: U(c|q, S, t) = U(c|q, S, t) - U(c|q, S, t)*\Delta_c$
+
+	 	\ShowLn $T(t_d|q) = T(t_d|q) - T(t_d|q)*\Delta_t$
+  }
+
+  \ShowLn\Return{$S$}
+
+  \BlankLine
+
+  \caption{\textsc{Aspect+Time Diversity}}
+  \vspace{-2mm}
+  \label{alg:ATD}
+\end{algorithm}

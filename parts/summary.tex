@@ -1,0 +1,19 @@
+\chapter*{Summary}
+
+Web archives are large text collections which contain documents spanning over long time periods. Recently, there have been numerous efforts to digitize previously published content and preserving born-digital content leading to their widespread growth. Web archives present many opportunities for historical, cultural and political analyses. Consequently there is a growing need for tools which can efficiently access and search them. In this work we are interested in indexing methods for supporting various text-search workloads over web archives.   
+
+Firstly, We present an index organization strategy for efficiently supporting \emph{time-travel text search}. Our approach results in indexes with a small index-size and can be easily maintained.
+
+Secondly, we present techniques to 
+
+Firstly, we present a scalable and efficient index organization technique called index sharding to support \emph{time-travel text search}. We also develop methods which 
+
+scalable, efficient and space efficient index  
+
+Recently, there have been efforts to not only preserve born-digital content but also to digitize pre-Web documents. Consequently, there has been a proliferation of large-scale web archives which are repositories of valuable information. Web archives present many opportunities for various kinds of historical analyses, cultural analyses and analytics for computational journalism. Hence to unleash their true potential we need to support efficient methods to access and search them. 
+
+The first problem which we address is to build indexing methods which are scalable and efficiently support \emph{time-travel text search}. Similar to keyword queries to commercial search engines, the time-travel query allows the user to additionally constrain the keyword query with a certain time of interest. For instance, a time-travel query \query{cricket world cup}{02/2011 - 03/2011} constrains the keyword search in documents which existed in the months of March and April 2011. Existing indexing methods were characterized by a blowup in index size for a reasonable query performance. We propose index sharding as a novel index organization technique which eliminates wasteful replication. 
+
+We propose an optimal method to partition the posting lists in such a way that all accesses to postings
+
+We fine-tune the index by taking into consideration the index-access costs to improve the query reponse times by carefully allowing waste

@@ -1,0 +1,78 @@
+
+\input{preamble}
+
+
+% % % Abstract
+\input{parts/abstract}
+
+
+
+% % % Summary
+%\input{parts/summary}
+
+% % % Zusammenfassung
+%\input{parts/zusammenfassung}
+
+%\input{parts/acknowledgment}
+%\input{formal/Acknowledgement}
+
+
+% % % Table of Contents
+\setcounter{tocdepth}{2}	
+\tableofcontents
+ 
+\mainmatter
+% % % Introduction
+\input{chapters/introduction}		
+
+
+\input{chapters/archive_usage}
+
+
+\input{chapters/historical_search}
+
+\input{chapters/system}
+% % % Conclusion
+\input{chapters/conclusion}
+
+
+
+
+
+
+% % % Bibliography
+%\input{parts/bib}
+
+\bibliographystyle{abbrv}
+\bibliography{chapters/references}
+
+% % % Appendix
+\begin{appendix}
+
+\input{chapters/appendix}	
+
+\end{appendix}
+  
+\backmatter
+
+% % % List of Figures 	
+\listoffigures
+
+% % % List of tableofcontentsx
+\listoftables
+
+% % % List of Algorithms
+\listofalgorithms \addcontentsline{toc}{chapter}{List of Algorithms}
+
+%\input{formal/Statement}
+
+% % % Print Index
+\begin{balance}
+  \printindex  
+\end{balance}
+
+%\input{parts/declaration}
+
+\end{document}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % %

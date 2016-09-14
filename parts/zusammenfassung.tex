@@ -1,0 +1,121 @@
+\chapter*{Zusammenfassung}
+%
+%Webarchive bezeichnen einerseits Archive urspr\"unglich im Web
+%ver\-\"offent\-lichter Inhalte (z.~B. das Internet
+%Archive~\footnote[1]{\textbf{ http://www.archive.org}}), andererseits
+%Archive, die vor m\"og\-lich\-er\-wei\-se langer Zeit
+%ver\"offentlichte Inhalte im Web zugreifbar machen (z.~B. das Archiv
+%von The Times~\footnote[2]{\textbf{
+%    http://archive.timesonline.co.uk}}). Ein gewachsenes Bewusstsein,
+%dass origin\"ar digitale Inhalte (z.~B. Webseiten) bewahrenswert sind,
+%sowie verbesserte Digi\-tal\-is\-ierungs\-verfahren, haben dazu
+%gef\"uhrt, dass Anzahl und Umfang von Webarchiven in den letzten
+%Jahren zugenommen haben. Die beiden zuvor genannten Beispiele, das
+%Internet Archive und das Archiv von The Times, zeigen zwei wichtige
+%Merkmale von Webarchiven: Erstens sind diese h\"au\-fig umfangreich
+%und umfassen Millionen oder gar Milliarden von Dokument\-en -- seit
+%1996 hat das Internet Archive 150 Milliarden Kopien von Webseiten
+%gespeichert. Zweitens decken Webarchive oft einen sehr langen Zeitraum
+%ab -- so stammen die \"altesten der im Archiv von The Times
+%enthaltenen Artikel aus dem Jahr 1785. Bestehende Suchverfahren
+%ber\"uck\-sich\-tigen diese Charakteristika von Webarchiven derzeit
+%nicht. Damit Webarchive ihr volles Potenzial aussch\"opfen und zu
+%wirklich wert\-vollen Wissensquellen werden k\"onnen, bedarf es
+%durchdachter Suchverfahren. Die vorliegende Arbeit
+%befasst sich mit den drei folgenden relevanten Teilproblemen:\\
+%
+%\textit{Zeitreise-Textsuche} effizient zu unterst\"utzen ist das erste
+%dieser Teilprobleme. Die sogenannte Zeitreise-Textsuche erlaubt es
+%Benutzern, Anfragen zu formu\-lieren, wie sie auch an Websuchmaschinen
+%gestellt werden, diese jedoch zu\-s\"atz\-lich mit einer Zeit von
+%Interesse (z.~B. einem Tag im vergangenen Jahr) zu versehen. Nur jener
+%Teil des Webarchives, der zum genannten Zeitpunkt existiert hat, wird
+%f\"ur eine solche Zeitreise-Suchanfrage betrachtet. Sucht man
+%beispiels\-weise nach zeitgen\"ossischen Dokumenten zur FIFA
+%Weltmeisterschaft im Jahr 2006, so kann man die Suchanfrage
+%\textsf{fifa world cup}@\textit{July 2006} formu\-lieren und damit nur
+%auf jenen Dokumenten suchen, die im Juli 2006 existiert haben. Wir
+%beschreiben einen effizienten Ansatz zur Unter\-st\"utzung von
+%Zeitreise-Suchanfragen. Uns\-er Ansatz basiert auf dem bekannten
+%invertierten Index und erweitert ihn derart, dass G\"ultigkeitszeiten
+%von Daten erfasst werden. Um Indizes trotz des gro{\ss}en Umfangs von
+%Web\-ar\-chi\-ven kompakt zu halten, stellen wir Verfahren zur
+%Verschmelzung von zu aufeinanderfolgenden Versionen des selben
+%Dokumentes geh\"orenden Daten vor. Ein weiterer Beitrag sind
+%Verfahren, welche eine Feinabstimmung des Index im Hinblick auf zu
+%erf\"ullende Leistungsgarantien oder Speicher\-be\-schr\"an\-kung\-en
+%erlauben. Die\-se Verfahren basieren auf einer zeitlichen
+%Partitionierung und Repli\-zier\-ung der im Index vorhandenen
+%Daten. Sowohl die Verfahren zur zeitlichen Verschmelzung als auch die
+%Partitionierungsverfahren sind als Optimierungs\-pro\-bleme
+%formalisiert. Wir beschreiben Algorithmen zur Berechnung von optimalen
+%und --wenn sinnvoll-- an\-n\"ah\-er\-ungs\-weisen
+%L\"o\-sung\-en. Anhand von umfangreichen Experimenten auf drei
+%re\-pr\"a\-sen\-tativen Web\-archiven wird gezeigt, dass der
+%vorgeschlagene
+%Ansatz praktikabel ist.\\
+%
+%W\"ahrend des von einem Webarchiv abgedeckten Zeitraumes kann sich die
+%g\"angige Terminologie deutlich ver\"andert haben. Diese
+%\textit{Terminologie\-ver\"ande\-rung} ist urs\"achlich f\"ur eine
+%sich weitende Kluft zwischen heute g\"angiger Terminologie, die von
+%Benutzern verwendet wird, um Suchanfragen zu formu\-lieren, und jener
+%Terminologie, in der archivierte Dokumente geschrieben wurden. F\"ur
+%die Suchanfrage \textsf{saint petersburg museum} beispielsweise werden
+%in den 1970ern ver\"offentlichte Dokumente, die wertvolle Information
+%\"uber Museen in Lenin\-grad enthalten, oft nicht gefunden. Um einer
+%daraus resultierenden Verminderung der Ergebnisg\"ute
+%entgegenzuwirken, stellen wir ein Verfahren zur automatischen
+%Umformulierung von Suchanfragen vor. Anhand von zeit\-ab\-h\"ang\-igen
+%Sta\-tistiken \"uber das gemeinsame Auftreten von Termen, ermittelt
+%unser Verfahren solche Terme, die in der Vergangenheit eine \"ahnliche
+%Bedeutung hatten wie die in der vorliegen Anfrage enthaltenen
+%Ter\-me. Hierzu werden zeit\-ab\-h\"angige Kontexte von Termen
+%verglichen -- der Term \textsf{leningrad} beispielsweise trat in der
+%Vergangenheit h\"aufig mit Termen wie \textsf{russia},
+%\textsf{hermitage} und \textsf{tsar} auf, genau wie es heute der Term
+%\textsf{saint petersburg} tut. Unter Verwendung eines Hidden Markov
+%Modells bestimmt das Verfahren dann gute Umformulierungen der
+%vorliegenden Suchanfrage, indem es solche als \"ahnlich identifizierte
+%Terme zusammensetzt, welche koh\"arent (d.~h. zusammen Sinn ergebend)
+%und popul\"ar (d.~h. g\"angig verwendet) sind. Hierzu greift das
+%Verfahren wiederum auf zeitabh\"angige Termstatistiken zur\"uck. Wir
+%beschreiben wie sich das vor\-ge\-schla\-gene Verfahren implementieren
+%l\"asst, so dass interaktive Antwortzeiten
+%erreicht werden, und demonstrieren seinen praktischen Nutzen.\\
+%
+%Beim dritten Teilproblem, das nicht nur f\"ur die Suche in Webarchiven
+%von Interesse ist, handelt es sich um
+%\textit{Informationsbed\"urfnisse mit deutlichem Zeitbezug}. Diese
+%lassen sich h\"aufig am besten durch Dokumente bedienen, welche auf
+%eine bestimmte Zeit Bezug nehmen. Ein konkretes Beispiel stellt die
+%Such\-an\-frage \textsf{crusades 13th century} dar. Bestehende
+%Verfahren scheitern oft an solchen Informationsbed\"urfnissen, da
+%ihnen in Dokumenten enthaltene Zeitbez\"uge (z.~B. \textsf{``in
+%  1202''}) und deren Bedeutung verborgen blei\-ben. Eine
+%Schwier\-ig\-keit beim Umgang mit Zeitbez\"ugen ist deren inh\"arente
+%Unsch\"arfe -- so kann der genannte Zeitbezug \textsf{``in 1202''}
+%sowohl auf einen bestimmten Tag, aber auch auf das gesamte Jahr
+%verweisen. Das vorgestellte Retrieval-Modell be\-r\"uck\-sich\-tigt
+%Zeitbez\"uge, deren Bedeutung sowie die ihnen inh\"arente Unsch\"arfe
+%und f\"ugt diese nahtlos in einen auf Language Models beruhenden
+%Retrieval-Ansatz ein. Die zentrale Idee dieses Modelles liegt darin,
+%Zeitbez\"uge als Mengen jener exakten Zeitintervalle zu
+%re\-pr\"a\-sen\-tieren, auf die sie verweisen k\"onnen, und damit ihre
+%Unsch\"arfe zu erfassen. Hierauf aufbauend entwerfen wir ein
+%generierendes Modell f\"ur Zeitintervalle und verfolgen einen
+%Query-Likelihood-Ansatz, um die Relevanz eines Dokumentes zu einer
+%Suchanfrage mit Zeitbezug zu sch\"atzen. Umfangreiche Experimente auf
+%zwei Do\-ku\-ment\-en\-kollektionen unter Verwendung von Suchanfragen
+%und Relevanzbewertungen, die wir mittels Online-Be\-fra\-gung echter
+%Benutzer gesammelt haben, zei\-gen, dass unser Ver\-fahren eine
+%we\-sent\-liche Ver\-bes\-ser\-ung der Ergebnisg\"ute f\"ur die
+%betrachteten Informationsbed\"urf\-nis\-se mit deutlichem Zeitbezug
+%erzielt.
+%
+%
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "phd-thesis"
+%%% End: 

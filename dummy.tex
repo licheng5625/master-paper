@@ -1,0 +1,126 @@
+\begin{table*}[!t]
+  \small
+  \centering
+  \scalebox{0.75}{
+  \begin{tabular}{@{}rccllllllllllll@{}}\toprule
+    %\multicolumn{2}{c}{} & \multicolumn{3}{c}{\textbf{GRD}} && \multicolumn{3}{c}{\textbf{APX}} && \multicolumn{3}{c}{\textbf{OPT}}\\
+    %\cmidrule{3-5} \cmidrule{7-9}\cmidrule{11-13}
+    \multicolumn{2}{l}{} && \textsc{Sbr} && \textsc{TIA-Ndcg} &&  \textsc{TIA-Prec.} && \textsc{TIA-Map} && \textsc{TIA-Err} && \textsc{TIA-SBR} \\ \midrule
+
+    \multicolumn{2}{l}{\textbf{LM}}&& 0.211 && 0.293 && 0.01 && 0.011 && 0.02 && 0.321     \\
+
+    \multicolumn{2}{l}{\textbf{T-IA-Select}}&& 0.203 && 0.316 && 0.01 && 0.012 && 0.023 && 0.315     \\
+
+    \multicolumn{2}{l}{\textbf{T-PM2}} && 0.131 && 0.175 && 0.011 && 0.012 && 0.018 && 0.233     \\
+
+    \multicolumn{2}{l}{\textbf{IA-Select}} && 0.164 && 0.239 && 0.008 && 0.009 && 0.016 && 0.253  \\
+
+    \multicolumn{2}{l}{\textbf{PM2}} && 0.195 && 0.3 && 0.01 && 0.011 && 0.022 && 0.299      \\
+
+    \multicolumn{2}{l}{\textbf{MDIV}} && 0.228 && 0.368 && 0.01 && 0.011 && 0.022 && 0.36    \\
+
+    \multicolumn{2}{l}{\textbf{OnlyTime}} && 0.228 && 0.352 && 0.008 && 0.011 && 0.021 && 0.358     \\
+
+    \multicolumn{2}{l}{\textbf{HistDiv}} && 0.237 && 0.425 && 0.011 && 0.014 && 0.027 && 0.377 \\
+    \bottomrule
+  \end{tabular}}
+  \caption{Retrieval Effectiveness ($k$ = 5)}
+  \label{tab:retrireval-effectiveness}
+\end{table*}
+
+
+
+\begin{table*}[!t]
+  \small
+  \centering
+  \begin{tabular}{@{}rccllllllllllll@{}}\toprule
+  \multicolumn{2}{l}{} && \textsc{Sbr} && \textsc{TIA-Ndcg} &&  \textsc{TIA-Prec.} && \textsc{TIA-Map} && \textsc{TIA-Err} && \textsc{TIA-SBR} \\ \midrule
+  \multicolumn{2}{l}{\textbf{T-PM2}} && 0.008 && 0.044 && 0.005 && 0.077 && 0.111 && 0.007 \\ \midrule
+  \multicolumn{2}{l}{\textbf{HistDiv}} && 0.004 && 0.217 && 0.013 && 0.192 && 0.246 && 0.005 \\ \bottomrule
+  \end{tabular}
+  \caption{Results for \emph{summer olympics doping scandals}}
+\label{table:olympics}
+\end{table*}
+
+
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.95\textwidth}
+    \includegraphics[width=\textwidth]{images/rg_timeline.png}
+    \caption{Temporal distribution of top 1000 documents for \texttt{Rudolph Giuliani}}
+    \label{fig:temporal_rg}
+  \end{subfigure}%
+  \begin{subfigure}[b]{1.0\textwidth}
+          \includegraphics[width=\textwidth]{images/rg_timeline_pm230.png}
+          \caption{Temporal distribution of top 1000 documents for \texttt{Rudolph Giuliani} after diversification using \textbf{T-PM2}}
+          \label{fig:temporal_rg}
+  \end{subfigure}%
+  \begin{subfigure}[b]{1.0\textwidth}
+          \includegraphics[width=\textwidth]{images/rg_timeline_iasel30.png}
+          \caption{Temporal distribution of top 1000 documents for \texttt{Rudolph Giuliani} after diversification using \textbf{T-IASEL}}
+          \label{fig:temporal_rg}
+  \end{subfigure}%
+  \begin{subfigure}[b]{1.0\textwidth}
+          \includegraphics[width=\textwidth]{images/rg_timeline_mdiv30.png}
+          \caption{Temporal distribution of top 1000 documents for \texttt{Rudolph Giuliani} after diversification using \textbf{T-MDIV}}
+          \label{fig:temporal_rg}
+  \end{subfigure}%
+  \begin{subfigure}[b]{1.0\textwidth}
+          \includegraphics[width=\textwidth]{images/rg_timeline_lmtd30.png}
+          \caption{Temporal distribution of top 1000 documents for \texttt{Rudolph Giuliani}after diversification using \textbf{Only Time}}
+          \label{fig:temporal_rg}
+  \end{subfigure}%
+  \begin{subfigure}[b]{1.0\textwidth}
+          \includegraphics[width=\textwidth]{images/rg_timeline_histdiv30.png}
+          \caption{Temporal distribution of top 1000 documents for \texttt{Rudolph Giuliani}after diversification using \textbf{HistDiv}}
+          \label{fig:temporal_rg}
+  \end{subfigure}%
+  \caption{Temporal distribution for \texttt{Rudolph Giuliani}}\label{fig:tempdist}
+\end{figure}
+
+
+
+
+methods --  sbr  ndcg  ia-precision  map  ia-err  ta-sbr 
+
+pm2 0.077 && 0.044 && 0.008 && 0.007 && 0.005 && 0.111 && 
+
+masptd 0.192 && 0.217 && 0.004 && 0.005 && 0.013 && 0.246 && 
+
+
+
+summer olympics doping scandals--pm2.0.008.0.044.0.005.0.077.0.111.0.007
+summer olympics doping scandals--masptd.0.004.0.217.0.013.0.192.0.246.0.005
+
+
+rg
+iasel  0.333 && 0.223 && 0.008 && 0.009 && 0.023 && 0.457 && 
+pm2  0.148 && 0.052 && 0.006 && 0.006 &&  0.011 && 0.18 && 
+mdiv 0.222 && 0.16 && 0.004 && 0.004 &&  0.007 && 0.298 && 
+ntpm2 0.074 && 0.017 && 0.004 && 0.004 &&  0.004 && 0.087 && 
+lm 0.185 && 0.04 && 0.003 && 0.004 &&  0.007 && 0.203 && 
+masptd  0.407 && 0.461 && 0.01 && 0.013 && 0.033 && 0.628 && 
+ntiasel  0.259 && 0.21 && 0.005 && 0.004 && 0.006 && 0.32 && 
+lm+t+d  0.333 && 0.314 && 0.008 && 0.011 && 0.029 && 0.457 && 
+
+k 15
+iasel 0.387 && 0.162 && 0.009 && 0.011 && 0.029 && 0.52 && 
+pm2 0.222 && 0.077 && 0.01 && 0.012 && 0.022 && 0.372 && 
+mdiv 0.376 && 0.156 && 0.01 && 0.01 && 0.028 && 0.53 && 
+ntpm2 0.349 && 0.143 && 0.01 && 0.011 && 0.027 && 0.497 && 
+lm 0.361 && 0.152 && 0.01 && 0.01 && 0.026 && 0.513 && 
+masptd 0.421 && 0.195 && 0.01 && 0.012 && 0.034 && 0.579 && 
+ntiasel 0.329 && 0.133 && 0.008 && 0.009 && 0.021 && 0.465 && 
+lm+t+d 0.443 && 0.184 && 0.007 && 0.009 && 0.026 && 0.573 && 
+
+k 5
+methods --  sbr  ndcg  ia-precision  map  ia-err  ta-sbr 
+iasel 0.203 && 0.316 && 0.01 && 0.012 && 0.023 && 0.315 && 
+pm2 0.131 && 0.175 && 0.011 && 0.012 && 0.018 && 0.233 && 
+mdiv 0.228 && 0.368 && 0.01 && 0.011 && 0.022 && 0.36 && 
+ntpm2 0.195 && 0.3 && 0.01 && 0.011 && 0.022 && 0.299 && 
+lm 0.211 && 0.293 && 0.01 && 0.011 && 0.02 && 0.321 && 
+masptd 0.237 && 0.425 && 0.011 && 0.014 && 0.027 && 0.377 && 
+ntiasel 0.164 && 0.239 && 0.008 && 0.009 && 0.016 && 0.253 && 
+lm+t+d 0.228 && 0.352 && 0.008 && 0.011 && 0.021 && 0.358 && 

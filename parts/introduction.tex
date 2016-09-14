@@ -1,0 +1,129 @@
+\chapter{Introduction}
+\label{chap:introduction}
+
+\section{Motivation}
+\label{sec:motivation}
+
+%Para 1 : Introduction to web archives. Cultural preservation. Mining and Search are interesting to extract meaningful information.  Full text search is enriched with a temporal component for useful usage of these archives. 
+With the popularity and ubiquity of the Internet our digital presence and footprint has been growing at a rapid pace. This has resulted in numerous digital curation efforts which are believed to lead to cultural preservation~\cite{digitization:cj}. Curation in the form of preservation of digital information deals with archiving born-digital content like Web archives and news archives. Web archives such as \emph{Internet Archive} [http://www.arch\-ive.org] and \emph{Internet Memory} [http://www.internetmemory.org] have been involved in periodically archiving websites for over 17 years with collection sizes amounting to several terabytes of data. Similarly, many news companies such as \emph{The New York Times}~\cite{NYT}, \emph{Wall Street Journal}~\cite{WSJ}, \emph{The Times}~\cite{TIMES} archive both their published digital content as well as digitize non-digital articles. Digitization for preservation~\cite{kulturarw}, apart from newspapers, also targets other content generated before the Web era in form of digitized books~\cite{Coyle2006641}, a prominent example being the Million Books Project~\cite{MBP}. All these efforts have given rise to huge repositories of text data which span considerable time periods. In this work we collectively refer to these collections as \emph{web archives}.
+
+Cultural preservation is the first step, but the true potential of these collections can be realized by enabling efficient searching and mining tasks. Web archives present many opportunities for various kinds of historical analyses~\cite{Schreibman:2008:CDH:1796118, digitalHistory:www}, cultural analyses~\cite{Michel:ys}, and analytics for computational journalism~\cite{Cohen:2011:CJ:2001269.2001288, CohenLYY:cidr11}. A case in point is data-driven journalism where the user resorts to various search tasks, visualization and longitudinal analyses on large amounts of data for obtaining useful insights in order to construct stories. As an example, \emph{The Weyeser Explorer} [http://www.data-art.net/weyeser\_explorer] provides visualizations of word clusters from news articles from \emph{The Guardian} [http://www.guardian.co.uk/]. In this work we are interested in indexing methods for supporting various text-search workloads over web archives. 
+
+With the popularity of search engines, full-text search has evolved into a powerful and popular way of searching text collections. However, search is no longer limited to humans typing queries. It is increasingly being used as a ``primitive'' operation in pre-processing steps in a longer pipeline for various extraction, mining and analytics tasks. Entity extraction systems like~\cite{agrawalCCG:vldb08, KanhabuaN10} commonly employ techniques based on keyword search as the first step. Similarly, many text mining and analytics applications like~\cite{time_explorer:hcir2010, Setty:2010:IEI:1920841.1921050} use text search as a filtering step to focus on a smaller and hence more usable document collection. To realize these benefits of search over archives it would be important to support keyword search functionality with additional temporal predicates.
+
+%It has triggered a large interest in the research community to meet the largely growing tension between user expectation of sub-second response times and growing collection sizes. 
+
+What has also evolved with the wide usage of search engines is the manner in which users interact with it. The user behaviour relies on multiple query reformulations and expansions to refine query intentions. A quick approximation of the query results often serves as feedback for further reformulations. Thus, to enhance the current day user behaviour it is important to provide functionality by which a large subset of the query results can be determined quickly.
+
+%Thus, to enhance the search experience and compliment the current day search behaviour there is a need to support such a functionality.
+
+ %along with the expectation of sub-second retrieval times. To enhance the search experience and compliment the current day search behaviour there is a need to support~\emph{approximate queries}.
+
+
+%Developing indexing methods to efficiently answer such queries could be useful for not only the end users who directly interact with the archive but also for applications like~\cite{time_explorer:hcir2010, Setty:2010:IEI:1920841.1921050} which use a full-text search engine as a first step for further mining operations. 
+
+%considering another line saying they can be used by machines and users.
+Along with keyword queries, phrase queries are another important query type in text search. Although a small fraction of the queries issued to search engines are phrase queries, a fairly large number are implicitly invoked, for instance, by means of query-segmentation methods~\cite{Hagen:2012fk,Li:2011kx}. Beyond their usage in search engines, phra\-se queries increasingly serve as a building block for other applications such as (a)~\emph{plagiarism detection}~\cite{Stamatatos:2011uq} (e.g.,~to identify documents that contain a highly discriminative fragment from the suspicious document), or (b)~\emph{culturomics}~\cite{Michel:ys}(e.g.,~to identify documents that contain a specific $n$-gram and compute a frequency time-series from their timestamps).
+
+%Phrases are unambiguous word sequences and are useful as primitives in retrieval and extraction tasks. 
+%Towards these goals we supporting these query workloads over archives we devise efficient and scalable indexing and query processing methods. 
+
+%Hence the need to provide support for efficient indexing and query processing techniques over Web archives which are efficient and also provide support for approximate results.
+
+%Digital humanities: using computing for disputed authorship study. (his was the study by Mosteller and Wallace of the Federalist Papers in an attempt to identify the authorship of the twelve disputed papers )
+
+\section{Research Challenges}
+ In this section, motivated from the scenarios presented above, we introduce the three different workloads we address in this thesis : \textbf{(A)} time-travel queries, \textbf{(B)} approximate queries and \textbf{(C)} phrase queries. We illustrate these by providing potential usecases for each of the workloads and consider the corresponding research challenges in designing efficient indexing and query processing methods. 
+
+\begin{enumerate}
+
+\item[\textbf{(A)}] In spite of the progresses in preservation, search capabilities over archives have been limited. A Na\"ive adaptation of the indexing infrastructure used for text retrieval is expensive and does not capture the temporal dimension inherent to such archives. With this in mind, \emph{time-travel queries}, which combine temporal predicates with keyword queries, e.g., \query{fifa world cup}{06/2006 - 07/2006}, were proposed in~\cite{kberberi:sigir2007} as an effective way of searching collections. 
+
+This combination of keyword queries with a temporal context could be an attractive construct in various analytical and comparative longitudinal analyses. %Data journalism is a case in point where journalists rely on searching, processing and presenting large amounts of data for obtaining useful insights for constructing stories. 
+Consider a journalist interested in views about the recent ponzi scheme in 2008. A keyword query ``\textsf{ponzi scheme}'' without the temporal predicates 
+over an archive might result in articles about various ponzi schemes spanning the entire time-line 
+of the archive. With the proper temporal constraints she would be able to restrict the search to time-intervals of her interest.
+
+To answer time-travel queries~\cite{kberberi:sigir2007} propose indexes that incur an index-size blowup, by replicating parts of the index, for better query performance. This motivates :
+
+% \textbf{RC I :} \textit{How do we build index structures which are both efficient in answering time-travel queries but also have a small space utilization ?}
+\textbf{RC I :} \textit{How do we build index structures which eliminate wasteful replication so as to have smaller index sizes and support time-travel queries efficiently?}
+
+Current indexing techniques are agnostic to index-access costs which can make a considerable difference to retrieval efficiency.  
+
+\textbf{RC II :} \textit{Can we devise index-tuning methods which take into account index-access costs rather than abstract cost measures ?} 
+
+Web archives are usually in a state of change where content is continuously added. The index needs to be in a fresh state and consistently reflect these changes. The current state-of-art indexing techniques are limited to static collections and do not consider updates. We need index-maintenance strategies which do not compromise query efficiency. 
+
+\textbf{RC III :} \textit{Can we design indexes which can be efficiently maintained ?}
+ 
+ % Often workloads have a need for functionality which provides quick and approximate results useful for further query reformulations.
+
+\item[\textbf{(B)}] Web archives are often associated with redundant information due to periodic re-crawls. Also in many application domains like news articles, the same information is available from different documents, so missing a few of them could be acceptable. Similarly, a subset of the true results is usually good enough for quickly checking if content or temporal predicates of the query need to be adapted. Consider a historian interested in the former US president ``\textsf{George Bush}'' in 2005. He might go through a series of reformulations to clarify his intent from \query{bush}{2005} to \query{george bush}{2005} to \query{george bush senior}{2005}. After the first query, he might have results relating to the infamous bush fires in 2005 prompting him a second round of reformulation. The second round might be unsuccessful due to mentions of the son of the actual entity he is interested in, thus necessitating a third reformulation. A quick review of the results (partially computed thus far) in each of these rounds would allow him for a productive reformulation experience.
+
+Due to the sheer size of archives, processing the temporal queries is expensive. This hampers the user experience when a user does not necessarily require the exact query result, but often would be satisfied with a good approximation that is determined quickly. Hence the need for query-optimization techniques to provide support for quick approximate results.
+
+\textbf{RC IV :} \textit{Can we support query optimizations given current indexes for temporal queries for quick approximate results ?}
+
+\item[\textbf{(C)}] Consider a company that is interested in the product reviews for a camera model \kwquery{canon eos 1100d} which was released in 2008 and is interested in all its mentions for planning for the next product release. This specific model is referred to as \kwquery{canon rebel xs}, \kwquery{eos rebel t3} and \kwquery{eos kiss x50} in different contexts. In order to determine the documents which mention this specific model, these surface forms can be used as \emph{phrase queries} along with the year of its release. The output documents can then be fed into a more elaborate extraction system for further analysis.
+
+Traditional indexing methods for processing phrase queries use inverted indexes with positional information. Phrases are processed by intersecting posting lists corresponding to the query terms and additionally checked for positional proximity. Phrase-query processing in such a setting becomes expensive for large collections because (i) one cannot employ standard retrieval techniques like \emph{stop-word elimination} common to standard keyword retrieval and (ii) additional checks for positional adjacency. 
+
+The above problem can be addressed by indexing phrases or multi-word sequences, but explicitly indexing all possible sequences is prohibitive. However, not all phrases are frequently queried and not all combinations of words make valid multi-word sequences. Promising sequences can be mined from the document collection and from workloads. By considering their selectivities in the document collections and frequency in the query workload, practical indexing and efficient phrase querying solutions are possible.
+
+\textbf{RC V :} \textit{How can we index multi-word sequences to improve phrase-query efficiency ?}
+
+\textbf{RC VI :} \textit{How can query processing efficiently answer phrase queries using indexed multi-word sequences ?}
+
+\end{enumerate}
+
+\section{Contributions and Publications}
+\label{sec:contributions}
+We now present a synopsis of our contributions made in this work in addressing the research questions posed above. We also mention the key publications in which these contributions appear.
+
+\begin{enumerate}
+
+\item[(I)]\textbf{Scalable and Efficient Support for Time-travel Queries : } We present a novel index organization scheme, called \emph{index sharding}, that results in an almost zero increase in index size.  This practically efficient index organization method reconciles the costs of random and sequential accesses, hence minimizing the cost of reading index entries during query processing.
+
+We also describe index maintenance strategies based on which the proposed index can be updated incrementally as new document versions are added to the web archive. Our solution bounds the number of wasted read index entries per posting-list and can be maintained using small in-memory buffers and append-only operations. This work is published in:
+
+\begin{itemize}
+	\item{\textbf{~\cite{aanand:sigir2011}: }} 
+		Avishek Anand, Srikanta Bedathur, Klaus Berberich, Ralf Schenkel.
+		\emph{Temporal Index Sharding for Space-Time Efficiency in Archive Search}
+		in ACM Conference on Research and Development in Information Retrieval, SIGIR 2011.
+
+	\item{\textbf{~\cite{aanand:sigir2012}: }} 
+		Avishek Anand, Srikanta Bedathur, Klaus Berberich, Ralf Schenkel.
+		\emph{Index Maintenance for Time-Travel Text Search}
+		in ACM Conference on Research and Development in Information Retrieval, SIGIR 2012.
+
+\end{itemize}
+
+\item[(II)]\textbf{Supporting Approximate Time-travel Queries : } Building on the state-of-art index partitioning scheme proposed in~\cite{kberberi:sigir2007} we present a framework for efficient approximate processing of time-travel queries and present practical algorithms for the query-optimization problem. We derive a query plan for each time-travel query ensuring that the number of results obtained at each stage of the execution is maximized. Our experiments with three diverse, large-scale text archives reveal that our proposed approach can provide close to 80\% recall even when only about half the index is allowed to be read. This work is published in:
+	
+\begin{itemize}
+	\item{\textbf{~\cite{aanand:cikm2010}: }} 
+		Avishek Anand, Srikanta Bedathur, Klaus Berberich, Ralf Schenkel.
+		\emph{Efficient Temporal Keyword Queries over Versioned Text}
+		in ACM International Conference on Information and 
+Knowledge Management, CIKM 2010.
+\end{itemize}
+	
+\item[(III)] \textbf{Efficient Indexing and Phrase-Query Processing : }We propose a phrase indexing solution and query-optimization techniques to improve the performance of phrase queries. Our solution augments the existing word level index by a phrase-level index which is tunable by index size and is optimized for phrase-query performance. We study how arbitrary phrase queries can be processed efficiently on such an augmented inverted index. Moreover, we develop methods to select multi-word sequences to be indexed so as to optimize query-processing cost taking into account characteristics of both the workload and the document collection. Experiments on two real-world document collections demonstrate the efficiency and effectiveness of our methods. This work is under peer review:
+
+\begin{itemize}
+	\item{} 
+		Avishek Anand, Ida Mele, Srikanta Bedathur, Klaus Berberich.
+		\emph{Efficient Phrase Indexing and Querying}, 
+		under review.
+\end{itemize}
+
+
+\end{enumerate}
+
+\section{Outline}
+\label{sec:outline}
+This thesis is organized in three parts, each focused on a different workload type. Before we describe our contributions in detail, Chapter~\ref{chap:foundations} introduces the required background and necessary technical foundations on which we build.
+
+Chapter~\ref{chap:sharding} explores a novel space-time efficient index partitioning technique called \emph{index sharding}. It addresses issues surrounding index organization, tuning and maintenance along with extensive experimental evaluation. Chapter~\ref{chap:selection} introduces the problem of supporting approximate queries by proposing query-optimization techniques over the state-of-art vertically-partitioned index. It discusses the different approaches to this problem along with detailed experimental results. Chapter~\ref{chap:phrases} deals with the last workload type, namely \emph{phrase queries}. It introduces novel indexing and query processing techniques for efficient phrase-query processing. We finally conclude in Chapter~\ref{chap:conclusions} by revisiting the research challenges sketched before and discussing our contributions. In addition, we give an outlook on future research directions.
