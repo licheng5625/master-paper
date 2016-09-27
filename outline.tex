@@ -3,18 +3,20 @@
 \usepackage{graphicx}
 
 \begin{document}
-\title{Outline: Indexing Methods for Web Archives}
+\title{Outline: Real time rumor debunking in twitter	}
 \maketitle
 
 \section{Introduction - (5 pages)}
-	Motivate FT search on Archives and need for specific workloads. Argue that these workloads are important as ``primitive'' operations which enable various text and time analysis and extraction tasks. Present use cases for each scenarios which will be presented as motivations to more-or-less concrete research questions later.
+	Motivations of rumor debunking system like the one rumor of Obama made the stock down. Twitter is anonymous and the information on twitter spreads faster and wider than the traditional media. So a real time rumor detecting system is helpful. 
 
 	\subsection{Research Questions - (1 - 1.5 pages)}
 	Each of these correspond to a core chapter in the thesis.
 		\begin{itemize}
-			\item{Efficient Indexing and Maintenance for Temporal Queries}
-			\item{Enabling approximate results for temporal queries}
-			\item{Supporting efficient phrase queries}
+			\item{definition of rumor}
+
+			\item{general rumors detecting not rumor in some special events}
+			\item{real time single tweet credibility system}
+			\item{time series model rumor detecting}
 		\end{itemize}
 	\subsection{Contributions and Publications - (1 page)}
 		List contributions as solutions to the research questions and the correspoinding publications.
@@ -23,139 +25,95 @@
 \newpage
 \section{Foundations and Technical Background - (20-25 pages)}
 	
-	\subsection{Web Archiving (1 - 1.5 page)} 
-		Keeping it general and prsent an overview rather than details.
-	
-	\subsection{Information Retrieval (10 pages)}
-		Fundamentals of IR, scoring model, ranking, evaluation(???), link analysis, doc. ordered vs score ordered index lists.
-
-		\subsubsection{Indexing Text - (7 pages)}
+	\subsection{Machine learning l (10 page)} 
+		Keeping it general and present an overview rather than details.
+		\subsubsection{decision Tree  - (3 pages)}
 		\begin{itemize}
-			\item{Introduce inverted indexes, dictionaries, data structures}
-			\item{Explain different payloads for postings, query semantics}
-			\item{Construction of inverted indexes etc.}
+			\item{Introduce basic algorithm of DT }
+			\item{using DT for features' evolution}
+		\end{itemize}
+		
+		\subsubsection{random decision forest  - (3 pages)}
+		\begin{itemize}
+			\item{Introduce basic algorithm of RDF }
+		\end{itemize}
+		
+		\subsubsection{SVM  - (3 pages)}
+		\begin{itemize}
+			\item{Introduce basic algorithm of SVM }
+		\end{itemize}
+		
+		\subsubsection{MLP  - (3 pages)}
+		\begin{itemize}
+			\item{Introduce basic algorithm of MLP }
 		\end{itemize}
 
-		\subsubsection{Query Processing Techinques - (1-2 pages)}
-			DAAT, TAAT, WAND, NRA, TA, CA etc.
+ 		 
+	\subsection{Time series Model  (1 pages)}
+ 	introduce the series Model
+		
 
-		\subsubsection{Phrase Queries - (2 pages)}
-			Auxillary indexes. Bi-gram indexes etc.
+ 
 
-		\subsubsection{Handling index updates - (2 pages)}
-			Index update schemes - geometric, logarithmic, query-log based etc.
-		\subsubsection{Compression and Caching (2 pages)}
-			Compression techniques based on gaps. explain different
-			Do we need caching at all ? or do I introduce it in the context of phrase queries later.
-
-
-	\subsection{Data Management}
-			\subsubsection{Temporal Databases - (1 page)}
-			Plan to keep it short and concise. 
-
-			\subsection{KMV Synopsis (1 page)} 
+	\subsection{Spike model}
+			\subsubsection{Original Spike Model - (1 pages)}
+ 
+		%\subsubsection{evaluated Model for muti-pike - (1 pages)}
 	
 
-	\subsection{Indexing Archives - (7-10 pages)}
-		\subsubsection{Time-travel Queries and indexing}
-			Content about TTIX and initial notation which will be re-used throughout the dissertation.
-		\subsubsection{Compression in indexes for archives}
-			Coalescing and mostly work from Jinru He. Other related works on compressing document collections.
-
+ 
 
 %core chapters
 \newpage
-\section{Query Optimization for approximate queries (23 pages)}
+\section{data collection (2 pages)}
+
+\section{single tweet credibility score  }
 	
 	\subsection{Introduction and Problem statement (3 pages)}
 	
 	\subsection{Related Work (0.5 - 1 page)}
 	
-	\subsection{Model(0.5 page)}
+	\subsection{feature design (1 page)}
 
-	\subsection{Index Organization(1 page)}
-		Synopsis Index and the vertically partitioned index.
+	\subsection{Model selection(1 page)}
 
-	\subsection{Partition Selection (1 page)}
-		Partition Selection as a query optimization step for approximate queries and formal problem statement.
+ 
 
-	\subsection{Single-Term Partition Selection (5 pages)}
-		\subsubsection{Size-based Partition}
-		\subsubsection{Equi-cost Partition Selection}
+ 
+	\subsection{result  (1 pages)}
+ 
 
-	\subsection{Multi-Term Partition Selection (4 pages)}
-		\subsubsection{Size-based Partition (3 pages)}
-		\subsubsection{Equi-cost Partition Selection}
-
-
-	\subsection{Pratical Issues and Optimizations (1 pages)}
-		\subsubsection{Cost Model and Heuristic algorithm }
-
-	\subsection{Experimental Evaluation (6 pages)}
+ 	\subsection{feature Evaluation (6 pages)}
 
 	\subsection{Summary}
 
 
 \newpage
-\section{Efficient Indexing and Maintenance for Temporal Queries - (30-35 pages)}
-	Presents index sharding as an alternate index organization way for temporal queries. Discusses alternate sharding methods. Addresses index maintenance and presents experiments to justify claims.
+\section{Time series Model  (3 pages)}
 
 	\subsection{Introduction and Problem statement (2 pages)}
-		\subsubsection{Approach}
-		\subsubsection{Organization}
+		\subsubsection{why time series}
+ 		\subsubsection{time series feature}
 
-
+	
 	\subsection{Related Work (1 page)}
+	
+	\subsection{evolution of SpikM model }
+	
+	\subsection{feature design (1 page)}
 
-	\subsection{Model (0.5 page)}
+	\subsection{Model selection (0.5 page)}
 
-	\subsection{Index Organization (1 page)}
+	\subsection{result  (1 pages)}
 
-	\subsection{Index Sharding (1 pages)}
+ 	\subsection{feature Evaluation (6 pages)}
 
-	\subsection{Idealized Index Sharding (3 pages)}
-		\subsubsection{Algorithm and Proof of Optimality}
-
-	\subsection{Cost-Aware Shard Merging (3 pages)}
-		\subsubsection{Cost Model and Heuristic algorithm }
-
-	\subsection{Index Maintenance (2 pages)}
-		Introduce index maintenance and extra notation as required.
-
-	\subsection{Incremental Sharding (5 pages)}
-		\subsubsection{Algorithm and Proof of Approximation guarantee}
-
-	\subsection{System Architecture (1 pages)}
-		
-	\subsection{Experimental Evaluation(10 pages)}
+	\subsection{Summary}
 		%TODO: a) need experiments with more queries for the UKGOV dataset. Currently we have an evaluation over 50 queries. Extend it to 300 queries. b) need experiments for entire index build times. We currently have partial indexes containing query terms only in the test workload. (Do we need this given we do warm-cache measurements).
 		
 		%TODO: profile the updation of the sharded index with complete recomputation.
 	
 
-	\subsection{Summary}
-
-
-\newpage
-\section{Phrase Indexing and Querying - (23 pages)}
-	
-	\subsection{Introduction (1 page)}
-		
-	\subsection{Model and Indexing Organization (3 pages)}
-
-	\subsection{Related Work (1 page)}
-
-	\subsection{Query Optimization (4 pages)}
-		\subsubsection{Optimal Solution}
-		\subsubsection{Approximation Guarantee}
-
-	\subsection{Phrase Selection (4 pages)}
-		\subsubsection{Query-Optmizer-Based Selection}
-		\subsubsection{Coverage-Based Selection}
-
-	\subsection{Experimental Evaluation (7 pages)}
-		Add experiments for robustnes and final plots for wall-clock-times.	
-	\subsection{Summary}
 
 \section{Conclusion - (2-3 pages)}
 
