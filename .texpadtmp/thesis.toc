@@ -1,0 +1,51 @@
+\contentsline {chapter}{\nonumberline Abstract}{iii}{chapter*.1}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {subsection}{\numberline {1.0.1}Contributions}{1}{subsection.1.0.1}
+\contentsline {subsection}{\numberline {1.0.2}Thesis Outline}{2}{subsection.1.0.2}
+\contentsline {chapter}{\numberline {2}Background and Related Work}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Twitter}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Retweet}{3}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Mentions}{3}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Hashtags}{3}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Favorite}{3}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Verified User}{4}{subsection.2.1.5}
+\contentsline {subsection}{\numberline {2.1.6}Followers}{4}{subsection.2.1.6}
+\contentsline {subsection}{\numberline {2.1.7}Following}{4}{subsection.2.1.7}
+\contentsline {subsection}{\numberline {2.1.8}Twitter API}{4}{subsection.2.1.8}
+\contentsline {section}{\numberline {2.2}Definition of Rumor}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Rumor Event}{4}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Time Period of an Event}{4}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Machine learning}{5}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Machine learning Overview}{5}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}random forest (RF)}{5}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Machine learning}{5}{section.2.4}
+\contentsline {chapter}{\numberline {3}Historical search}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Historical Query Intent}{8}{section.3.2}
+\contentsline {section}{\numberline {3.3}Time-Aware Effectiveness Measures}{9}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Time-augmented Diversification Metrics}{9}{subsection.3.3.1}
+\contentsline {paragraph}{\nonumberline Time aware alpha-IA-NDCG}{9}{section*.2}
+\contentsline {paragraph}{\nonumberline Time aware IA-ERR}{10}{section*.3}
+\contentsline {paragraph}{\nonumberline Time aware IA precision}{10}{section*.4}
+\contentsline {paragraph}{\nonumberline Time aware average IA-precision \& MAP-IA}{10}{section*.5}
+\contentsline {paragraph}{\nonumberline Subtopic recall}{11}{section*.6}
+\contentsline {subsection}{\numberline {3.3.2}Time-Aware Subtopic Recall}{11}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}The \textsc {HistDiv} Approach}{12}{section.3.4}
+\contentsline {section}{\numberline {3.5}Test Collection and Setup}{16}{section.3.5}
+\contentsline {subsubsection}{\nonumberline Competitors}{16}{section*.12}
+\contentsline {subsection}{\numberline {3.5.1}Test collection}{16}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Setup}{17}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Results \& Discussion}{19}{section.3.6}
+\contentsline {paragraph}{\nonumberline Rudolph Giuliani}{21}{section*.21}
+\contentsline {section}{\numberline {3.7}Related Work}{24}{section.3.7}
+\contentsline {chapter}{\numberline {4}The Historical Search System}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Architecture}{25}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Server side}{25}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Client side}{26}{subsection.4.1.2}
+\contentsline {chapter}{\numberline {5}Outlook}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}Conclusion}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}Future Work}{31}{section.5.2}
+\contentsline {chapter}{\nonumberline Bibliography}{33}{section.5.2}
+\contentsline {chapter}{\nonumberline List of Figures}{39}{figure.caption.35}
+\contentsline {chapter}{\nonumberline List of Tables}{41}{figure.caption.35}
+\contentsline {chapter}{List of Algorithms}{43}{figure.caption.35}

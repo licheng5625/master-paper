@@ -1,0 +1,18 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Time-Aware Effectiveness Measures\relax }}{11}{table.caption.7}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Retrieval Effectiveness ($k$ = 10)\relax }}{18}{table.caption.13}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Retrieval Effectiveness ($k$ = 5)\relax }}{18}{table.caption.14}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Retrieval Effectiveness ($k$ = 15)\relax }}{18}{table.caption.15}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Retrieval Effectiveness ($k$ = 20)\relax }}{19}{table.caption.16}
+\contentsline {table}{\numberline {3.6}{\ignorespaces Results for \texttt {Rudolph Giuliani} - \emph {LM}\relax }}{20}{table.caption.17}
+\contentsline {table}{\numberline {3.7}{\ignorespaces Results for \texttt {Rudolph Giuliani} - \emph {T-PM2}\relax }}{20}{table.caption.18}
+\contentsline {table}{\numberline {3.8}{\ignorespaces Results for \texttt {Rudolph Giuliani} - \emph {T-IA-Select}\relax }}{20}{table.caption.19}
+\contentsline {table}{\numberline {3.9}{\ignorespaces Results for \texttt {Rudolph Giuliani} - \emph {HistDiv}\relax }}{20}{table.caption.20}
+\contentsline {table}{\numberline {3.10}{\ignorespaces \textsc {Tia-SBR}(win/loss) at $k$=5,10,15 \& 20\relax }}{22}{table.caption.23}
+\contentsline {table}{\numberline {3.11}{\ignorespaces Retrieval Effectiveness ($k$ = 10) for the topic \texttt {Rudolph Giuliani}\relax }}{22}{table.caption.24}
+\contentsline {table}{\numberline {3.12}{\ignorespaces Results for \emph {summer olympics doping scandals}\relax }}{22}{table.caption.26}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

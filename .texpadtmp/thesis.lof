@@ -1,0 +1,15 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Temporal distribution of top 1000 documents for \texttt {Rudolph Giuliani}\relax }}{23}{figure.caption.27}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Temporal distribution of top 1000 documents for \texttt {Rudolph Giuliani} after diversification using \textbf {T-PM2}\relax }}{23}{figure.caption.28}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Temporal distribution of top 1000 documents for \texttt {Rudolph Giuliani} after diversification using \textbf {T-IASEL}\relax }}{23}{figure.caption.29}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Temporal distribution of top 1000 documents for \texttt {Rudolph Giuliani} after diversification using \textbf {T-MDIV}\relax }}{23}{figure.caption.30}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Temporal distribution of top 1000 documents for \texttt {Rudolph Giuliani}after diversification using \textbf {Only Time}\relax }}{24}{figure.caption.31}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Temporal distribution of top 1000 documents for \texttt {Rudolph Giuliani}after diversification using \textbf {HistDiv}\relax }}{24}{figure.caption.32}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces System Architecture\relax }}{26}{figure.caption.33}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Newspaper interface with timeline.\relax }}{27}{figure.caption.34}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {.1}{\ignorespaces Query Workload\relax }}{38}{figure.caption.35}
