@@ -4,24 +4,21 @@ Twitter is a mircoblogging service which are used by millions users. Users can p
 
 But these advantages make Twitter which became one of the most importance resources of breaking news, at the same time becomes into a ideal media for spreading unverified information. On Twitter everyone can be a journalist and publish news or rumors without any substantiation which must be done by traditional journalists before news' publishing. 
 
- Rumor could be defined as a statement whose truth value is unverified or deliberately false(wenxian).And they could be harmful to the government, market and society. One case is some hacked accounts spread a rumor about Obama had been injured in white house. The S\&P crashed and wiped off 130 Billion dollars of stock value (wenxian). 
+ Rumor could be defined as a statement whose truth value is unverified or deliberately false(wenxian). And they could be harmful to the government, market and society. One case is some hacked accounts spread a rumor about Obama had been injured in white house. The S\&P crashed and wiped off 130 Billion dollars of stock value (wenxian). 
  
- So a method of detecting rumors on Twitter that could detect rumors in the early stage of propagation can be very usefull.    
+ So a method of detecting rumors on Twitter that could detect rumors in the early stage of propagation can be very useful.    
 
  
  \subsection{Contributions}
-This thesis develops a model of classification of single tweet with high credibility or low credibility and a time series model for detection of rumor event.
-
-The classifier of single tweet is random decision forest with accuracy 77.58\%. And we use the result from this classifier as a feature into 
- In this thesis, we make the following contributions:
+In this thesis, we make the following contributions:
 
 \begin{itemize}
 	
-	\item We develop a model of classification of single tweet with high credibility or low credibility. We call it \textsc{credit scoring model}. Considering it could be set up online in the further and it should response as quick as possible. So we use only the features which can be extracted from one tweet in the Twitter's interface. The classifier uses random decision forest. Although the features are limited,  it still gets 81\% accuracy(xiugai). The result of this model we called it credit score.
+	\item We develop a model of classification of single tweet with high credibility or low credibility. We call it \textsc{single tweet's creditability scoring model}. Considering it could be set up online for the early rumor events detection in the further and it should response as quick as possible. So we use only the features which can be extracted from one tweet in the Twitter's interface. We test 2 models. One is random decision forest with handcrafted features. Because the features are limited, it gets only 64\% accuracy. Second model is two layer RNN model. The result of this model we called it credit score.
 
- 	\item We develop a time series model for detecting rumor events. We used Dynamic Series-Time Structure (DSTS)(wenxian) to capture the changes of features over time. And we tested 3 time series model as feature: modified Spike Model(wenxian), SIS model(wenxian) and SEIZ model(wenxian). We fit the results of credit scoring model as a feature into time series model to improve the performance in the early stage. And we approved that credit score is one of the best feature.
+ 	\item We develop a time series model for detecting rumor events. We used Dynamic Series-Time Structure (DSTS)(wenxian) to capture the changes of features over time. And we tested 3 time series model as feature: modified Spike Model(wenxian), SIS model and SEIZ model(wenxian). We add the results of credit scoring model as a feature into time series model to improve the performance in the early stage. And we approved that credit score is one of the best feature in the rumor detection task.
 
- 	\item We study how top features changes over time during the spreading of rumors.
+ 	\item We study how features changes over time during the spreading of rumors.
 
  \end{itemize}
  

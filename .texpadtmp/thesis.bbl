@@ -1,25 +1,23 @@
 \begin{thebibliography}{10}
 
-\bibitem{wikiminer}
-{New york times archives}.
-\newblock \url{http://wikipedia-miner.cms.waikato.ac.nz}.
+\bibitem{ahmed2012mcl}
+F.~Ahmed and M.~Abulaish.
+\newblock An mcl-based approach for spam profile detection in online social
+  networks.
+\newblock In {\em 2012 IEEE 11th International Conference on Trust, Security
+  and Privacy in Computing and Communications}, pages 602--608. IEEE, 2012.
 
-\bibitem{nyt}
-{The New York Times Annotated Corpus}.
-\newblock \url{http://corpus.nytimes.com}.
+\bibitem{allport1947psychology}
+G.~W. Allport and L.~Postman.
+\newblock The psychology of rumor.
+\newblock 1947.
 
-\bibitem{agrawal_diversifying_2009}
-R.~Agrawal, S.~Gollapudi, A.~Halverson, and S.~Ieong.
-\newblock Diversifying search results.
-\newblock In {\em Proceedings of the Second {ACM} International Conference on
-  Web Search and Data Mining}, {WSDM} '09, pages 5--14, New York, {NY}, {USA},
-  2009. {ACM}.
-
-\bibitem{lm+t+d}
-K.~Berberich and S.~Bedathur.
-\newblock Temporal diversification of search results.
-\newblock In {\em SIGIR 2013 Workshop on Time-aware Information Access (TAIA
-  2013)}, 2013.
+\bibitem{barbosa2010robust}
+L.~Barbosa and J.~Feng.
+\newblock Robust sentiment detection on twitter from biased and noisy data.
+\newblock In {\em Proceedings of the 23rd International Conference on
+  Computational Linguistics: Posters}, pages 36--44. Association for
+  Computational Linguistics, 2010.
 
 \bibitem{breiman2001random}
 L.~Breiman.
@@ -31,155 +29,136 @@ L.~Breiman, J.~Friedman, C.~J. Stone, and R.~A. Olshen.
 \newblock {\em Classification and regression trees}.
 \newblock CRC press, 1984.
 
-\bibitem{carbonell1998use}
-J.~Carbonell and J.~Goldstein.
-\newblock The use of mmr, diversity-based reranking for reordering documents
-  and producing summaries.
-\newblock In {\em Proceedings of the 21st annual international ACM SIGIR
-  conference on Research and development in information retrieval}, pages
-  335--336. ACM, 1998.
+\bibitem{castillo2011information}
+C.~Castillo, M.~Mendoza, and B.~Poblete.
+\newblock Information credibility on twitter.
+\newblock In {\em Proceedings of the 20th international conference on World
+  wide web}, pages 675--684. ACM, 2011.
 
-\bibitem{Carterette:2009:PMR:1645953.1646116}
-B.~Carterette and P.~Chandar.
-\newblock Probabilistic models of ranking novel documents for faceted topic
-  retrieval.
-\newblock In {\em Proceedings of the 18th ACM Conference on Information and
-  Knowledge Management}, CIKM '09, pages 1287--1296, New York, NY, USA, 2009.
-  ACM.
+\bibitem{gupta2014tweetcred}
+A.~Gupta, P.~Kumaraguru, C.~Castillo, and P.~Meier.
+\newblock Tweetcred: Real-time credibility assessment of content on twitter.
+\newblock In {\em International Conference on Social Informatics}, pages
+  228--243. Springer, 2014.
 
-\bibitem{choi2012temporal}
-J.~Choi and W.~B. Croft.
-\newblock Temporal models for microblogs.
-\newblock In {\em Proceedings of the 21st ACM international conference on
-  Information and knowledge management}, pages 2491--2494. ACM, 2012.
+\bibitem{jin2013epidemiological}
+F.~Jin, E.~Dougherty, P.~Saraf, Y.~Cao, and N.~Ramakrishnan.
+\newblock Epidemiological modeling of news and rumors on twitter.
+\newblock In {\em Proceedings of the 7th Workshop on Social Network Mining and
+  Analysis}, page~8. ACM, 2013.
 
-\bibitem{clarke2011nist}
-C.~Clarke, N.~Craswell, I.~Soboroff, and E.~Voorhees.
-\newblock Nist, overview of the trec2011 web track.
-\newblock In {\em Proceedings of TREC}, pages 500--295, 2011.
+\bibitem{kimmey2015twitter}
+D.~Kimmey.
+\newblock Twitter event detection.
+\newblock 2015.
 
-\bibitem{clarke2009overview}
-C.~L. Clarke, N.~Craswell, and I.~Soboroff.
-\newblock Overview of the trec 2009 web track.
-\newblock Technical report, DTIC Document, 2009.
+\bibitem{kwon2013aspects}
+S.~Kwon, M.~Cha, K.~Jung, W.~Chen, and Y.~Wang.
+\newblock Aspects of rumor spreading on a microblog network.
+\newblock In {\em International Conference on Social Informatics}, pages
+  299--308. Springer, 2013.
 
-\bibitem{costa2012evaluating}
-M.~Costa and M.~J. Silva.
-\newblock Evaluating web archive search systems.
-\newblock In {\em Web Information Systems Engineering-WISE 2012}, pages
-  440--454. Springer, 2012.
+\bibitem{kwon2013prominent}
+S.~Kwon, M.~Cha, K.~Jung, W.~Chen, and Y.~Wang.
+\newblock Prominent features of rumor propagation in online social media.
+\newblock In {\em 2013 IEEE 13th International Conference on Data Mining},
+  pages 1103--1108. IEEE, 2013.
 
-\bibitem{dang_term_2013}
-V.~Dang and B.~W. Croft.
-\newblock Term level search result diversification.
-\newblock In {\em Proceedings of the 36th International {ACM} {SIGIR}
-  Conference on Research and Development in Information Retrieval}, {SIGIR}
-  '13, pages 603--612, New York, {NY}, {USA}, 2013. {ACM}.
+\bibitem{lai2015recurrent}
+S.~Lai, L.~Xu, K.~Liu, and J.~Zhao.
+\newblock Recurrent convolutional neural networks for text classification.
+\newblock In {\em AAAI}, pages 2267--2273, 2015.
 
-\bibitem{dang_diversity_2012}
-V.~Dang and W.~B. Croft.
-\newblock Diversity by proportionality: An election-based approach to search
-  result diversification.
-\newblock In {\em Proceedings of the 35th International {ACM} {SIGIR}
-  Conference on Research and Development in Information Retrieval}, {SIGIR}
-  '12, pages 65--74, New York, {NY}, {USA}, 2012. {ACM}.
+\bibitem{liu2015real}
+X.~Liu, A.~Nourbakhsh, Q.~Li, R.~Fang, and S.~Shah.
+\newblock Real-time rumor debunking on twitter.
+\newblock In {\em Proceedings of the 24th ACM International on Conference on
+  Information and Knowledge Management}, pages 1867--1870. ACM, 2015.
 
-\bibitem{diaz2004using}
-F.~Diaz and R.~Jones.
-\newblock Using temporal profiles of queries for precision prediction.
-\newblock In {\em SIGIR}, volume~4, pages 18--24, 2004.
+\bibitem{madetecting}
+J.~Ma, W.~Gao, P.~Mitra, S.~Kwon, B.~J. Jansen, K.-F. Wong, and M.~Cha.
+\newblock Detecting rumors from microblogs with recurrent neural networks.
 
-\bibitem{dong2010towards}
-A.~Dong, Y.~Chang, Z.~Zheng, G.~Mishne, J.~Bai, R.~Zhang, K.~Buchner, C.~Liao,
-  and F.~Diaz.
-\newblock Towards recency ranking in web search.
-\newblock In {\em Proceedings of the third ACM international conference on Web
-  search and data mining}, pages 11--20. ACM, 2010.
+\bibitem{ma2015detect}
+J.~Ma, W.~Gao, Z.~Wei, Y.~Lu, and K.-F. Wong.
+\newblock Detect rumors using time series of social context information on
+  microblogging websites.
+\newblock In {\em Proceedings of the 24th ACM International on Conference on
+  Information and Knowledge Management}, pages 1751--1754. ACM, 2015.
 
-\bibitem{mdiv}
-Z.~Dou, S.~Hu, K.~Chen, R.~Song, and J.-R. Wen.
-\newblock Multi-dimensional search result diversification.
-\newblock In {\em Proceedings of the Fourth {ACM} International Conference on
-  Web Search and Data Mining}, {WSDM} '11, pages 475--484, New York, {NY},
-  {USA}, 2011. {ACM}.
+\bibitem{conf/kdd/MatsubaraSPLF12}
+Y.~Matsubara, Y.~Sakurai, B.~A. Prakash, L.~Li, and C.~Faloutsos.
+\newblock Rise and fall patterns of information diffusion: model and
+  implications.
+\newblock In Q.~Yang, D.~Agarwal, and J.~Pei, editors, {\em KDD}, pages 6--14.
+  ACM, 2012.
 
-\bibitem{joho2014ntcir}
-H.~Joho, A.~Jatowt, and R.~Blanco.
-\newblock Ntcir temporalia: a test collection for temporal information access
-  research.
-\newblock In {\em Proceedings of the companion publication of the 23rd
-  international conference on World wide web companion}, pages 845--850.
-  International World Wide Web Conferences Steering Committee, 2014.
+\bibitem{mendoza2010twitter}
+M.~Mendoza, B.~Poblete, and C.~Castillo.
+\newblock Twitter under crisis: can we trust what we rt?
+\newblock In {\em Proceedings of the first workshop on social media analytics},
+  pages 71--79. ACM, 2010.
 
-\bibitem{kanhabua2010determining}
-N.~Kanhabua and K.~N{\o}rv{\aa}g.
-\newblock Determining time of queries for re-ranking search results.
-\newblock In {\em Research and Advanced Technology for Digital Libraries},
-  pages 261--272. Springer, 2010.
-
-\bibitem{li2003time}
-X.~Li and W.~B. Croft.
-\newblock Time-based language models.
-\newblock In {\em Proceedings of the twelfth international conference on
-  Information and knowledge management}, pages 469--475. ACM, 2003.
-
-\bibitem{liang_fusion_2014}
-S.~Liang, Z.~Ren, and M.~de~Rijke.
-\newblock Fusion helps diversification.
-\newblock In {\em Proceedings of the 37th International {ACM} {SIGIR}
-  Conference on Research \&\#38; Development in Information Retrieval}, {SIGIR}
-  '14, pages 303--312, New York, {NY}, {USA}, 2014. {ACM}.
-
-\bibitem{ecir/NguyenK14}
-T.~N. Nguyen and N.~Kanhabua.
-\newblock Leveraging dynamic query subtopics for time-aware search result
-  diversification.
-\newblock In {\em ECIR}, pages 222--234, 2014.
-
-\bibitem{peetz2012adaptive}
-M.-H. Peetz, E.~Meij, M.~de~Rijke, and W.~Weerkamp.
-\newblock Adaptive temporal query modeling.
-\newblock In {\em Advances in Information Retrieval}, pages 455--458. Springer,
-  2012.
+\bibitem{oh2010exploration}
+O.~Oh, K.~H. Kwon, and H.~R. Rao.
+\newblock An exploration of social media in extreme events: Rumor theory and
+  twitter during the haiti earthquake 2010.
+\newblock In {\em ICIS}, page 231, 2010.
 
 \bibitem{russell2003artificial}
 S.~J. Russell, P.~Norvig, J.~F. Canny, J.~M. Malik, and D.~D. Edwards.
 \newblock {\em Artificial intelligence: a modern approach}, volume~2.
 \newblock Prentice hall Upper Saddle River, 2003.
 
-\bibitem{santos2010exploiting}
-R.~L. Santos, C.~Macdonald, and I.~Ounis.
-\newblock Exploiting query reformulations for web search result
-  diversification.
-\newblock In {\em Proceedings of the 19th International Conference on World
-  Wide Web}, {WWW} '10, pages 881--890, New York, {NY}, {USA}, 2010. {ACM}.
+\bibitem{starbird2014rumors}
+K.~Starbird, J.~Maddock, M.~Orand, P.~Achterman, and R.~M. Mason.
+\newblock Rumors, false flags, and digital vigilantes: Misinformation on
+  twitter after the 2013 boston marathon bombing.
+\newblock {\em iConference 2014 Proceedings}, 2014.
 
-\bibitem{santos_intent-aware_2011}
-R.~L. Santos, C.~Macdonald, and I.~Ounis.
-\newblock Intent-aware search result diversification.
-\newblock In {\em Proceedings of the 34th International {ACM} {SIGIR}
-  Conference on Research and Development in Information Retrieval}, {SIGIR}
-  '11, pages 595--604, New York, {NY}, {USA}, 2011. {ACM}.
+\bibitem{sunstein2014rumors}
+C.~R. Sunstein.
+\newblock {\em On rumors: How falsehoods spread, why we believe them, and what
+  can be done}.
+\newblock Princeton University Press, 2014.
 
-\bibitem{soboroff2013building}
-I.~M. Soboroff.
-\newblock Building test collections: an interactive tutorial for students and
-  others without their own evaluation conference series.
-\newblock In {\em Proceedings of the 36th international ACM SIGIR conference on
-  Research and development in information retrieval}, pages 1132--1132. ACM,
-  2013.
+\bibitem{tanaka2012transmission}
+Y.~Tanaka, Y.~Sakamoto, and T.~Matsuka.
+\newblock Transmission of rumor and criticism in twitter after the great japan
+  earthquake.
+\newblock In {\em Annual Meeting of the Cognitive Science Society}, page 2387,
+  2012.
 
-\bibitem{zhou2013impact}
-K.~Zhou, S.~Whiting, J.~M. Jose, and M.~Lalmas.
-\newblock The impact of temporal intent variability on diversity evaluation.
-\newblock In {\em Advances in Information Retrieval}, pages 820--823. Springer,
-  2013.
+\bibitem{thomson2012trusting}
+R.~Thomson, N.~Ito, H.~Suda, F.~Lin, Y.~Liu, R.~Hayasaka, R.~Isochi, and
+  Z.~Wang.
+\newblock Trusting tweets: The fukushima disaster and information source
+  credibility on twitter.
+\newblock {\em Proc. of ISCRAM}, 10, 2012.
 
-\bibitem{zhu_learning_2014}
-Y.~Zhu, Y.~Lan, J.~Guo, X.~Cheng, and S.~Niu.
-\newblock Learning for search result diversification.
-\newblock In {\em Proceedings of the 37th International {ACM} {SIGIR}
-  Conference on Research \&\#38; Development in Information Retrieval}, {SIGIR}
-  '14, pages 293--302, New York, {NY}, {USA}, 2014. {ACM}.
+\bibitem{wang2010don}
+A.~H. Wang.
+\newblock Don't follow me: Spam detection in twitter.
+\newblock In {\em Security and Cryptography (SECRYPT), Proceedings of the 2010
+  International Conference on}, pages 1--10. IEEE, 2010.
+
+\bibitem{wu2015false}
+K.~Wu, S.~Yang, and K.~Q. Zhu.
+\newblock False rumors detection on sina weibo by propagation structures.
+\newblock In {\em 2015 IEEE 31st International Conference on Data Engineering},
+  pages 651--662. IEEE, 2015.
+
+\bibitem{yang2012automatic}
+F.~Yang, Y.~Liu, X.~Yu, and M.~Yang.
+\newblock Automatic detection of rumor on sina weibo.
+\newblock In {\em Proceedings of the ACM SIGKDD Workshop on Mining Data
+  Semantics}, page~13. ACM, 2012.
+
+\bibitem{zhao2015enquiring}
+Z.~Zhao, P.~Resnick, and Q.~Mei.
+\newblock Enquiring minds: Early detection of rumors in social media from
+  enquiry posts.
+\newblock In {\em Proceedings of the 24th International Conference on World
+  Wide Web}, pages 1395--1405. ACM, 2015.
 
 \end{thebibliography}

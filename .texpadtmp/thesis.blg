@@ -3,55 +3,57 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: /Users/licheng5625/PythonCode/masterarbeit/master paper/.texpadtmp/thesis.aux
 The style file: abbrv.bst
 Database file #1: ../chapters/references.bib
-I was expecting a `,' or a `}'---line 1688 of file ../chapters/references.bib
+I was expecting a `,' or a `}'---line 10 of file ../chapters/references.bib
  : 
  : @article{breiman2001random,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-A bad cross reference---entry "ecir/NguyenK14"
-refers to entry "DBLP:conf/ecir/2014", which doesn't exist
-Warning--I didn't find a database entry for "DBLP:conf/ecir/2014"
-Warning--to sort, need author or key in nyt
-Warning--to sort, need author or key in wikiminer
-You've used 29 entries,
+A bad cross reference---entry "conf/kdd/MatsubaraSPLF12"
+refers to entry "conf/kdd/2012", which doesn't exist
+Warning--I didn't find a database entry for "conf/kdd/2012"
+Warning--empty journal in allport1947psychology
+Warning--empty journal in kimmey2015twitter
+Warning--empty journal in madetecting
+Warning--empty year in madetecting
+You've used 27 entries,
             2118 wiz_defined-function locations,
-            661 strings with 9407 characters,
-and the built_in function-call counts, 12709 in all, are:
-= -- 1346
-> -- 496
-< -- 24
-+ -- 197
-- -- 166
-* -- 780
-:= -- 1867
-add.period$ -- 104
-call.type$ -- 29
-change.case$ -- 169
+            639 strings with 8857 characters,
+and the built_in function-call counts, 11587 in all, are:
+= -- 1150
+> -- 583
+< -- 19
++ -- 231
+- -- 201
+* -- 750
+:= -- 1799
+add.period$ -- 95
+call.type$ -- 27
+change.case$ -- 177
 chr.to.int$ -- 0
 cite$ -- 31
-duplicate$ -- 577
-empty$ -- 1037
-format.name$ -- 166
-if$ -- 2908
+duplicate$ -- 497
+empty$ -- 876
+format.name$ -- 201
+if$ -- 2559
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 28
-newline$ -- 146
-num.names$ -- 54
-pop$ -- 226
+int.to.str$ -- 27
+missing$ -- 30
+newline$ -- 137
+num.names$ -- 56
+pop$ -- 252
 preamble$ -- 1
-purify$ -- 141
+purify$ -- 153
 quote$ -- 0
-skip$ -- 464
+skip$ -- 369
 stack$ -- 0
-substring$ -- 850
-swap$ -- 234
-text.length$ -- 24
+substring$ -- 616
+swap$ -- 191
+text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 112
-warning$ -- 2
-while$ -- 121
-width$ -- 31
-write$ -- 349
+type$ -- 102
+warning$ -- 4
+while$ -- 102
+width$ -- 29
+write$ -- 303
 (There were 2 error messages)

@@ -1,15 +1,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces large scale tweet volume of event Robert Byrd\relax }}{5}{figure.caption.2}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces tweet volume of the rumor event of Robert Byrd after selected time period\relax }}{6}{figure.caption.3}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces An example of random forest with 3 trees\relax }}{7}{figure.caption.5}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces An example of 1 layer neural network\relax }}{8}{figure.caption.6}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces multi-input single-output Recurrent neural network\relax }}{9}{figure.caption.7}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces single-input multi-output Recurrent neural network\relax }}{9}{figure.caption.8}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces multi-input multi-output Recurrent neural network\relax }}{9}{figure.caption.9}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces The fraction of tweets containing url with top 5000 domain\relax }}{10}{figure.caption.10}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces The fraction of poster living in large city\relax }}{10}{figure.caption.11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Temporal distribution of top 1000 documents for \texttt {Rudolph Giuliani}\relax }}{23}{figure.caption.27}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Temporal distribution of top 1000 documents for \texttt {Rudolph Giuliani} after diversification using \textbf {T-PM2}\relax }}{23}{figure.caption.28}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Temporal distribution of top 1000 documents for \texttt {Rudolph Giuliani} after diversification using \textbf {T-IASEL}\relax }}{23}{figure.caption.29}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Temporal distribution of top 1000 documents for \texttt {Rudolph Giuliani} after diversification using \textbf {T-MDIV}\relax }}{23}{figure.caption.30}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Temporal distribution of top 1000 documents for \texttt {Rudolph Giuliani}after diversification using \textbf {Only Time}\relax }}{24}{figure.caption.31}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Temporal distribution of top 1000 documents for \texttt {Rudolph Giuliani}after diversification using \textbf {HistDiv}\relax }}{24}{figure.caption.32}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces System Architecture\relax }}{26}{figure.caption.33}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Newspaper interface with timeline.\relax }}{27}{figure.caption.34}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Sample of Users' Information on Twitter Interface\relax }}{16}{figure.caption.14}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 1 layer GRU Recurrent neural network\relax }}{20}{figure.caption.20}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 2 layer GRU Recurrent neural network\relax }}{20}{figure.caption.21}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {.1}{\ignorespaces Query Workload\relax }}{38}{figure.caption.35}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces SIS Model\relax }}{23}{figure.caption.26}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces SEIZ Model\relax }}{24}{figure.caption.27}

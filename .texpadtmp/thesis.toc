@@ -12,40 +12,43 @@
 \contentsline {subsection}{\numberline {2.1.6}Followers}{4}{subsection.2.1.6}
 \contentsline {subsection}{\numberline {2.1.7}Following}{4}{subsection.2.1.7}
 \contentsline {subsection}{\numberline {2.1.8}Twitter API}{4}{subsection.2.1.8}
-\contentsline {section}{\numberline {2.2}Definition of Rumor}{4}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Rumor Event}{4}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Time Period of an Event}{4}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Machine learning}{5}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Machine learning Overview}{5}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}random forest (RF)}{5}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Machine learning}{5}{section.2.4}
-\contentsline {chapter}{\numberline {3}Historical search}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{7}{section.3.1}
-\contentsline {section}{\numberline {3.2}Historical Query Intent}{8}{section.3.2}
-\contentsline {section}{\numberline {3.3}Time-Aware Effectiveness Measures}{9}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Time-augmented Diversification Metrics}{9}{subsection.3.3.1}
-\contentsline {paragraph}{\nonumberline Time aware alpha-IA-NDCG}{9}{section*.2}
-\contentsline {paragraph}{\nonumberline Time aware IA-ERR}{10}{section*.3}
-\contentsline {paragraph}{\nonumberline Time aware IA precision}{10}{section*.4}
-\contentsline {paragraph}{\nonumberline Time aware average IA-precision \& MAP-IA}{10}{section*.5}
-\contentsline {paragraph}{\nonumberline Subtopic recall}{11}{section*.6}
-\contentsline {subsection}{\numberline {3.3.2}Time-Aware Subtopic Recall}{11}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}The \textsc {HistDiv} Approach}{12}{section.3.4}
-\contentsline {section}{\numberline {3.5}Test Collection and Setup}{16}{section.3.5}
-\contentsline {subsubsection}{\nonumberline Competitors}{16}{section*.12}
-\contentsline {subsection}{\numberline {3.5.1}Test collection}{16}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Setup}{17}{subsection.3.5.2}
-\contentsline {section}{\numberline {3.6}Results \& Discussion}{19}{section.3.6}
-\contentsline {paragraph}{\nonumberline Rudolph Giuliani}{21}{section*.21}
-\contentsline {section}{\numberline {3.7}Related Work}{24}{section.3.7}
-\contentsline {chapter}{\numberline {4}The Historical Search System}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Architecture}{25}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Server side}{25}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Client side}{26}{subsection.4.1.2}
-\contentsline {chapter}{\numberline {5}Outlook}{29}{chapter.5}
-\contentsline {section}{\numberline {5.1}Conclusion}{29}{section.5.1}
-\contentsline {section}{\numberline {5.2}Future Work}{31}{section.5.2}
-\contentsline {chapter}{\nonumberline Bibliography}{33}{section.5.2}
-\contentsline {chapter}{\nonumberline List of Figures}{39}{figure.caption.35}
-\contentsline {chapter}{\nonumberline List of Tables}{41}{figure.caption.35}
-\contentsline {chapter}{List of Algorithms}{43}{figure.caption.35}
+\contentsline {section}{\numberline {2.2}Credibility of Tweets}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Definition of Rumor}{4}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Rumor Event}{4}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Time Period of an Event}{5}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Machine learning}{6}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Machine learning Overview}{6}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Decision tree}{6}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Random Forest (RF)}{6}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Recurrent neural network}{8}{subsection.2.4.4}
+\contentsline {section}{\numberline {2.5}Spark}{9}{section.2.5}
+\contentsline {section}{\numberline {2.6}tensorflow}{9}{section.2.6}
+\contentsline {section}{\numberline {2.7}LM fitting}{9}{section.2.7}
+\contentsline {section}{\numberline {2.8}Related Work}{9}{section.2.8}
+\contentsline {chapter}{\numberline {3}Data Collection}{13}{chapter.3}
+\contentsline {chapter}{\numberline {4}Single Tweet's Creditability Scoring Model}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Single Tweet's Creditability Model with handcrafted features}{15}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Features}{15}{subsection.4.1.1}
+\contentsline {subsubsection}{\nonumberline Text Features}{15}{section*.12}
+\contentsline {subsubsection}{\nonumberline User Features}{16}{section*.13}
+\contentsline {subsubsection}{\nonumberline Twitter Features}{16}{section*.15}
+\contentsline {subsection}{\numberline {4.1.2}Classification Methods}{17}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Single Tweet's Creditability Model without handcrafted features}{19}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Data preparing}{20}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}First Layer: Embedding Layer}{20}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Hidden Layer: GRU and LSTM}{20}{subsection.4.2.3}
+\contentsline {chapter}{\numberline {5}Time Seriers Rumor Detection Model}{21}{chapter.5}
+\contentsline {section}{\numberline {5.1}Dynamic Series-Time Structure (DSTS)}{21}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Time Stamps Generation}{21}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Dynamic Series-Time Structure (DSTS)}{21}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Features}{22}{subsection.5.1.3}
+\contentsline {subsubsection}{\nonumberline Text Features}{22}{section*.22}
+\contentsline {subsubsection}{\nonumberline Twitter Features}{22}{section*.23}
+\contentsline {subsubsection}{\nonumberline User Features}{22}{section*.24}
+\contentsline {subsubsection}{\nonumberline Epidemiological Modeling Features}{22}{section*.25}
+\contentsline {subsubsection}{\nonumberline SpikeM model Features}{24}{section*.28}
+\contentsline {subsubsection}{\nonumberline Crowd Wisdom Features}{24}{section*.30}
+\contentsline {subsubsection}{\nonumberline CreditScore Features}{24}{section*.31}
+\contentsline {chapter}{\nonumberline Bibliography}{27}{table.caption.32}
+\contentsline {chapter}{\nonumberline List of Figures}{31}{table.caption.32}
+\contentsline {chapter}{\nonumberline List of Tables}{33}{table.caption.32}
