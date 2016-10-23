@@ -1,20 +1,60 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces large scale tweet volume of event Robert Byrd\relax }}{5}{figure.caption.2}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces tweet volume of the rumor event of Robert Byrd after selected time period\relax }}{6}{figure.caption.3}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces An example of random forest with 3 trees\relax }}{7}{figure.caption.5}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces An example of 1 layer neural network\relax }}{8}{figure.caption.6}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces multi-input single-output Recurrent neural network\relax }}{9}{figure.caption.7}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces single-input multi-output Recurrent neural network\relax }}{9}{figure.caption.8}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces multi-input multi-output Recurrent neural network\relax }}{9}{figure.caption.9}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces The fraction of tweets containing url with top 5000 domain\relax }}{10}{figure.caption.10}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces The fraction of poster living in large city\relax }}{10}{figure.caption.11}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces large scale tweet volume of event Robert Byrd\relax }}{5}{figure.caption.5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces tweet volume of the rumor event of Robert Byrd after selected time period\relax }}{6}{figure.caption.6}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Decision tree\relax }}{7}{figure.caption.7}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces An example of random forest with 3 trees\relax }}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces An example of 1 layer neural network\relax }}{9}{figure.caption.9}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces tanh function\relax }}{10}{figure.caption.10}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces CNN for Text Classification (source from\cite {kim2014convolutional}) \relax }}{11}{figure.caption.11}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces 2 layer Recurrent neural network\relax }}{11}{figure.caption.12}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces multi-input single-output Recurrent neural network\relax }}{11}{figure.caption.13}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces single-input multi-output Recurrent neural network\relax }}{12}{figure.caption.14}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces multi-input multi-output Recurrent neural network\relax }}{12}{figure.caption.15}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Two models of RNNs (a) Normal model of RNN with tanh Unit (b) RNN with LSTM Cells (source \cite {olah2015understanding}) \relax }}{13}{figure.caption.16}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Simple RNN model}}}{13}{figure.caption.16}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {LSTM RNN model}}}{13}{figure.caption.16}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces GRU Cell (source \cite {olah2015understanding}) \relax }}{14}{figure.caption.17}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Dropout Neural Net Model. (a) a standard neural network (b) after deploying dropout \relax }}{14}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {standard NN model}}}{14}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NN with dropout}}}{14}{figure.caption.18}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces K Fold Cross Validation (green rectangle is the training set, red rectangle is the testing set) \relax }}{15}{figure.caption.19}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces The fraction of tweets containing url with top 5000 domain\relax }}{16}{figure.caption.20}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces The fraction of poster living in large city\relax }}{16}{figure.caption.21}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Sample of Users' Information on Twitter Interface\relax }}{16}{figure.caption.14}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces 1 layer GRU Recurrent neural network\relax }}{20}{figure.caption.20}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces 2 layer GRU Recurrent neural network\relax }}{20}{figure.caption.21}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Sample of Users' Information on Twitter Interface\relax }}{22}{figure.caption.24}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces neural network model for single tweet classification 1\relax }}{28}{figure.caption.30}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sample RNN Model}}}{28}{figure.caption.30}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {1-layer GRU-RNN}}}{28}{figure.caption.30}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {1-layer LSTM-RNN}}}{28}{figure.caption.30}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {2-layer GRU-RNN}}}{28}{figure.caption.30}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {FastText}}}{28}{figure.caption.30}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Hybrid CNN + LSTM}}}{28}{figure.caption.30}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces SIS Model\relax }}{23}{figure.caption.26}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces SEIZ Model\relax }}{24}{figure.caption.27}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces SIS Model\relax }}{31}{figure.caption.32}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces SEIZ Model\relax }}{32}{figure.caption.33}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Fitting results of SIS and SEIZ model of (a) Rumor: Robert Byrd was a member of KKK (b) Rumor: CNN altered a photograph of a shooter making him look white (c) News: Doctor announces Michael Schumacher is making process (d) News: Two U.S. sailors are arrested over an alleged rape of a Japanese woman on Okinawa\relax }}{35}{figure.caption.35}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SIS and SEIZ model for rumor 1}}}{35}{figure.caption.35}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SIS and SEIZ model for rumor 2}}}{35}{figure.caption.35}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {SIS and SEIZ model for news 1}}}{35}{figure.caption.35}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {SIS and SEIZ model for news 2}}}{35}{figure.caption.35}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Fitting results of SIS and SEIZ model with only first 10 hours tweet volume data (same 4 stories as above)\relax }}{36}{figure.caption.36}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SIS and SEIZ model for rumor 1 with 10 hours data}}}{36}{figure.caption.36}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SIS and SEIZ model for rumor 2 with 10 hours data}}}{36}{figure.caption.36}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {SIS and SEIZ model for news 1 with 10 hours data}}}{36}{figure.caption.36}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {SIS and SEIZ model for news 2 with 10 hours data}}}{36}{figure.caption.36}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Fitting results of SpikeM model of (a) Rumor: Robert Byrd was a member of KKK (b) Rumor: CNN altered a photograph of a shooter making him look white (c) News: Doctor announces Michael Schumacher is making process (d) News: Two U.S. sailors are arrested over an alleged rape of a Japanese woman on Okinawa \relax }}{41}{figure.caption.39}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SIS and SEIZ model for rumor 1}}}{41}{figure.caption.39}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SIS and SEIZ model for rumor 2 }}}{41}{figure.caption.39}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {SIS and SEIZ model for news 1}}}{41}{figure.caption.39}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {SIS and SEIZ model for news 2 }}}{41}{figure.caption.39}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Fitting results of SpikeM model with first 10 hours data (same stories as above) \relax }}{42}{figure.caption.40}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SIS and SEIZ model for rumor 1 with 10 hours data}}}{42}{figure.caption.40}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SIS and SEIZ model for rumor 2 with 10 hours data}}}{42}{figure.caption.40}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {SIS and SEIZ model for news 1 with 10 hours data}}}{42}{figure.caption.40}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {SIS and SEIZ model for news 2 with 10 hours data}}}{42}{figure.caption.40}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Accuracy: Time series VS static Features\relax }}{46}{figure.caption.45}
+\addvspace {10\p@ }

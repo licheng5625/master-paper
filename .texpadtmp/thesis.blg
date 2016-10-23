@@ -1,6 +1,10 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: /Users/licheng5625/PythonCode/masterarbeit/master paper/.texpadtmp/thesis.aux
+White space in argument---line 112 of file /Users/licheng5625/PythonCode/masterarbeit/master paper/.texpadtmp/thesis.aux
+ : \citation{srivastava2014dropout
+ :                                 }
+I'm skipping whatever remains of this command
 The style file: abbrv.bst
 Database file #1: ../chapters/references.bib
 I was expecting a `,' or a `}'---line 10 of file ../chapters/references.bib
@@ -15,45 +19,45 @@ Warning--empty journal in allport1947psychology
 Warning--empty journal in kimmey2015twitter
 Warning--empty journal in madetecting
 Warning--empty year in madetecting
-You've used 27 entries,
+You've used 39 entries,
             2118 wiz_defined-function locations,
-            639 strings with 8857 characters,
-and the built_in function-call counts, 11587 in all, are:
-= -- 1150
-> -- 583
-< -- 19
-+ -- 231
-- -- 201
-* -- 750
-:= -- 1799
-add.period$ -- 95
-call.type$ -- 27
-change.case$ -- 177
+            703 strings with 10981 characters,
+and the built_in function-call counts, 15765 in all, are:
+= -- 1557
+> -- 821
+< -- 20
++ -- 328
+- -- 283
+* -- 1060
+:= -- 2520
+add.period$ -- 132
+call.type$ -- 39
+change.case$ -- 254
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 497
-empty$ -- 876
-format.name$ -- 201
-if$ -- 2559
+cite$ -- 43
+duplicate$ -- 638
+empty$ -- 1163
+format.name$ -- 283
+if$ -- 3399
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 30
-newline$ -- 137
-num.names$ -- 56
-pop$ -- 252
+int.to.str$ -- 39
+missing$ -- 42
+newline$ -- 197
+num.names$ -- 80
+pop$ -- 320
 preamble$ -- 1
-purify$ -- 153
+purify$ -- 218
 quote$ -- 0
-skip$ -- 369
+skip$ -- 468
 stack$ -- 0
-substring$ -- 616
-swap$ -- 191
-text.length$ -- 19
+substring$ -- 859
+swap$ -- 215
+text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 102
+type$ -- 150
 warning$ -- 4
-while$ -- 102
-width$ -- 29
-write$ -- 303
-(There were 2 error messages)
+while$ -- 140
+width$ -- 41
+write$ -- 431
+(There were 3 error messages)

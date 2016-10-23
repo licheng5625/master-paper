@@ -1,0 +1,13 @@
+ 
+\chapter{Data Collection} % (fold)
+\label{cha:Data_Collection}
+We collected rumor stories from a rumor tracking website \textbf{snopes.com}. We crawled 4300 stories from the website and we manually constructed 130 queries. The approach of constructing queries is mainly following the work(wenxian). The regular expression of a query is $(Object \& Subject \& Description(Description1||Description2||...))$
+for example a story is about Obama removing a flag in pearl harbor. Object is Obama, subject is flag and its synonym like flags, flagpole. Description is remove and its synonym removes, removed, removal, removing, "token down" or a url about this rumor "Departed.co". In this case there is a proper noun "pearl harbor" is also useful. Finally we transfer the regex to Twitter's query: obama (flag OR flags OR flagpole) (remove OR removes OR removed OR removal OR removing OR "token down" OR "Departed.co") pearl harbor.
+
+
+
+We collect news stories for the data of (wenxian). We crawled average 50\% of them and we selected events with the most coverage and minimal 100 tweets. 
+
+After we crawled and parsed the whole timeline of an events. We detect the 48 hours time period of the burst in the way we mentioned in section \ref{sec:Time_Period_of_an_Event}. We crawled the homepage of poster of the tweets in the event time period total 133,396 users. We also extracted 11,038 domains which are contained in the tweets in the 48 hours time period and we crawled these domains' catalogs in bluecoat.com \footnote{http://sitereview.bluecoat.com/sitereview.jsp\#/?search=bbc.com}, ranks in alexa.com\footnote{http://www.alexa.com/siteinfo/bbc.com} and WOT score in wot.com \footnote{https://www.mywot.com/en/api}. 
+
+We use Beautiful Soup as the html parsing library to parse the Twitter timeline pages and the users' homepage \footnote{https://www.crummy.com/software/BeautifulSoup/bs4/doc/}. Beautiful Soup is a Python library for pulling data out of HTML and XML files. For increasing the speed of parsing html and extracting features from raw data, we use Spark\footnote{http://spark.apache.org/} technology, because it can simply manage multithread and its mapReduce in memory technology makes the process much faster.  

@@ -12,12 +12,33 @@ G.~W. Allport and L.~Postman.
 \newblock The psychology of rumor.
 \newblock 1947.
 
+\bibitem{bao2013new}
+Y.~Bao, C.~Yi, Y.~Xue, and Y.~Dong.
+\newblock A new rumor propagation model and control strategy on social
+  networks.
+\newblock In {\em Proceedings of the 2013 IEEE/ACM International Conference on
+  Advances in Social Networks Analysis and Mining}, pages 1472--1473. ACM,
+  2013.
+
 \bibitem{barbosa2010robust}
 L.~Barbosa and J.~Feng.
 \newblock Robust sentiment detection on twitter from biased and noisy data.
 \newblock In {\em Proceedings of the 23rd International Conference on
   Computational Linguistics: Posters}, pages 36--44. Association for
   Computational Linguistics, 2010.
+
+\bibitem{bettencourt2006power}
+L.~M. Bettencourt, A.~Cintr{\'o}n-Arias, D.~I. Kaiser, and
+  C.~Castillo-Ch{\'a}vez.
+\newblock The power of a good idea: Quantitative modeling of the spread of
+  ideas from epidemiological models.
+\newblock {\em Physica A: Statistical Mechanics and its Applications},
+  364:513--536, 2006.
+
+\bibitem{breiman1996bagging}
+L.~Breiman.
+\newblock Bagging predictors.
+\newblock {\em Machine learning}, 24(2):123--140, 1996.
 
 \bibitem{breiman2001random}
 L.~Breiman.
@@ -35,17 +56,39 @@ C.~Castillo, M.~Mendoza, and B.~Poblete.
 \newblock In {\em Proceedings of the 20th international conference on World
   wide web}, pages 675--684. ACM, 2011.
 
+\bibitem{cho2014learning}
+K.~Cho, B.~Van~Merri{\"e}nboer, C.~Gulcehre, D.~Bahdanau, F.~Bougares,
+  H.~Schwenk, and Y.~Bengio.
+\newblock Learning phrase representations using rnn encoder-decoder for
+  statistical machine translation.
+\newblock {\em arXiv preprint arXiv:1406.1078}, 2014.
+
 \bibitem{gupta2014tweetcred}
 A.~Gupta, P.~Kumaraguru, C.~Castillo, and P.~Meier.
 \newblock Tweetcred: Real-time credibility assessment of content on twitter.
 \newblock In {\em International Conference on Social Informatics}, pages
   228--243. Springer, 2014.
 
+\bibitem{hochreiter1997long}
+S.~Hochreiter and J.~Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural computation}, 9(8):1735--1780, 1997.
+
 \bibitem{jin2013epidemiological}
 F.~Jin, E.~Dougherty, P.~Saraf, Y.~Cao, and N.~Ramakrishnan.
 \newblock Epidemiological modeling of news and rumors on twitter.
 \newblock In {\em Proceedings of the 7th Workshop on Social Network Mining and
   Analysis}, page~8. ACM, 2013.
+
+\bibitem{joulin2016bag}
+A.~Joulin, E.~Grave, P.~Bojanowski, and T.~Mikolov.
+\newblock Bag of tricks for efficient text classification.
+\newblock {\em arXiv preprint arXiv:1607.01759}, 2016.
+
+\bibitem{kim2014convolutional}
+Y.~Kim.
+\newblock Convolutional neural networks for sentence classification.
+\newblock {\em arXiv preprint arXiv:1408.5882}, 2014.
 
 \bibitem{kimmey2015twitter}
 D.~Kimmey.
@@ -68,6 +111,12 @@ S.~Kwon, M.~Cha, K.~Jung, W.~Chen, and Y.~Wang.
 S.~Lai, L.~Xu, K.~Liu, and J.~Zhao.
 \newblock Recurrent convolutional neural networks for text classification.
 \newblock In {\em AAAI}, pages 2267--2273, 2015.
+
+\bibitem{lecun1989backpropagation}
+Y.~LeCun, B.~Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, W.~Hubbard, and
+  L.~D. Jackel.
+\newblock Backpropagation applied to handwritten zip code recognition.
+\newblock {\em Neural computation}, 1(4):541--551, 1989.
 
 \bibitem{liu2015real}
 X.~Liu, A.~Nourbakhsh, Q.~Li, R.~Fang, and S.~Shah.
@@ -104,6 +153,22 @@ O.~Oh, K.~H. Kwon, and H.~R. Rao.
 \newblock An exploration of social media in extreme events: Rumor theory and
   twitter during the haiti earthquake 2010.
 \newblock In {\em ICIS}, page 231, 2010.
+
+\bibitem{olah2015understanding}
+C.~Olah.
+\newblock Understanding lstm networks.
+\newblock {\em Net: http://colah. github.
+  io/posts/2015-08-Understanding-LSTMs}, 2015.
+
+\bibitem{pascanu2013difficulty}
+R.~Pascanu, T.~Mikolov, and Y.~Bengio.
+\newblock On the difficulty of training recurrent neural networks.
+\newblock {\em ICML (3)}, 28:1310--1318, 2013.
+
+\bibitem{rumelhart1988learning}
+D.~E. Rumelhart, G.~E. Hinton, and R.~J. Williams.
+\newblock Learning representations by back-propagating errors.
+\newblock {\em Cognitive modeling}, 5(3):1, 1988.
 
 \bibitem{russell2003artificial}
 S.~J. Russell, P.~Norvig, J.~F. Canny, J.~M. Malik, and D.~D. Edwards.
@@ -160,5 +225,10 @@ Z.~Zhao, P.~Resnick, and Q.~Mei.
   enquiry posts.
 \newblock In {\em Proceedings of the 24th International Conference on World
   Wide Web}, pages 1395--1405. ACM, 2015.
+
+\bibitem{zhou2015c}
+C.~Zhou, C.~Sun, Z.~Liu, and F.~Lau.
+\newblock A c-lstm neural network for text classification.
+\newblock {\em arXiv preprint arXiv:1511.08630}, 2015.
 
 \end{thebibliography}
