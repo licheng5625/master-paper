@@ -17,9 +17,9 @@
 \BOOKMARK [1][-]{section.2.3}{Definition of Rumor}{chapter.2}% 17
 \BOOKMARK [2][-]{subsection.2.3.1}{Rumor Event}{section.2.3}% 18
 \BOOKMARK [2][-]{subsection.2.3.2}{Time Period of an Event}{section.2.3}% 19
-\BOOKMARK [1][-]{section.2.4}{Machine learning}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.4}{Machine Learning}{chapter.2}% 20
 \BOOKMARK [2][-]{subsection.2.4.1}{Machine learning Overview}{section.2.4}% 21
-\BOOKMARK [2][-]{subsection.2.4.2}{Decision tree}{section.2.4}% 22
+\BOOKMARK [2][-]{subsection.2.4.2}{Decision Tree}{section.2.4}% 22
 \BOOKMARK [2][-]{subsection.2.4.3}{Random Forest \(RF\)}{section.2.4}% 23
 \BOOKMARK [1][-]{section.2.5}{Neural Network}{chapter.2}% 24
 \BOOKMARK [2][-]{subsection.2.5.1}{Convolutional Neural Network}{section.2.5}% 25
@@ -41,25 +41,33 @@
 \BOOKMARK [2][-]{subsection.4.2.1}{Data Preparing}{section.4.2}% 41
 \BOOKMARK [2][-]{subsection.4.2.2}{Embedding Layer}{section.4.2}% 42
 \BOOKMARK [2][-]{subsection.4.2.3}{Tested Results}{section.4.2}% 43
-\BOOKMARK [0][-]{chapter.5}{Time Seriers Rumor Detection Model}{}% 44
-\BOOKMARK [1][-]{section.5.1}{Dynamic Series-Time Structure \(DSTS\)}{chapter.5}% 45
-\BOOKMARK [2][-]{subsection.5.1.1}{Time Stamps Generation}{section.5.1}% 46
-\BOOKMARK [2][-]{subsection.5.1.2}{Dynamic Series-Time Structure \(DSTS\)}{section.5.1}% 47
-\BOOKMARK [1][-]{section.5.2}{Features}{chapter.5}% 48
-\BOOKMARK [2][-]{subsection.5.2.1}{Text Features}{section.5.2}% 49
-\BOOKMARK [2][-]{subsection.5.2.2}{Twitter Features}{section.5.2}% 50
-\BOOKMARK [2][-]{subsection.5.2.3}{User Features}{section.5.2}% 51
-\BOOKMARK [2][-]{subsection.5.2.4}{Epidemiological Modeling Features}{section.5.2}% 52
-\BOOKMARK [2][-]{subsection.5.2.5}{SpikeM model Features}{section.5.2}% 53
-\BOOKMARK [2][-]{subsection.5.2.6}{Crowd Wisdom Features}{section.5.2}% 54
-\BOOKMARK [2][-]{subsection.5.2.7}{CreditScore Features}{section.5.2}% 55
-\BOOKMARK [1][-]{section.5.3}{Classification Models}{chapter.5}% 56
-\BOOKMARK [1][-]{section.5.4}{Feature Evolution}{chapter.5}% 57
-\BOOKMARK [2][-]{subsection.5.4.1}{Time Series VS Static Feature}{section.5.4}% 58
-\BOOKMARK [2][-]{subsection.5.4.2}{Feature Analyzing Over Time}{section.5.4}% 59
-\BOOKMARK [0][-]{chapter.6}{Outlook}{}% 60
-\BOOKMARK [1][-]{section.6.1}{Conclusion}{chapter.6}% 61
-\BOOKMARK [1][-]{section.6.2}{Future Work}{chapter.6}% 62
-\BOOKMARK [0][-]{section.6.2}{Bibliography}{}% 63
-\BOOKMARK [0][-]{table.caption.48}{List of Figures}{}% 64
-\BOOKMARK [0][-]{table.caption.48}{List of Tables}{}% 65
+\BOOKMARK [2][-]{subsection.4.2.4}{CNN + LSTM \(C-LSTM\) Model}{section.4.2}% 44
+\BOOKMARK [0][-]{chapter.5}{Time Seriers Rumor Detection Model}{}% 45
+\BOOKMARK [1][-]{section.5.1}{Dynamic Series-Time Structure \(DSTS\)}{chapter.5}% 46
+\BOOKMARK [2][-]{subsection.5.1.1}{Time Stamps Generation}{section.5.1}% 47
+\BOOKMARK [2][-]{subsection.5.1.2}{Dynamic Series-Time Structure \(DSTS\)}{section.5.1}% 48
+\BOOKMARK [1][-]{section.5.2}{Features}{chapter.5}% 49
+\BOOKMARK [2][-]{subsection.5.2.1}{Text Features}{section.5.2}% 50
+\BOOKMARK [2][-]{subsection.5.2.2}{Twitter Features}{section.5.2}% 51
+\BOOKMARK [2][-]{subsection.5.2.3}{User Features}{section.5.2}% 52
+\BOOKMARK [2][-]{subsection.5.2.4}{Epidemiological Modeling Features}{section.5.2}% 53
+\BOOKMARK [2][-]{subsection.5.2.5}{SpikeM model Features}{section.5.2}% 54
+\BOOKMARK [2][-]{subsection.5.2.6}{Crowd Wisdom Features}{section.5.2}% 55
+\BOOKMARK [2][-]{subsection.5.2.7}{CreditScore Features}{section.5.2}% 56
+\BOOKMARK [1][-]{section.5.3}{Classification Models}{chapter.5}% 57
+\BOOKMARK [1][-]{section.5.4}{Experiment Result}{chapter.5}% 58
+\BOOKMARK [2][-]{subsection.5.4.1}{Time Series VS Static Feature}{section.5.4}% 59
+\BOOKMARK [2][-]{subsection.5.4.2}{Feature Analyzing Over Time}{section.5.4}% 60
+\BOOKMARK [2][-]{subsection.5.4.3}{Text Features}{section.5.4}% 61
+\BOOKMARK [2][-]{subsection.5.4.4}{Twitter Features}{section.5.4}% 62
+\BOOKMARK [2][-]{subsection.5.4.5}{User Features}{section.5.4}% 63
+\BOOKMARK [2][-]{subsection.5.4.6}{SpikeM Features and Epidemiological Features}{section.5.4}% 64
+\BOOKMARK [2][-]{subsection.5.4.7}{Credit Score}{section.5.4}% 65
+\BOOKMARK [2][-]{subsection.5.4.8}{Crowd Wisdom}{section.5.4}% 66
+\BOOKMARK [2][-]{subsection.5.4.9}{Machine vs Human}{section.5.4}% 67
+\BOOKMARK [0][-]{chapter.6}{Outlook}{}% 68
+\BOOKMARK [1][-]{section.6.1}{Conclusion}{chapter.6}% 69
+\BOOKMARK [1][-]{section.6.2}{Future Work}{chapter.6}% 70
+\BOOKMARK [0][-]{section.6.2}{Bibliography}{}% 71
+\BOOKMARK [0][-]{table.caption.61}{List of Figures}{}% 72
+\BOOKMARK [0][-]{table.caption.61}{List of Tables}{}% 73

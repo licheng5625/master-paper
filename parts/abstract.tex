@@ -9,7 +9,7 @@ So automatic detecting rumors on social media has become a trending topic. But e
 
 And most of previous work for rumor detection modeled on static features like the content of tweets or propagation features, but they ignored that those features can change during the information's propagation over time.
 
-We build up a system with random forest and the Dynamic Series-Time Structure (DSTS) \cite{ma2015detect} with the temporal features and their varieties over time. And we test the Spike Model \cite{kwon2013prominent}, SIS Model and SEIZ Model  \cite{jin2013epidemiological} as temporal features in our model. To improve the time series model's performance at early stage of the event we develop a single tweet's credibility scoring model with zhou's CNN+LSTM model \cite{zhou2015c} which can predict a single tweet whether is rumor related or not with 81.20\%accuracy. Finally we got the accuracy of the time series rumor detecting model get 91\% accuracy within 48 hours. 
+We build up a system with random forest and the Dynamic Series-Time Structure (DSTS) \cite{ma2015detect} with the temporal features and their varieties over time. And we test the Spike Model \cite{kwon2013prominent}, SIS Model and SEIZ Model  \cite{jin2013epidemiological} as temporal features in our model. To improve the time series model's performance at early stage of the event we develop a single tweet's credibility scoring model with zhou's CNN+LSTM model \cite{zhou2015c} which can predict a single tweet whether is rumor related or not with 81.20\%accuracy. Finally we got the accuracy of the time series rumor detecting model get 90\% accuracy within 48 hours. 
 
  Our experiments using the events from Twitter and our model demonstrates better performance on detecting rumors.
 

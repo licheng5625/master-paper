@@ -19,10 +19,10 @@ The followers of a user are accounts who receive this user's posting. The total 
 \subsection{Following}
 The following are other accounts who follow this user. The total number of following can been seen in the profile of poster.
 \subsection{Twitter API}
+\label{tapi}
 Twitter API is provided by Twitter\footnote{https://dev.twitter.com/overview/api} for developer. But the search API only return a sampling of recent Tweets published in the past 7 days\footnote{https://dev.twitter.com/rest/public/search}. We need the full stories of the events, so we crawled the data directly from the searching interface\footnote{https://twitter.com/search-home}.
 \section{Credibility of Tweets } % (fold)
-Titter has been used for reporting breaking news when emergency events happen like disaster (wenxian). But the people are likely to trust the news which post on traditional news website more than the news with same headline but posted on twitter. And Thomson's work shows that different crowds of people trust tweets basing on different kinds of sources\cite{thomson2012trusting}.
-
+Titter has been used for reporting breaking news when emergency events happen like disaster \cite{kwak2010twitter}. But the people are likely to trust the news which post on traditional news website more than the news with same headline but posted on twitter\cite{java2007we}. And Thomson's work shows that different crowds of people trust tweets basing on different kinds of sources \cite{thomson2012trusting}.
  \section{Definition of Rumor}
  The definition of rumor in our work is unverified information spreading on Twitter over time. It is a set of tweets including the the sources, spreaders, retweets, doubting  tweets and the denying tweet. 
  \subsection{Rumor Event}
@@ -52,7 +52,7 @@ For example, a rumor\footnote{http://www.snopes.com/robert-byrd-kkk-photo/} clai
 
 
 
-\section{Machine learning } % (fold)
+\section{Machine Learning } % (fold)
 \label{sec:Maschine_learning}
 \subsection{Machine learning Overview} % (fold)
 
@@ -64,9 +64,10 @@ Normally we split the ML methods into Supervised learning, Unsupervised learning
 The supervised learning is the most popular method of ML. It needs a set of inputs and a set of desired outputs. And the algorithm will learn to produce the correct output based on the new input. 
 
 The unsupervised learning needs a set of inputs but no outputs. The algorithm will generate the outputs like clusters or patterns. The unsupervised learning task can be used for example when people can't label the outputs. 
-\subsection{ Decision tree} % (fold)
-A decision tree uses a tree model of decisions and their possible consequences as shown in figure \ref{fig:DeTree}.  DT is an non-parametric supervised learning method used for classification and regression. Because the trees structure is very simple to visualize, the result of DT is easy to understand. But Decision trees are unstable \cite{breiman1996bagging}. But DT is the basic unit of random forest.
-
+\subsection{ Decision Tree} % (fold)
+Classification is a supervised data mining technique. Our work can be considered as a classification task. Decision tree is a model we use for base line in the after work. A decision tree uses a tree model of decisions and their possible consequences as shown in figure \ref{fig:detrees}.  DT is an non-parametric supervised learning method used for classification and regression. Because the trees structure is very simple to visualize, the result of DT is easy to understand. But Decision trees are unstable \cite{breiman1996bagging}. But DT is the basic unit of random forest.
+\begin{figure}[!h]
+\center
 \tikzset{
  sibling distance={6em},
   treenode/.style = {shape=rectangle, rounded corners,
@@ -78,8 +79,7 @@ A decision tree uses a tree model of decisions and their possible consequences a
       level distance          = 10em,
    edge from parent/.style = {draw, -latex}
 }
-\begin{figure}[!h]
-\center
+
 \begin{tikzpicture}
   
 \node [root] {Fruits}
@@ -91,19 +91,32 @@ A decision tree uses a tree model of decisions and their possible consequences a
       } edge from parent node [right] {yellow}
        };
 \end{tikzpicture}
-\label{fig:DeTree}
 \caption{Decision tree}
+\label{fig:detrees}
+
 \end{figure}
 
 \subsection{Random Forest (RF)} % (fold)
 \label{random_forest}
-Classification is a supervised data mining technique. Our work can be considered as a classification task. And the classification model is random forest.
+ Another we use for testing is random forest.
 
 RF is an algorithm of supervised learning which developed by Leo Breiman \cite{breiman2001random}. It's built by a set of classification trees \cite{breiman1984classification}. Each tree is trained by a small bootstrap sample of training set and while prediction each tree votes one single candidate. RF generates the result of prediction By taking the majority vote. 
 
 For example we got task to classify pears and apples. We have the features are whether the fruit round, whether the fruit has seeds, whether the fruit red and whether the fruit is juicy. We build up a 3 trees random forest as the graph \ref{fig:randomforest}. Tree 1 randomly takes the subset of the features red and seeds and votes to apple. Tree 2 randomly takes the subset of the features red and seeds and votes to pear. Tree 3 randomly takes the subset of the features round and red and votes to apple. The most vote is apple, so the output of RF is apple.
 
 \begin{figure}[!h]
+\tikzset{
+ sibling distance={6em},
+  treenode/.style = {shape=rectangle, rounded corners,
+                     draw, align=center,
+                     top color=white, bottom color=blue!20},
+  root/.style     = {treenode, font=\Large, bottom color=red!30},
+  env/.style      = {treenode, font=\ttfamily\normalsize},
+  dummy/.style    = {circle,draw},
+      level distance          = 10em,
+   edge from parent/.style = {draw, -latex}
+}
+
 \begin{tikzpicture}
  \begin{scope} 
 \node [root] {Tree 1}
@@ -143,9 +156,12 @@ For example we got task to classify pears and apples. We have the features are w
 \end{figure}
 
 
-Because RF uses a random subset of features instead of the best features in every node, so it can avoid the overfitting\cite{breiman2001random}. 
+Because RF uses a random subset of features instead of the best features in every node, so it can avoid the overfitting problem \cite{breiman2001random}. 
 
-Another benefit of RF is that it can return the \textbf{features' importance}. RF is built up by a subset of training data. If there are N trees, RF will take N times bootstrap sampling. So some features we didn't select to use for training the model. The data we didn't selected we call it out-of-bag (OOB) data. In the above example the feature whether the fruit is juicy didn't join the construction the Trees, so it is a OOB data. These data can be use for validating the model and the output is OBB error $E_{oob}(G) = \frac {1}{N} \sum_{n=1}^{N}err(y_n,G_{n}^-(X_n))$ with $X_n$ are features only in OOB. At last we get the importance of feature by permuting one feature to random numbers. $importance(i)= E_{oob}(G)-E_{oob}^{p}(G)$; where $E_{oob}^{p}(G)$ is the OBB error after permuting a feature. The more performance drop down, that means the more important this feature is. We use this method to measure the performance of features and evolute the models later.
+Another benefit of RF is that it can return the \textbf{features' importance}. RF is built up by a subset of training data. If there are N trees, RF will take N times bootstrap sampling. So some features we didn't select to use for training the model. The data we didn't selected we call it out-of-bag (OOB) data. In the above example the feature whether the fruit is juicy didn't join the construction the Trees, so it is a OOB data. These data can be use for validating the model and the output is OBB error $E_{oob}(G) = \frac {1}{N} \sum_{n=1}^{N}err(y_n,G_{n}^-(X_n))$ with $X_n$ are features only in OOB. At last we get the importance of feature by permuting one feature to random numbers. $importance(i)= E_{oob}(G)-E_{oob}^{p}(G)$; where $E_{oob}^{p}(G)$ is the OBB error after permuting a feature. The more performance drop down, that means the more important this feature is. We use this method to measure the performance of features and evolute the models later. 
+One more important benefit of RF is it can easily visualize, so it can convince people not only by the test accuracy  but also by the giving us a good explanation, for example rumor containing more negative sentiment or the poster of real news more likely living in large city. 
+
+
 \section{Neural Network} % (fold)
 Figure \ref{fig:NN} is a simple model of forwarding neural network which is a computing systems that processes information by their dynamic state response to external inputs [39]. In the figure  \ref{fig:NN}  
 the round nodes are called neurons. Each neuron has a active function like sigmod or tanh \ref{fig:tanh} Neurons are connected each others with weight. The process of training the model is actually the process learning the weights of the connections of the network. With the back-propagation algorithm we 1) compute the loss from the network
@@ -197,7 +213,8 @@ backwards through the network \cite{rumelhart1988learning}.
 \label{fig:NN}
 \end{figure}
 \label{sec:NNsec}
- \begin{figure}
+
+ \begin{figure}[h]
 \center
 \begin{tikzpicture}
 \begin{axis}[
@@ -225,6 +242,8 @@ backwards through the network \cite{rumelhart1988learning}.
  \subsection{Convolutional Neural Network} % (fold)
 CNN is a kind of neural network which contains a convolutional layers. First CNN is developed by LeCun et al. developed CNNs \cite{lecun1989backpropagation} for computer vision to resolve the problem of imagines' shift or rotation. With the convolutional layer CNN make that is possible to learn from the local features. Figure \ref{fig:cnn2} is an example p of CNN in application of text classification. The word "wait" and its following word "for" are mapped together into different classes though different convolutional filters. That makes convolutional neural network does not learn from the single word form sentence but from the word and its context. That makes sense because one word can in different context have different meaning. For example "Apple Tree" and "Apple Company", the same apple but contains different meaning. 
  Pooling layer often follows after the convolutional layers in CNN models whose mainly task is to down-sample from the output of convolutional layers.  
+ 
+ We use it for for single tweet's creditability score model in the later section \ref{sec:single_nofeature}
    
 
 
@@ -239,7 +258,7 @@ CNN is a kind of neural network which contains a convolutional layers. First CNN
 
 \subsection{Recurrent Neural Network} % (fold)
 
-A Recurrent neural network (RNN) is one of of class of neural network. The different between RNN and other neural network is there are feedback connections between the hidden layers showing as figure \ref{fig:RNNfull}, that makes the input from the past also can influence the network. The activation status of the hidden layer neurons presents as an internal state which can be considered as a kind of memory. That makes recurrent neural network has the ability to process the sequence input. Humen understand the words of a sentence based on the previous words, the feed forwarding neural network will ignore the previous inputs.
+A Recurrent neural network (RNN) is one of of class of neural network. The different between RNN and other neural network is there are feedback connections between the hidden layers showing as figure \ref{fig:RNNfull}, that makes the input from the past also can influence the network. The activation status of the hidden layer neurons presents as an internal state which can be considered as a kind of memory. That makes recurrent neural network has the ability to process the sequence input. Human understand the words of a sentence often need the help of the previous words, but the feed forwarding neural network will ignore the previous inputs.
 
 
 \begin{figure}[!h]
@@ -493,7 +512,7 @@ GRU Cell is a special case of LSTM which is invited by  Cho, et al \cite{cho2014
 \end{figure}
 
 \subsection{Dropout}
-To avoid the overfitting we used dropout methode\cite{srivastava2014dropout }. The main idea of dropout is to dropout some units in hidden layer in neural network while training. When training the model some of the units are removed temporarily with probability $p$ as figure \ref{fig:Dropout}.  But while testing the dropout units still join the test. The aim of dropout is to avoid one best state keeping exist. By disabling some units of the network dropout makes  
+To avoid the overfitting we used dropout methode\cite{srivastava2014dropout}. The main idea of dropout is to dropout some units in hidden layer in neural network while training. When training the model some of the units are removed temporarily with probability $p$ as figure \ref{fig:Dropout}.  But while testing the dropout units still join the test. The aim of dropout is to avoid one best state keeping existing, by disabling some units time to time of the network dropout makes the model to be trained in different form every time.  Dropout causes to the convergence speed slower than without it, the model needs more epochs to find the local best solution. But the benefit is it can avoid the overfitting \cite{srivastava2014dropout}. 
 \begin{figure}[!h]
 
   \centering
@@ -533,11 +552,11 @@ In our work we split the data not equally, we consider an event as a unit.  We u
 People research on Twitter for a long time and there are a lots directions  to study this complex social network like event detection\cite{kimmey2015twitter}, spam detection \cite{ahmed2012mcl} \cite{wang2010don} or sentiment detection\cite{barbosa2010robust}. These work are similar with our task rumor detection but still contain many differences.
 
 People first studied on rumors in psychology area for years \cite{allport1947psychology} \cite{sunstein2014rumors}.
-But Twitter becomes an important platform for people sharing and exchanging information including rumors, the detection of misinformation on twitter turns to be a trending researching topic. 
+But since Twitter becomes an important platform for people sharing and exchanging information including rumors, the detection of misinformation on twitter turns to be a trending researching topic. 
 
-Researcher first began from studying rumor spreading during several special events like natural disasters\cite{oh2010exploration} \cite{tanaka2012transmission} or terrorist attacks \cite{starbird2014rumors}. But these results are not general enough to other types of rumors. Our data includes sports, politic, entertainment, also natural disasters and other kinds of rumors. 
+Researcher first began from studying rumor spreading during several special events like natural disasters\cite{oh2010exploration} \cite{tanaka2012transmission}\cite{mendoza2010twitter}  or terrorist attacks \cite{starbird2014rumors}. But these results are not general enough to other types of rumors. Our data includes sports, politic, entertainment, also natural disasters and other kinds of rumors. 
 
-Carlos Castillo researched the information credibility on Twitter\cite{mendoza2010twitter} \cite{castillo2011information}\cite{gupta2014tweetcred}. But his work is more about people opinion (trustful or not) to a tweet not the credibility of tweet itself. But it still a good start of resolving problem. Lots of other works are based on Castillo's work \cite{yang2012automatic} \cite{liu2015real} and used different set of features, for example yang \cite{yang2012automatic} add the location of poster and the client type of user (web client or mobile phone) as two important features.
+Carlos Castillo researched the information credibility on Twitter\cite{castillo2011information}\cite{gupta2014tweetcred}. But his work is more about people opinion (trustful or not) to a tweet not the credibility of tweet itself. But it still a good start of resolving problem. Lots of other works are based on Castillo's work \cite{yang2012automatic} \cite{liu2015real} and used different set of features, for example yang \cite{yang2012automatic} add the location of poster and the client type of user (web client or mobile phone) as two important features.
 And 
 
 
@@ -562,7 +581,7 @@ Xiaomo claimed their system is the first real time rumor debunking system on Twi
 \end{figure}
 
 \newpage
-Other researchers used propagation models like SpikeM \cite{kwon2013prominent} and SEIZ models \cite{jin2013epidemiological} to capture the tweet's volume changing over time, but they didn't use other features into time series model. And these features can't show the effect in the early stage of rumor spreading. We can provide it in the last section(wenxian).
+Other researchers used propagation models like SpikeM \cite{kwon2013prominent} and SEIZ models \cite{jin2013epidemiological} to capture the tweet's volume changing over time, but they didn't use other features into time series model. And these features can't show the effect in the early stage of rumor spreading. We can provide it in the later section \ref{featureanalyzing}.
 
 J Ma used Recurrent Neural Networks for rumor detection \cite{madetecting}, as the same disadvantage of the other Neural Networks models, the process of model's training is black box to us, so we can't know way we got this result. In our case we can't get the evidences to convince people why the detected event is more likely to be a rumor or rather than a breaking news. 
 

@@ -20,7 +20,7 @@ We used the python natural language Toolkit (nlTK) \footnote{http://www.nltk.org
 \label{fig:UserSample}
 \end{figure}
 
-\subsubsection{Twitter Features} Twitter Features are the features of twitter's special functions. It includes Hashtag, Mention, Number of URLs, Number of retweeted and whether this tweet is retweet (contains RT as keywords or \emph{"QuoteTweet-innerContainer u-cf js-permalink js-media-container"} as the CSS class of the tweet in html).
+\subsubsection{Twitter Features} Twitter Features are the features of twitter's special functions. It includes Hashtag, Mention, Number of URLs, Number of retweets and whether this tweet is retweet (contains RT as keywords or \emph{"QuoteTweet-innerContainer u-cf js-permalink js-media-container"} as the CSS class of the tweet in html).
 
 
 \begin{table*}[!h]
@@ -34,16 +34,16 @@ We used the python natural language Toolkit (nlTK) \footnote{http://www.nltk.org
  		& Mention & Whether the tweet mentions others @user\\
  		& NumUrls & \# url in the tweet \\
  		& Retweets & How many times this tweet has been retweeted \\ 
- 		& Isretweet & Whether this tweet is retweeted from others\\
+ 		& IsRetweet & Whether this tweet is retweeted from others\\
 \midrule
- Text Features & LengthofTweet & The length of tweet\\
-    & NumofChar & \# of individual characters \\
+ Text Features & LengthOfTweet & The length of tweet\\
+    & NumOfChar & \# of individual characters \\
    & Capital &  Fraction of characters in Uppercase \\
    & Smile & Whether this tweet contains :->, :-), ;->, ;-)\\
    & Sad & Whether this tweet contains :-<, :-(, ;->, ;-(\\
    & NumPositiveWords & \# of positive words\\
    & NumNegativeWords & \# of negative words\\
-   & Polarityscores & polarity scores of the Tweet\\
+   & PolarityScores & polarity scores of the Tweet\\
    & Via & Whether this tweet contains via\\
    & Stock & Whether this tweet contains \$ \\
    & Question & Whether this tweet contains ? \\
@@ -52,12 +52,12 @@ We used the python natural language Toolkit (nlTK) \footnote{http://www.nltk.org
    & I & Whether this tweet contains  first pronoun like I, my, mine, we, our   \\
    & You & Whether this tweet contains second pronoun like U, you, your, yours \\ 
    & HeShe & Whether this tweet contains third pronoun like he, she, they, his, etc. \\\midrule
-   User Features & Followers  & \# of followers\\
- 	& Friends  & \# of friends\\
- 	& Tweets  & \# of tweets which are posted by this user\\
- 	& Description  & Whether this user has description\\
- 	& Verified  & Whether this user is a verified user\\
- 	& ReputationScore & Ratio between \#Friends over (\# Followers + \#Friends)\\
+   User Features & UserFollowers  & \# of followers\\
+ 	& UserFriends  & \# of friends\\
+ 	& UserTweets  & \# of tweets which are posted by this user\\
+ 	& UserDescription  & Whether this user has description\\
+ 	& UserVerified  & Whether this user is a verified user\\
+ 	& UserReputationScore & Ratio between \#Friends over (\# Followers + \#Friends)\\
  \bottomrule
  \end{tabular}}
  \caption{Features for Single Tweet's Creditability Scoring Model}
@@ -99,9 +99,9 @@ Most of existing researches use SVM, Random Forest and DT. We test our data also
  \label{tab:single_result}
 \end{table*}
 
- And we rank the features using the features importance which we mentioned in section \ref{random_forest}, showing in table \ref{tab:Features_Importance}. The best feature is polarity scores of sentiment. It means that there is a big bias between the rumors tweets and the tweets real events. It was mentioned by previous work \cite{allport1947psychology} where he gathered a large rumors collection during WW2 which are printed in the Boston Heralds Rumor Clinic. He summarized rumors as several types:  pipe-dream, fear and aggression. The most researches believe that rumors mostly contain negative sentiment and polarity \cite{sunstein2014rumors}\cite{kwon2013aspects}. In our study average polarity score of news event is -0.066 and average polarity score of rumors is -0.1393 ,it means that rumors contain more negative sentiment. 
+ And we rank the features using the features importance which we mentioned in section \ref{random_forest}, showing in table \ref{tab:Features_Importance}. The best feature is polarity scores of sentiment. It means that there is a big bias between the rumors tweets and the tweets real events. It was mentioned by previous work \cite{allport1947psychology} where he gathered a large rumors collection during WW2 which are printed in the Boston Heralds Rumor Clinic. He summarized rumors as several types:  pipe-dream, fear and aggression. The most researches believe that rumors mostly contain negative sentiment and polarity \cite{sunstein2014rumors}\cite{kwon2013aspects}. In our study average polarity score of news event is -0.066 and average polarity score of rumors is -0.1393, it means that rumors contain more negative sentiment. 
  
- And we usually think the verified users may have less possibility to be involved in the rumors' spreading, but the result shows that the verified users may be not really trustful like we thought. And "Isreweet" feature is neither a good feature which means the possibility of people retweeting the rumors or true events are similar.
+ And we usually think the verified users may have less possibility to be involved in the rumors' spreading, but the result shows that the verified users may be not really trustful like we thought. And "IsReweet" feature is neither a good feature which means the probability of people retweeting the rumors or true events are similar.
  
   
  
@@ -114,16 +114,16 @@ Most of existing researches use SVM, Random Forest and DT. We test our data also
 \textbf{Feature} & \textbf{Feature Importance} \\ \midrule
 PolarityScores	&	0.1460686474\\
 Capital	&	0.09638447209\\
-LengthofTweet  &	0.09283739724\\
-Tweets  &	0.08750049577 \\
-Friends  &	0.08065591431 \\
-ReputationScore  &	0.08002109553 \\
-Followers   &	0.07938657292 \\
+LengthOfTweet  &	0.09283739724\\
+UserTweets  &	0.08750049577 \\
+UserFriends  &	0.08065591431 \\
+UserReputationScore  &	0.08002109553 \\
+UserFollowers   &	0.07938657292 \\
 NumOfChar	&	0.07659755102\\
 Stock	&	0.04920394972\\
 NumNegativeWords	&	0.03068379335\\
 Exclamation	&	0.02304551015\\
-numUrls	&	0.02124370609\\
+NumUrls	&	0.02124370609\\
 NumPositiveWords	&	0.01976939973\\
 Hashtag	&	0.01851408745\\
 Mention	&	0.01596532677\\
@@ -135,8 +135,8 @@ HeShe	&	0.00774915859\\
 UserDescription	&	0.007402174886\\
 Via	&	0.005545157727\\
 QuestionExclamation	&	0.005422123705\\
-Isretweet	&	0.003240079497\\
-Verified	&	0.003081752983\\
+IsRetweet	&	0.003240079497\\
+UserVerified	&	0.003081752983\\
 Smile	&	0.0003979192278\\
 Sad	&	0\\ \bottomrule
 
@@ -147,13 +147,13 @@ Sad	&	0\\ \bottomrule
 
  \clearpage
  \section{Single Tweet's Creditability Model without handcrafted features} 
-
+\label{sec:single_nofeature}
 As we showed in last section. The result of Single Tweet's Creditability Model with handcrafted features no matter with SVM, DT or RF is not so convincible. We may miss some important features we didn't mine out of the tweet. 
 
  Inspired by the Lai and J Ma's works \cite{lai2015recurrent} \cite{madetecting} we test neural networks as the classifier which does not need to extract features from the data.
-Based on the previous work we tested it with (wenxian) models: Basic tanh-RNN \ref{fig:SRNN}, 1-layer GRU-RNN \ref{fig:1GRU} ,1-layer LSTM \ref{fig:1LSTM}, 2-layer GRU-RNN \ref{fig:2GRU}, Fasttext \ref{fig:fasttext} and CNN+LSTM \ref{fig:CNNLSTM}  model  as figure \ref{fig:2GRU} model. Basic tanh-RNN, 1-layer GRU-RNN, 1-layer LSTM-RNN and 2-layer GRU-RNN models are based on the work of Lai and J Ma's works \cite{madetecting} \cite{lai2015recurrent}. Fasttext comes from joulin's work  \cite{joulin2016bag} which is a fast text classification model no need of GPU acceleration. The hybrid model of CNN and LSTM is zhou idea \cite{zhou2015c}. 
+Based on the previous work we tested it with 6 models: Basic tanh-RNN \ref{fig:SRNN}, 1-layer GRU-RNN \ref{fig:1GRU} ,1-layer LSTM \ref{fig:1LSTM}, 2-layer GRU-RNN \ref{fig:2GRU}, Fasttext \ref{fig:fasttext} and CNN+LSTM \ref{fig:CNNLSTM}  model  as figure \ref{fig:2GRU} model. Basic tanh-RNN, 1-layer GRU-RNN, 1-layer LSTM-RNN and 2-layer GRU-RNN models are based on the work of J Ma's works \cite{madetecting} . Fasttext comes from joulin's work  \cite{joulin2016bag} which is a fast text classification model no need of GPU acceleration. The hybrid model of CNN and LSTM (C-LSTM) is zhou idea \cite{zhou2015c} which has the best performance in out experiments. 
 
-\begin{figure}[!h]
+\begin{figure}[]
 
   \centering
 
@@ -177,7 +177,7 @@ Based on the previous work we tested it with (wenxian) models: Basic tanh-RNN \r
 \centering
   \includegraphics[width=0.22\columnwidth]{images/fasttext.png}
 }
-\subfigure[Hybrid CNN + LSTM]{\label{fig:CNNLSTM}
+\subfigure[Hybrid CNN + LSTM (C-LSTM)]{\label{fig:CNNLSTM}
 \centering
   \includegraphics[width=0.22\columnwidth]{images/CNNLSTM.png}
 }
@@ -192,7 +192,7 @@ We test the above models with same dataset and same shuffled sequence as the RF,
  \subsection{Embedding Layer}  
  The first layer is embedding layer which is set up the same to all models.The embedding size is 50. The output of the embedding layer is the vectors presenting the words.  
   \subsection{Tested Results}  
-  The best accuracy result is CNN+LSTM model as shown in table \ref{tab:single_result2}. To avoid overfitting we use 10-fold cross validation and dropout technology.  
+  The best accuracy result is C-LSTM model as shown in table \ref{tab:single_result2}. To avoid overfitting we use 10-fold cross validation and dropout technology.  
   
  \begin{table*}[!h]
  \centering
@@ -211,4 +211,13 @@ We test the above models with same dataset and same shuffled sequence as the RF,
  \label{tab:single_result2}
 \end{table*}
 
-
+\newpage
+  \subsection{CNN + LSTM (C-LSTM) Model}  
+  The best accuracy result is C-LSTM model which is invented by zhou \cite{zhou2015c}. The architecture of the model is shown in figure \ref{fig:CNNLSTMde}. Front hidden layer is a CNN which can split the text to different features and the pooling layer group the same type of feature together then the last hidden layer is a LSTM layer. According to his paper C-LSTM achieved the best result for a 2-classification task with 87.8\% accuracy. And in our test it gets 81\% accuracy. 
+  
+  \begin{figure}
+\centering
+\includegraphics[width=0.8\columnwidth]{images/CNNLSTMdetail.png}
+\caption{The architecture of C-LSTM Interface (source: \cite{zhou2015c})}
+\label{fig:CNNLSTMde}
+\end{figure} 

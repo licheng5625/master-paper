@@ -47,6 +47,7 @@ where $f_{i,t,k}$ is the k-th feature in time interval t of the event $E_i$ in t
 \subsection{User Features}
 The list of large city \footnote{http://www.demographia.com/db-worldua.pdf}
 \subsection{Epidemiological Modeling Features}
+\label{sec:epide}
 Jin's work is as far as we know the first people using epidemiological model to analyze rumors' prorogation on twitter \cite{jin2013epidemiological}. They fits the volume of the rumors and news events into two models SIS (Susceptible, Infected, Susceptible) and SEIZ (susceptible, exposed, infected, skeptic). 
 
 \textbf{SIS} is one of the most popular epidemiological model. To adapt to the scenario of Twitter, we define a user who posts a tweet of relevant event as \textbf{(I)} infected, a user who didn't we define as \textbf{(S)} susceptible. But unlikely as a normal epidemiological scenario infected nodes can be cured and return to be susceptible,  the user once posts a tweet of the certain events, he will be classified into the infected component forever. He can't be return susceptible class. At time t the total number of population is $\Delta N(t)= I(t) + S(t)$ where $I(t)$ is the size of infected population and  $S(t)$ is the size of susceptible population.  As shown in Figure \ref{fig:SIS}, SIS model works as follow:
@@ -120,7 +121,6 @@ Because of the Shortcomings of above two model, they test another model called S
    \caption{SEIZ Model}
 \label{fig:SEIZ}
 \end{figure}
-\newpage
  To adapt to Twitter context, the compartments of the SEIZ model can be mapped like this: \textbf{(S)} Susceptible is a user who has not been exposed to the event aka he didn't see any tweets about the certain event yet, \textbf{(I)} infected  means a user has posted tweets about the certain events, \textbf{(Z)} skeptic is a user who has been exposed to the certain event but he decides to ignore it and \textbf{(E)} exposed is a user who been exposed to the certain event but he will post the tweets after some delay.
  
  We show the model in figure \ref{fig:SEIZ}. And the SEIZ works as follow:
@@ -172,7 +172,6 @@ p	&	S->I Probability given contact with adopters\\
 \caption{Parameters of SEIZ}
 \label{tab:SEIZ_Para}
 \end{table*}
-\newpage
 The author presents an index of SEIZ called $R_{SI}$ as equation \ref{RSI}. It contains all rate values of SEIZ and related to the flux ratio of the \textbf{(E)} exposed compartment, the ratio of entering \textbf{(E)} to leaving \textbf{(E)}. If $R_{SI}$ is bigger than 1 means the influx of exposed compartment is bigger than the efflux. This index may be a good candidate of feature to analyze rumor spreading on Twitter.
 
 
@@ -247,7 +246,7 @@ But fitting the models needs enough input data. We don't have enough data to lea
 
 \clearpage
 \subsection{SpikeM model Features}
-Kwon is another approach \cite{kwon2013prominent} discussing differences between the rumors' propagation pattern and the news events' propagation pattern on twitter. He adjusted the SpikeM Model and also used the parameters as features. 
+Kwon showed us another approach \cite{kwon2013prominent}  for finding the differences between the rumors' propagation pattern and the news events' propagation pattern on twitter. He adjusted the SpikeM Model and also used the parameters as features. 
 
 SpikeM first was introduced by Yasuko Matsubara \cite{conf/kdd/MatsubaraSPLF12} which cab describe the pattern of information diffusion. We present it as follow:
 
@@ -312,7 +311,7 @@ $n_b$ & starting time of \textbf{\underline{b}}reaking news\\
 $S_b$	&	strength of external shock at birth (time $n_b$)\\
 $\varepsilon$	&	background noise \\\midrule
 $P_a$ & strength of periodicity\\
-$P_p$			& period\\
+$P_p$			& period of periodicity\\
 $P_s$			& phase shift of periodicity\\ \bottomrule
 
 \end{tabular}}
@@ -360,7 +359,6 @@ $q_s$			& phase shift of periodicity of the external shock\\ \bottomrule
 \caption{New Parameters of extended SpikeM}
 \label{tab:Features_Impsortance2}
 \end{table*}
-\newpage
 As the same approach of fitting SIS model, we learn the parameters of SpikeM model with Levenberg-Marquard algorithm. We fit the sequenced tweet volume from the beginning time the $t_0$ to the current time interval $t_n$ of an event to the model and use the output parameters as the features adding into DSTS. We use the $p_a$,  $p_p$, $p_s$ and $q_a$, $q_p$, $q_s$ as feature. We show 4 examples of the SpikeM fitting result in figure \ref{fig:SPikeModel}. But same problem as fitting SIS or SEIZ, if we test only within 10 hours data the result seems much worse than the result with full 48 hours showing in figure \ref{fig:SpikeMModelshort}.
 
 \begin{figure}[!h]
@@ -534,10 +532,10 @@ Decision Trees& 0.7807  & 0.8115   &  0.75 & 0.7385 \\    \bottomrule
 
 
 \newpage
-  \section{ Feature Evolution } 
+  \section{Experiment Result } 
     \subsection{ Time Series VS Static Feature} 
 
-First we compare our time series model and the normal static feature model. We show the result is in figure \ref{TVSF} the full 48 hours details in Appendix table \ref{TSVSSFFULL} and in figure . As we can see from the result that the accuracy of time Series is better than the static. But after 24 hours the advantage of the time series is very limited. 
+First we compare our time series model and the normal static feature model. We show the result is in table \ref{TVSF} the full 48 hours details in Appendix table \ref{TSVSSFFULL} and in figure \ref{fig:TVSF}. As we can see from the result that the accuracy of time Series in most of time is better than the static model. But after 24 hours the advantage of the time series is very limited. The reason may be after 24 hours the static model already has enough data to ignore the offset of features at the different time points. But the time series model still has the benefit of detecting rumors at the beginning of spreading. 
  
 \begin{table}[!h]
 \centering
@@ -561,55 +559,244 @@ Hour & Time series model & Static model & Difference \\ \hline
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\columnwidth]{images/Vsstatic.png}
+\includegraphics[width=0.8\columnwidth]{images/Vsstatic.png}
 \caption{Accuracy: Time series VS static Features}
 \label{fig:TVSF}
 \end{figure}
 
-  
+  \newpage
  \subsection{ Feature Analyzing Over Time} 
- We rank the features' importance using the method we introduced in section \ref{random_forest}, the full result is shown in Appendix table \ref{tab:allfeaturerank}.  First we split the features in 7 catalogues as table \ref{tab:full_features} Tweet\_Feature, User\_Feature,Text\_Feature,  CreditScore, SpikeM, Epidemiological Features, CrowdWisdom and the BestSets. The BestSets is top 23 features on average in table \ref{bestfeature}.
+ \label{featureanalyzing}
+ We rank the features' importance using the method we introduced in section \ref{random_forest}, the full result is shown in appendix table \ref{tab:allfeaturerank}.  First we split the features in 7 catalogues as in table \ref{tab:full_features}: Tweet\_Feature, User\_Feature,Text\_Feature,  Credit Score, SpikeM Features, Epidemiological Features, CrowdWisdom and the BestSet. The BestSet is a combination of the 28 top best average rank of 48 hours features, they are shown in table \ref{bestfeature}. The results over 48 hours are in figure \ref{fig:allfeature} .
  
  \begin{table}[!h]
 \centering
-\begin{tabular}{|l|}
+\begin{tabular}{l|l}
 \hline
-Best Feature set\\ \hline
 
- CreditScore \\
- ContainNEWS \\
- NumChar \\
- UserTweetsPerDays \\
- QuestionExclamation \\ 
- UserReputationScore \\
+\multicolumn{2}{c}{Best Feature set} \\\hline
 
-WotScore \\
-Question \\
-UserJoin\_date \\
-Mention \\
-LengthOfTweet \\
-DebunkingWords \\ 
-UserFollowers \\
-Exclamation \\
-UserVerified \\
-Hashtag \\
-Capital \\
-You \\
-UserNumPhoto \\
-numUrls \\
-UserFriends \\
-NumPositiveWords \\
-Via \\
-$P_a$  \\
-UserIsInLargeCity \\PolarityScores \\UserDescription \\$R_{SI}$\\$\beta_{SIS}$ \\ $\varepsilon_{SEIZ}$   \\ \bottomrule 
+ CreditScore & ContainNEWS \\
+
+NumChar  & UserTweetsPerDays\\
+QuestionExclamation  & UserReputationScore\\ 
+ 
+WotScore  & Question\\
+UserJoin\_date  & Mention\\
+LengthOfTweet  & DebunkingWords\\
+UserFollowers  & Exclamation\\
+UserVerified  &  Hashtag\\
+
+Capital   & You\\
+UserNumPhoto   & numUrls\\
+UserFriends   & NumPositiveWords\\
+Via   & $P_a$\\
+
+UserIsInLargeCity  & PolarityScores \\UserDescription  & $R_{SI}$  \\ \bottomrule 
  \end{tabular}
 \caption{Best Features}
 \label{bestfeature}
 \end{table}
 
+ \begin{figure}[!h]
+\centering
+\includegraphics[width=\columnwidth]{images/allfeatures.png}
+\caption{Accuracy: Time series VS static Features}
+\label{fig:allfeature}
+\end{figure}
  
+ As we can see in figure \ref{fig:allfeature} the best result on average over 48 hours in the \emph{BestSet} with top 28 features. Second is the  \emph{All features}. Except those two the best group feature is \emph{Text feature}. One reason is the text feature set has the largest group of feature with totally 16 features. But if look into each feature in text feature group we can see the best and the worst features are all in this set. \emph{User feature} and \emph{Twitter feature} are stable over time around 82\%. The performances of 3 different models (SIS, SEIZ and SpikeM) describing the propagation pattern of rumors and news are not so well especially within 24 hours. \emph{Crowd Wisdom} and \emph{Credit Score} both contain only one feature but they already have impressive result comparing with the \emph{User feature} and \emph{Twitter feature}.
+ \newpage
+ 
+ \subsection{Text Features} 
+ \emph{Text feature} set contains 16 features. The ranks of feature as shown in table \ref{testfeaturerank}. The best one is \emph{NumChar} which is the average number of different characters in tweets. It is quite hard to explain why it is like that. 
+ 
+ \emph{PolarityScores} is the best feature when we tested the single tweets model, but its rank in time series model is not so good.  It is true that rumor contains more negative sentiment, but in an event (rumor or news) people can show their different views about this event \cite{mendoza2010twitter} \cite{starbird2014rumors} like discussing or denying.  \emph{ PolarityScores}'s performance becomes worse and worse over time. In table \ref{Percentage-of-tweet-type} we reference the result from Thomas Heverin's work \cite{heverin2010microblogging}. He analyzed the tweets which responded to the 2009 Violent Crisis. The number of tweets containing original information and emotion are less and less over time. In the other hand more and more people start to share their different opinions even technology problems after 24 hours. That may make difference of sentiment features between rumors and news less and less in first 12 hours and it becomes useless after 24 hours. 
+ 
+  \emph{Text feature} overall is the the best feature set.
+ 
+\begin{table}[]
+\centering
+\begin{tabular}{ccccccc}
+\hline
+
+\multicolumn{1}{|c|}{\small{Time Period}} & \multicolumn{1}{c|}{\small{Information}} & \multicolumn{1}{c|}{\small{Opinion}} & \multicolumn{1}{c|}{\small{Technology}} & \multicolumn{1}{c|}{\small{Emotion}} & \multicolumn{1}{c|}{\small{Action}} & \multicolumn{1}{c|}{\small{Other}} \\ \hline
+\multicolumn{1}{|c|}{\small{0-12hours}}   & \multicolumn{1}{c|}{90.0\%}           & \multicolumn{1}{c|}{6.8\%}        & \multicolumn{1}{c|}{1.1\%}           & \multicolumn{1}{c|}{5.6\%}        & \multicolumn{1}{c|}{1.1\%}       & \multicolumn{1}{c|}{0.0\%}      \\ \hline
+\multicolumn{1}{|c|}{\small{12-24 hours}} & \multicolumn{1}{c|}{86.6\%}           & \multicolumn{1}{c|}{13.0\%}       & \multicolumn{1}{c|}{3.1\%}           & \multicolumn{1}{c|}{4.5\%}        & \multicolumn{1}{c|}{1.3\%}       & \multicolumn{1}{c|}{0.7\%}      \\ \hline
+\multicolumn{1}{|c|}{\small{24-36 hours}} & \multicolumn{1}{c|}{73.9\%}           & \multicolumn{1}{c|}{18.3\%}       & \multicolumn{1}{c|}{7.0\%}           & \multicolumn{1}{c|}{2.7\%}        & \multicolumn{1}{c|}{0.5\%}       & \multicolumn{1}{c|}{3.7\%}      \\ \hline
+\multicolumn{1}{|c|}{\small{26-48 hours}} & \multicolumn{1}{c|}{74.6\%}           & \multicolumn{1}{c|}{21.3\%}       & \multicolumn{1}{c|}{1.0\%}           & \multicolumn{1}{c|}{3.8\%}        & \multicolumn{1}{c|}{0.5\%}       & \multicolumn{1}{c|}{2.8\%}      \\ \hline
+
+\end{tabular}
+   \caption{. Percentage of tweet type (non-exclusive) per 12 hour time period (source: \cite{heverin2010microblogging})}
+\label{Percentage-of-tweet-type}
+
+\end{table}
+
+  \begin{table}[!h]
+ \centering
+\scalebox{1}{
+\begin{tabular}{@{\textbf{ }}ccccccccccccccccc@{}}
+\toprule
+\textbf{Features} & \multicolumn{10}{c}{\textbf{Ranks}} \\\hline
+Hours & 1 & 6 & 12 & 18&24&30&36&42&48 & AVG\\\hline
+ %ContainNEWS & 8 & 4 & 5& 4 & 4&2&2&2&2&3.48\\
+NumChar			& 3& 3 & 4 & 3& 3& 8& 7&6 & 4& 4.29\\
+QuestionExclamation		& 25& 16 & 2 & 1& 1& 1& 3& 7&5&4.79\\
+%UrlRankIn5000			& 14& 13 & 7 & 11 & 7& 3& 1& 4&6&4.79\\
+%WotScore			& 4 & 10& 6 & 10 & 10& 6& 9& 8&7&7.63\\ 
+Question 			& 15 & 11& 13 & 7 & 5& 4& 8& 5&8&8.29\\ 
+%Mention 			& 13 & 5& 10 & 14 & 13& 10& 12& 12&10&10.98\\
+LengthOfTweet 			& 6 & 6& 9 & 6 & 14& 16& 13& 16&13&11.96\\ 
+PolarityScores & 12 & 15& 23 & 28 & 33& 33& 34& 31&32&28\\
+
+Stock 			& 34 & 44& 47 & 47 & 47& 47& 47& 47&48&46.15\\ 
+Smile 			& 35 & 45& 45 & 48 & 48& 48& 48& 48&48&47.06\\ 
+ 
+Sad 			& 36 & 46& 46 & 49 & 49& 49& 49& 49&49&47.9\\ 
+
+\bottomrule
+ \end{tabular}}
+\caption{Rank of Part of Text Feature}
+\label{testfeaturerank}
+\end{table}
+\newpage
+ \subsection{Twitter Features} 
+   \emph{Twitter feature} is stable over time from the beginning to the end.
+
+ The 3 best of \emph{Tweet Features} are all the features about the contained ULR in tweet: \emph{ContainNEWS}, \emph{UrlRankIn5000}, \emph{WotScore} showing in table \ref{twitterfeaturerank}. It it quite logical that the news will have higher probability reported by news websites or higher ranked website. And it is clear to see the that their performance significantly improve after 24 hours. In Alexander's work \cite{mills2009web}, he also shows similar phenomenon that credibility of the information from twitter is higher than external website in the first 24 hours. 
+ 
+  \begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\columnwidth]{images/Informationqulitat.png}
+\caption{Information Quality over time (source: \cite{mills2009web})}
+\label{fig:allfeature}
+\end{figure}
+
+ But the other original twitter functions like the retweets or mention do not contribute much.
  
 
+\begin{table}[!h]
+\centering
+\scalebox{1}{
+\begin{tabular}{@{\textbf{ }}ccccccccccccccccc@{}}
+\toprule
+\textbf{Features} & \multicolumn{10}{c}{\textbf{Ranks}} \\\hline
+Hours & 1 & 6 & 12 & 18&24&30&36&42&48 & AVG\\\hline
+ContainNEWS & 8 & 4 & 5& 4 & 4&2&2&2&2&3.48\\
+UrlRankIn5000			& 14& 13 & 7 & 11 & 7& 3& 1& 4&6&5.96\\
+WotScore			& 4 & 10& 6 & 10 & 10& 6& 9& 8&7&7.63\\ 
+%Question 			& 15 & 11& 13 & 7 & 5& 4& 8& 5&8&8.29\\ 
+Mention 			& 13 & 5& 10 & 14 & 13& 10& 12& 12&10&10.98\\
+Hashtag 			& 20 & 20& 15 & 18 & 16& 13& 15& 17&17&17.46\\ 
+Retweets & 21 & 21& 27 & 38 & 42& 35& 31& 37&34&33.25\\
+\bottomrule
+ \end{tabular}}
+\caption{Rank of Part of Twitter Feature}
+\label{twitterfeaturerank}
+\end{table}
+
+\subsection{User Features} 
+The performance of user features is similar with the twitter, they are both quite stable from the first hour to the last hour. But one difference is in the first few user feature is the best feature set except all feature set.
+
+As in table \ref{userfeaturerank} shown, the best feature of user feature is UserTweetsPerDays. And it is the best feature overall in the first 4 hours, but it drops down over time. Others user features like Reputation Score and Join date have also better performance at the first fews hours. 
+
+That means the sources (the poster in the first few hours) of news and rumors are quite different with each other, but more and more users join in the discussion, so the bias of two groups of user is less and less. After 6 hours we distinguish the rumors basing on the content of the tweet(text features) already better basing on the feature of the poster.
+ 
+\begin{table}[!h]
+\centering
+\scalebox{1}{
+\begin{tabular}{@{\textbf{ }}ccccccccccccccccc@{}}
+\toprule
+\textbf{Features} & \multicolumn{10}{c}{\textbf{Ranks}} \\\hline
+Hours & 1 & 6 & 12 & 18&24&30&36&42&48 & AVG\\\hline
+UserTweetsPerDays & 0 & 1 & 1& 2 & 2&9&5&10&14&4.63\\
+UserReputationScore	 & 1& 2 & 3 & 5 &6& 5& 6& 3&3&5.06\\
+UserJoin\_date			& 5 & 8& 8 & 8 & 12& 14& 16& 11&9&10.58\\ 
+UserVerified 			& 24 & 17& 12 & 16 & 17& 12& 11&14&19&16.25\\ 
+ \bottomrule
+ \end{tabular}}
+\caption{Rank of Part of User Feature}
+\label{userfeaturerank}
+\end{table}
+\subsection{SpikeM Features and Epidemiological Features}
+The two feature sets of these two models seem not so well. 
+Only one feature $P_a$ from the SpikeM is added in the BestSet features. 
+As the problem of these two models which we have already figured out in section \ref{sec:epide} is Both of these models need enough data to fit the parameters. Only after 24 hours these two models' features can reach 60\% accuracy. In other words before 24 hour these is no clear propagation pattern of these events. In the work of Kwon \cite{kwon2013prominent}, the durations of dataset which he uses are more than (wenxian). In the work of Jin\cite{jin2013epidemiological}, he uses () to fit the SEIZ models. Their data's durations are far larger than ours 48 hours.
+ 
+ $P_a$ parameter from SpikeM is the only one feature in the top 26 feature set. It stands for the strength of periodicity.   Kwon add 3 more parameters to explain the periodicity of the external shock. They are not so functional because of short time period.
+
+\begin{table}[!h]
+\centering
+\scalebox{1}{
+\begin{tabular}{@{\textbf{ }}ccccccccccccccccc@{}}
+\toprule
+\textbf{Features} & \multicolumn{10}{c}{\textbf{Ranks}} \\\hline
+Hours & 1 & 6 & 12 & 18&24&30&36&42&48 & AVG\\\hline
+$P_a$ & 29 & 28 & 34& 30 & 33&24&23&21&23&25.75\\
+$R_{SI}$	 & 47& 24 & 30 & 23 &36& 39& 38& 24&30&29.56\\
+$\beta_{SIS}$			&49& 30 & 33& 28 & 31 & 36&28&33&25&30.15\\ 
+$Q_a$  			& 44 & 47& 47 & 21 & 38& 40& 44&41&33&38.04\\ 
+ \bottomrule
+ \end{tabular}}
+ \caption{Rank of Part of SpikeM Features and Epidemiological Features}
+\label{SPikemfeaturerank}
+
+ \end{table}
+ 
+\newpage
+ \subsection{Credit Score} 
+Credit Score is the pre-trained Single Tweet Credibility Scoring model's output in section \ref{sec:single_nofeature}. As shown in table \ref{tab:Rank_Credit}, excepting the first 4 hours Credit Score is the best feature overall. In figure \ref{fig:WCVSAF} we show the result of model without Credit Score feature and model with full features set. Before the first 24 hours the model without credit score has worse performance than the full feature set, so the credit score feature contributes much for the early stage of rumor detecting. 
+
+ \begin{figure}[!h]
+\centering
+\includegraphics[width=\columnwidth]{images/WCVSAF.png}
+\caption{Accuracy: Time series VS static Features}
+\label{fig:WCVSAF}
+\end{figure}
+
+  \begin{table*}[!h]
+ \centering
+\scalebox{1}{
+\begin{tabular}{@{\textbf{ }}cll@{}}
+\toprule
+\textbf{Hour} & \textbf{Rank} \\ \midrule
+1 & 2\\
+2			& 1\\
+3			& 1\\
+4			& 1\\
+5			& 0\\ 
+..  & 0\\ 
+48 & 0\\ 
+\bottomrule
+
+\end{tabular}}
+\caption{Ranks of CreditScore}
+\label{tab:Rank_Credit}
+\end{table*}
   
   
-  
+ \subsection{Crowd Wisdom} 
+Crowd Wisdom is also a good feature which can get 75.8\% accuracy as a single feature. But its performance is very poor (less than 70\%) in the first 32 hours. The crowds need time to unify their views to the event after absorbing all kind of information. That is also one reason we need this automatic detecting system. 
+
+ \subsection{Machine vs Human } 
+ Our system is meaningless if the system detecting the rumors after the human recognize them. In this section we will compare our system with the human rumor debunking website snopes.com. 
+ 
+ Snopes.com has their own twitter account \footnote{https://twitter.com/snopes}. They will post tweets via this account about rumors. We consider the creation time of the first tweet which contains the keyword "snopes" in the tweets or URL of "snopes.com" is the time stamp of human confirming rumors. 
+ 
+   But some of the rumors have a long duration, the website may report it several months ago or later. We think that doesn't refer to the same rumor affair. So we set up a threshold 72 hours. We only consider the time stamps of human confirming rumors 72 hours before or after the beginning time of the events which we defined in section \ref{sec:Time_Period_of_an_Event}. The result is in table. On average the editors of "snopes.com" need 25 hours to verify the rumors and post it. On hour 25 our system already achieves 87\% accuracy. 
+   
+  \begin{table*}[!h]
+ \centering
+\scalebox{1}{
+\begin{tabular}{@{\textbf{ }}cll@{}}
+\toprule
+\textbf{} & \textbf{Hours} \\ \midrule
+Least & 71\\
+Earliest			& -55\\
+Average 		& 25.49\\
+\bottomrule
+
+\end{tabular}}
+\caption{Time of Human Confirming Rumors }
+\label{tab:Rank_Credit}
+\end{table*}

@@ -69,10 +69,23 @@ A.~Gupta, P.~Kumaraguru, C.~Castillo, and P.~Meier.
 \newblock In {\em International Conference on Social Informatics}, pages
   228--243. Springer, 2014.
 
+\bibitem{heverin2010microblogging}
+T.~Heverin and L.~Zach.
+\newblock {\em Microblogging for Crisis Communication: Examination of Twitter
+  Use in Response to a 2009 Violent Crisis in the Seattle-Tacoma, Washington,
+  Area}.
+\newblock ISCRAM, 2010.
+
 \bibitem{hochreiter1997long}
 S.~Hochreiter and J.~Schmidhuber.
 \newblock Long short-term memory.
 \newblock {\em Neural computation}, 9(8):1735--1780, 1997.
+
+\bibitem{java2007we}
+A.~Java, X.~Song, T.~Finin, and B.~Tseng.
+\newblock Why we twitter: understanding microblogging usage and communities.
+\newblock In {\em Proceedings of the 9th WebKDD and 1st SNA-KDD 2007 workshop
+  on Web mining and social network analysis}, pages 56--65. ACM, 2007.
 
 \bibitem{jin2013epidemiological}
 F.~Jin, E.~Dougherty, P.~Saraf, Y.~Cao, and N.~Ramakrishnan.
@@ -94,6 +107,17 @@ Y.~Kim.
 D.~Kimmey.
 \newblock Twitter event detection.
 \newblock 2015.
+
+\bibitem{kohut2008internet}
+A.~Kohut and M.~Remez.
+\newblock Internet overtakes newspapers as news outlet.
+\newblock {\em Pew Research Centre}, 2008.
+
+\bibitem{kwak2010twitter}
+H.~Kwak, C.~Lee, H.~Park, and S.~Moon.
+\newblock What is twitter, a social network or a news media?
+\newblock In {\em Proceedings of the 19th international conference on World
+  wide web}, pages 591--600. ACM, 2010.
 
 \bibitem{kwon2013aspects}
 S.~Kwon, M.~Cha, K.~Jung, W.~Chen, and Y.~Wang.
@@ -142,11 +166,22 @@ Y.~Matsubara, Y.~Sakurai, B.~A. Prakash, L.~Li, and C.~Faloutsos.
 \newblock In Q.~Yang, D.~Agarwal, and J.~Pei, editors, {\em KDD}, pages 6--14.
   ACM, 2012.
 
+\bibitem{matthews2013does}
+C.~Matthews.
+\newblock How does one fake tweet cause a stock market crash.
+\newblock {\em Wall Street \& Markets: Time}, 2013.
+
 \bibitem{mendoza2010twitter}
 M.~Mendoza, B.~Poblete, and C.~Castillo.
 \newblock Twitter under crisis: can we trust what we rt?
 \newblock In {\em Proceedings of the first workshop on social media analytics},
   pages 71--79. ACM, 2010.
+
+\bibitem{mills2009web}
+A.~Mills, R.~Chen, J.~Lee, and H.~Raghav~Rao.
+\newblock Web 2.0 emergency applications: How useful can twitter be for
+  emergency response?
+\newblock {\em Journal of Information Privacy and Security}, 5(3):3--26, 2009.
 
 \bibitem{oh2010exploration}
 O.~Oh, K.~H. Kwon, and H.~R. Rao.
@@ -165,6 +200,13 @@ R.~Pascanu, T.~Mikolov, and Y.~Bengio.
 \newblock On the difficulty of training recurrent neural networks.
 \newblock {\em ICML (3)}, 28:1310--1318, 2013.
 
+\bibitem{qazvinian2011rumor}
+V.~Qazvinian, E.~Rosengren, D.~R. Radev, and Q.~Mei.
+\newblock Rumor has it: Identifying misinformation in microblogs.
+\newblock In {\em Proceedings of the Conference on Empirical Methods in Natural
+  Language Processing}, pages 1589--1599. Association for Computational
+  Linguistics, 2011.
+
 \bibitem{rumelhart1988learning}
 D.~E. Rumelhart, G.~E. Hinton, and R.~J. Williams.
 \newblock Learning representations by back-propagating errors.
@@ -174,6 +216,11 @@ D.~E. Rumelhart, G.~E. Hinton, and R.~J. Williams.
 S.~J. Russell, P.~Norvig, J.~F. Canny, J.~M. Malik, and D.~D. Edwards.
 \newblock {\em Artificial intelligence: a modern approach}, volume~2.
 \newblock Prentice hall Upper Saddle River, 2003.
+
+\bibitem{srivastava2014dropout}
+N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov.
+\newblock Dropout: a simple way to prevent neural networks from overfitting.
+\newblock {\em Journal of Machine Learning Research}, 15(1):1929--1958, 2014.
 
 \bibitem{starbird2014rumors}
 K.~Starbird, J.~Maddock, M.~Orand, P.~Achterman, and R.~M. Mason.
