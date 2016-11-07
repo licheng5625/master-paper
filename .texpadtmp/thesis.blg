@@ -15,45 +15,45 @@ Warning--empty journal in allport1947psychology
 Warning--empty journal in kimmey2015twitter
 Warning--empty journal in madetecting
 Warning--empty year in madetecting
-You've used 47 entries,
+You've used 52 entries,
             2118 wiz_defined-function locations,
-            745 strings with 12573 characters,
-and the built_in function-call counts, 18853 in all, are:
-= -- 1869
-> -- 974
-< -- 23
-+ -- 388
-- -- 335
-* -- 1267
-:= -- 3015
-add.period$ -- 159
-call.type$ -- 47
-change.case$ -- 303
+            775 strings with 13566 characters,
+and the built_in function-call counts, 21105 in all, are:
+= -- 2113
+> -- 1048
+< -- 26
++ -- 419
+- -- 359
+* -- 1411
+:= -- 3339
+add.period$ -- 177
+call.type$ -- 52
+change.case$ -- 330
 chr.to.int$ -- 0
-cite$ -- 51
-duplicate$ -- 761
-empty$ -- 1395
-format.name$ -- 335
-if$ -- 4063
+cite$ -- 56
+duplicate$ -- 860
+empty$ -- 1583
+format.name$ -- 359
+if$ -- 4576
 int.to.chr$ -- 0
-int.to.str$ -- 47
-missing$ -- 51
-newline$ -- 237
-num.names$ -- 96
-pop$ -- 379
+int.to.str$ -- 52
+missing$ -- 56
+newline$ -- 262
+num.names$ -- 106
+pop$ -- 411
 preamble$ -- 1
-purify$ -- 260
+purify$ -- 282
 quote$ -- 0
-skip$ -- 558
+skip$ -- 639
 stack$ -- 0
-substring$ -- 1042
-swap$ -- 253
-text.length$ -- 23
+substring$ -- 1240
+swap$ -- 296
+text.length$ -- 26
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 180
+type$ -- 200
 warning$ -- 4
-while$ -- 169
-width$ -- 49
-write$ -- 519
+while$ -- 191
+width$ -- 54
+write$ -- 577
 (There were 2 error messages)

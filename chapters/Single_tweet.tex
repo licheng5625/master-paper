@@ -1,18 +1,28 @@
 
 \chapter{Single Tweet's Creditability Scoring Model} % (fold)
 \label{cha:single_tweet_creditbility_scoring_model}
-Most of the pervious researches are focusing on event level rumors and claims taht the task of classification for individual tweet is not reliable \cite{liu2015real} \cite{ma2015detect} \cite{zhao2015enquiring}, because a single tweet is to short to contains engough features. But Carlos Castillo designed a single tweet's creditability rank system Tweetcred \cite{gupta2014tweetcred}. So we think it is still enable to build up a single tweet creditability model. And we were inspired by the (wenxian) work that we may use nn() without handcrafted features to build up the single tweet's creditability model which in later experiments outputs a better performance.   
-\section{Single Tweet's Creditability Model with handcrafted features} % (fold)
-First we follow Castillo's \cite{gupta2014tweetcred} idea to implement a single tweet's creditability model with handcrafted features and we test it with decision trees, decision forest and SVM. But the performance of each model are not good enough. 
+\section{Introduce} % (fold)
+At the beginning of an event, the tweet volume is limited and there is no propagation pattern yet, so as human verifying rumors we can only focus on the information from each single tweet. So a single tweet classification model can help us detect the rumors on the early stage. 
 
-\subsection{Features}
+
+\section{Related Work} % (fold)
+
+Most of the pervious researches are focusing on event level rumors and claims that the task of classification for individual tweet is not reliable \cite{liu2015real} \cite{ma2015detect} \cite{zhao2015enquiring}, because a single tweet is to short to contains enough features. But Carlos Castillo designed a single tweet's creditability rank system Tweetcred \cite{gupta2014tweetcred}. So we think it is still enable to build up a single tweet creditability model. 
+
+Recently deep learning is new technology which is used in various areas. And we were inspired by the  J Ma's work \cite{lai2015recurrent} that we may use neural network without handcrafted features to build up the single tweet's creditability model which in later experiments outputs a better performance.  
+   Zhou invented a C-LSTM model \cite{zhou2015c} for short text classification. The architecture of the model is shown in figure \ref{fig:CNNLSTMde}. Front hidden layer is a CNN which can split the text to different features and the pooling layer group the same type of feature together then the last hidden layer is a LSTM layer. They test the model with comments on IBMb website. According to his paper C-LSTM achieved the best result for a 2-classification task with 87.8\% accuracy. We adapt their work in our rumor detecting task.
+
+  
+
+\section{Features}
+\label{featuressingle}
 We use a collection of features major from  Castillo's Tweetcred system\cite{gupta2014tweetcred} totally 27 features in table \ref{tab:single_features}. These features can be extracted directly from Twitter interface without third part website. 
-\subsubsection{Text Features}
+\subsection{Text Features}
 The Text features capture the content of the text of the tweets. There are 16 Text features. 
 \textbf{Sentiment Features} are included in text features.
 We used the python natural language Toolkit (nlTK) \footnote{http://www.nltk.org/} to analyze the tweets' sentiment and extract the features: the NumPositiveWords, NumNegativeWords and Polarityscores. Polarity scores is a float for sentiment strength of one tweet\footnote{http://www.nltk.org/api/nltk.sentiment.html} $Polarity\_scores = \frac {1}{N}    \sum_{0}^{n} {Polarity(token_n)}$.
 
-\subsubsection{User Features} We selected total 5 features of the poster. These features are extracted directly from the twitter interface as in figure \ref{fig:UserSample}. ReputationScore is defined as the ratio between \#Friends over \# Followers. $ReputationScore = \frac {\#Friends }{\#Friends +\#Followers}$.
+\subsection{User Features} We selected total 5 features of the poster. These features are extracted directly from the twitter interface as in figure \ref{fig:UserSample}. ReputationScore is defined as the ratio between \#Friends over \# Followers. $ReputationScore = \frac {\#Friends }{\#Friends +\#Followers}$.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.55\columnwidth]{images/UserSample.png}
@@ -20,7 +30,7 @@ We used the python natural language Toolkit (nlTK) \footnote{http://www.nltk.org
 \label{fig:UserSample}
 \end{figure}
 
-\subsubsection{Twitter Features} Twitter Features are the features of twitter's special functions. It includes Hashtag, Mention, Number of URLs, Number of retweets and whether this tweet is retweet (contains RT as keywords or \emph{"QuoteTweet-innerContainer u-cf js-permalink js-media-container"} as the CSS class of the tweet in html).
+\subsection{Twitter Features} Twitter Features are the features of twitter's special functions. It includes Hashtag, Mention, Number of URLs, Number of retweets and whether this tweet is retweet (contains RT as keywords or \emph{"QuoteTweet-innerContainer u-cf js-permalink js-media-container"} as the CSS class of the tweet in html).
 
 
 \begin{table*}[!h]
@@ -63,10 +73,60 @@ We used the python natural language Toolkit (nlTK) \footnote{http://www.nltk.org
  \caption{Features for Single Tweet's Creditability Scoring Model}
  \label{tab:single_features}
 \end{table*}
- \newpage
 
-\subsection{Classification Methods}
-Most of existing researches use SVM, Random Forest and DT. We test our data also with these 3 models.  We implement these 3 model with scikit-learn library\footnote{scikit-learn.org/}. We shuffled the 260 events and split them into 10 subset, we uses them for 10 times cross-validation. We show the parameters after optimization for each model them in table \ref{tab:single_model_para}.
+\section{Classification Models} % (fold)
+We developed two kinds of classification model traditional classifier with handcraft features and neural network without handcraft features.
+\subsection{Single Tweet's Creditability Model with handcrafted features} % (fold)
+We follow Castillo's \cite{gupta2014tweetcred} idea to implement a single tweet's creditability model with above handcrafted features in section \ref{featuressingle} and we select the most popular classification models: decision trees, decision forest and SVM.  
+
+  \subsection{Single Tweet's Creditability Model without handcrafted features} 
+\label{sec:single_nofeature}
+
+ Inspired by the Lai and J Ma's works \cite{lai2015recurrent} \cite{madetecting} we test neural networks as the classifier which does not need to extract features from the data.
+Based on the previous work we tested it with 6 models: Basic tanh-RNN \ref{fig:SRNN} as baseline, 1-layer GRU-RNN \ref{fig:1GRU} ,1-layer LSTM \ref{fig:1LSTM}, 2-layer GRU-RNN \ref{fig:2GRU}, FastText \ref{fig:fasttext} and CNN+LSTM \ref{fig:CNNLSTM}  model  as figure \ref{fig:2GRU} model. Basic tanh-RNN, 1-layer GRU-RNN, 1-layer LSTM-RNN and 2-layer GRU-RNN models are based on the work of J Ma's works \cite{madetecting}. FastText comes from joulin's work  \cite{joulin2016bag} which is a fast text classification model no need of GPU acceleration. The hybrid model of CNN and LSTM (C-LSTM) is zhou idea \cite{zhou2015c} which has the best performance in out experiments. Zhou tested their C-LSTM for sentiment classification with the dataset of comments of movies in IMDb which are similar short text as tweets and got best accuracy 86\%. And we adapt their model into our work.
+
+\begin{figure}[]
+
+  \centering
+
+\subfigure[Sample RNN Model]{\label{fig:SRNN}
+\centering
+  \includegraphics[width=0.22\columnwidth]{images/simRNN.png}
+} %
+\subfigure[1-layer GRU-RNN]{\label{fig:1GRU}
+\centering
+  \includegraphics[width=0.22\columnwidth]{images/GRUlayer.png}
+}
+\subfigure[1-layer LSTM-RNN]{\label{fig:1LSTM}
+\centering
+  \includegraphics[width=0.22\columnwidth]{images/LSTMLayer.png}
+}
+\subfigure[2-layer GRU-RNN]{\label{fig:2GRU}
+\centering
+  \includegraphics[width=0.22\columnwidth]{images/2gru.png}
+}
+\subfigure[FastText]{\label{fig:fasttext}
+\centering
+  \includegraphics[width=0.22\columnwidth]{images/fasttext.png}
+}
+\subfigure[Hybrid CNN + LSTM (C-LSTM)]{\label{fig:CNNLSTM}
+\centering
+  \includegraphics[width=0.22\columnwidth]{images/CNNLSTM.png}
+}
+\caption{neural network model for single tweet classification 1}
+\label{fig:NNModel1}
+\end{figure}
+
+  \begin{figure}
+\centering
+\includegraphics[width=0.8\columnwidth]{images/CNNLSTMdetail.png}
+\caption{The architecture of C-LSTM Interface (source: \cite{zhou2015c})}
+\label{fig:CNNLSTMde}
+\end{figure} 
+
+
+\subsection{Experiment setting}
+ We implement these 3 model with scikit-learn library\footnote{scikit-learn.org/}. We shuffled the 260 events and split them into 10 subset, we uses them for 10 times cross-validation. We show the parameters after optimization for each model them in table \ref{tab:single_model_para}.
 
 \begin{table*}[!h]
  \centering
@@ -83,14 +143,29 @@ Most of existing researches use SVM, Random Forest and DT. We test our data also
  \caption{Parameters of Classification models}
  \label{tab:single_model_para}
 \end{table*}
+We implement the neural network with tensor-flow and python library Keras \footnote{https://keras.io/}.
+ \subsubsection{Embedding Layer}  
+ The first layer is embedding layer which is set up the same to all models.The embedding size is 50. The output of the embedding layer is the vectors presenting the words. 
+ \subsubsection{Limit Overfitting}  
+ To avoid overfitting we use 10-fold cross validation and dropout technology.
+ 
+  \section{Tested Results}  
+  We show the results in the table \ref{tab:single_result}. 
+   The best accuracy result is C-LSTM model. In table \ref{tab:False_label} and \ref{tab:True_label} we show some samples of correct labeling and in correct labeling.
 
- We show the results in the table \ref{tab:single_result}. The  best model with the highest accuracy is RF, but it reaches only 64.87\% and the other two models are even worse, so it is clear to see with manually handcrafted features, one single tweet is difficulty to be classified.  
+ The non-neural network model with the highest accuracy is RF, but it reaches only 64.87\% and the other two models are even worse, so it is clear to see with manually handcrafted features, one single tweet is difficulty to be classified.  
  \begin{table*}[!h]
  \centering
 \scalebox{1.1}{
  \begin{tabular}{@{}lllllll@{}}
  \toprule
  \textbf{Model} & \textbf{Accuracy} \\ \midrule
+  \textbf{CNN+RNN} & \textbf{0.8119 }\\
+ 2-layer GRU & 0.7891\\
+ GRU & 0.7644\\
+ LSTM & 0.7493\\
+ Basic RNN with tanh &  0.7291\\
+ FastText &  0.6602\\ \bottomrule
  Random Forest & \textbf{0.6487 }\\
  SVM &  0.5802\\
  Decision Trees &  0.5774\\ \bottomrule
@@ -98,13 +173,16 @@ Most of existing researches use SVM, Random Forest and DT. We test our data also
  \caption{Prediction Accuracy of Different Single Tweet's Creditability Scoring Models}
  \label{tab:single_result}
 \end{table*}
+ 
+ \section{Disscution}  
 
- And we rank the features using the features importance which we mentioned in section \ref{random_forest}, showing in table \ref{tab:Features_Importance}. The best feature is polarity scores of sentiment. It means that there is a big bias between the rumors tweets and the tweets real events. It was mentioned by previous work \cite{allport1947psychology} where he gathered a large rumors collection during WW2 which are printed in the Boston Heralds Rumor Clinic. He summarized rumors as several types:  pipe-dream, fear and aggression. The most researches believe that rumors mostly contain negative sentiment and polarity \cite{sunstein2014rumors}\cite{kwon2013aspects}. In our study average polarity score of news event is -0.066 and average polarity score of rumors is -0.1393, it means that rumors contain more negative sentiment. 
+ We rank the features using the features importance which we mentioned in section \ref{random_forest}, showing in table \ref{tab:Features_Importance}. The best feature is polarity scores of sentiment. It means that there is a big bias between the rumors tweets and the tweets real events. It was mentioned by previous work \cite{allport1947psychology} where he gathered a large rumors collection during WW2 which are printed in the Boston Heralds Rumor Clinic. He summarized rumors as several types:  pipe-dream, fear and aggression. The most researches believe that rumors mostly contain negative sentiment and polarity \cite{sunstein2014rumors}\cite{kwon2013aspects}. In our study average polarity score of news event is -0.066 and average polarity score of rumors is -0.1393, it means that rumors contain more negative sentiment. 
  
  And we usually think the verified users may have less possibility to be involved in the rumors' spreading, but the result shows that the verified users may be not really trustful like we thought. And "IsReweet" feature is neither a good feature which means the probability of people retweeting the rumors or true events are similar.
  
   
  
+
 
 \begin{table*}[!h]
  \centering
@@ -145,79 +223,57 @@ Sad	&	0\\ \bottomrule
 \label{tab:Features_Importance}
 \end{table*}
 
- \clearpage
- \section{Single Tweet's Creditability Model without handcrafted features} 
-\label{sec:single_nofeature}
-As we showed in last section. The result of Single Tweet's Creditability Model with handcrafted features no matter with SVM, DT or RF is not so convincible. We may miss some important features we didn't mine out of the tweet. 
+In table \ref{tab:True_label} and \ref{tab:False_label} we show some example of neural network's misclassification and  correctly classification. The misclassification of news are likely some common users' comments like "Who the hell is Mo Yan? Obviously a genious.........or a total bore.". We can compare them with true news tweets like "Congratulations! Mo Yan of this year Nobel Prize!", these misclassification tweets maybe contain doubt, banter or even rumor related. And on the other hand, the misclassification tweets of rumors, some of them are reports of news website  or they may have a news-likely style like 'Texas Town Quarantined After Family Of Five Test Positive For The Ebola Virus http://fb.me/3Bbw1uFLS'.
 
- Inspired by the Lai and J Ma's works \cite{lai2015recurrent} \cite{madetecting} we test neural networks as the classifier which does not need to extract features from the data.
-Based on the previous work we tested it with 6 models: Basic tanh-RNN \ref{fig:SRNN}, 1-layer GRU-RNN \ref{fig:1GRU} ,1-layer LSTM \ref{fig:1LSTM}, 2-layer GRU-RNN \ref{fig:2GRU}, Fasttext \ref{fig:fasttext} and CNN+LSTM \ref{fig:CNNLSTM}  model  as figure \ref{fig:2GRU} model. Basic tanh-RNN, 1-layer GRU-RNN, 1-layer LSTM-RNN and 2-layer GRU-RNN models are based on the work of J Ma's works \cite{madetecting} . Fasttext comes from joulin's work  \cite{joulin2016bag} which is a fast text classification model no need of GPU acceleration. The hybrid model of CNN and LSTM (C-LSTM) is zhou idea \cite{zhou2015c} which has the best performance in out experiments. 
-
-\begin{figure}[]
-
-  \centering
-
-\subfigure[Sample RNN Model]{\label{fig:SRNN}
-\centering
-  \includegraphics[width=0.22\columnwidth]{images/simRNN.png}
-} %
-\subfigure[1-layer GRU-RNN]{\label{fig:1GRU}
-\centering
-  \includegraphics[width=0.22\columnwidth]{images/GRUlayer.png}
-}
-\subfigure[1-layer LSTM-RNN]{\label{fig:1LSTM}
-\centering
-  \includegraphics[width=0.22\columnwidth]{images/LSTMLayer.png}
-}
-\subfigure[2-layer GRU-RNN]{\label{fig:2GRU}
-\centering
-  \includegraphics[width=0.22\columnwidth]{images/2gru.png}
-}
-\subfigure[FastText]{\label{fig:fasttext}
-\centering
-  \includegraphics[width=0.22\columnwidth]{images/fasttext.png}
-}
-\subfigure[Hybrid CNN + LSTM (C-LSTM)]{\label{fig:CNNLSTM}
-\centering
-  \includegraphics[width=0.22\columnwidth]{images/CNNLSTM.png}
-}
-\caption{neural network model for single tweet classification 1}
-\label{fig:NNModel1}
-\end{figure}
-
-
-
-  \subsection{Data Preparing} % (fold)
-We test the above models with same dataset and same shuffled sequence as the RF, SVM model. The difference is the we feed only the text of each tweet to the neural network models. And we randomly take 20\% data from the training set to be the valid set for optimizing the parameters. 
- \subsection{Embedding Layer}  
- The first layer is embedding layer which is set up the same to all models.The embedding size is 50. The output of the embedding layer is the vectors presenting the words.  
-  \subsection{Tested Results}  
-  The best accuracy result is C-LSTM model as shown in table \ref{tab:single_result2}. To avoid overfitting we use 10-fold cross validation and dropout technology.  
-  
- \begin{table*}[!h]
+But the sometime the action of neural network is hard to explain, because we don't know how it exactly works inside. For example "Dolphins 'deserve human rights' http://zite.to/zEfVKi" is labeled as rumors but similar tweet "Dolphins 'deserve human rights' http://bbc.in/yFU3og" is labeled to news.
+ 
+\begin{table*}[!h]
  \centering
-\scalebox{1.1}{
- \begin{tabular}{@{}lllllll@{}}
- \toprule
- \textbf{Model} & \textbf{Accuracy} \\ \midrule
- CNN+RNN & \textbf{0.8119 }\\
- 2-layer GRU & 0.7891\\
- GRU & 0.7644\\
- LSTM & 0.7493\\
- Basic RNN with tanh &  0.7291\\
- FastText &  0.6602\\ \bottomrule
- \end{tabular}}
- \caption{Prediction Accuracy of Different Single Tweet's Creditability Scoring Models }
- \label{tab:single_result2}
+\scalebox{1}{
+\begin{tabular}{@{\textbf{ }}cp{350pt}@{}}
+\toprule
+\textbf{Catalogue} & \textbf{Tweet} \\ \midrule
+News & Who the hell is Mo Yan? Obviously a genious.........or a total bore.\\\midrule
+ 			& we'll know in a few minutes...EU to win 2012 Nobel Peace Prize: Norwegian broadcaster http://reut.rs/WXXzLU via @reuters\\\midrule
+ 			& Wait, are these the Bizarro-world Nobels?\\ \midrule
+ 			& Little girl in California swims with huge 8 year old pet python http://bit.ly/2a3y7R7 via @BmaxNG\\\midrule
+			& Head of Fifa partner 'flees arrest': Ray Whelan, head of Fifa partner Match Hospitality, has fled to escape ar... http://bbc.in/1mkvNYZ\\\midrule
+			& Ahhh really, Dolphins deserve the same rights as humans? What's next, a race option for "porpoise" on legal documents? http://bbc.in/ArhIeb\\\midrule
+Rumors	&  
+\#Cancer Cell Phone Use at Night Does Not Cause Eye Cancer – http://snopes.com  http://goo.gl/i6qNQA\\\midrule
+			& BBC News: Afghan refugee involved in \#Wurzburg attack 'had IS flag in room' http://www.bbc.co.uk/news/world-europe-36832909 … \#ISIS \#Merkel \#Germany \#EU\\\midrule
+			& Texas Town Quarantined After Family Of Five Test Positive For The Ebola Virus http://fb.me/3Bbw1uFLS\\\midrule
+			& Yeahhhhh to stop making music period !  RT \@ ShallowShan\_: Bill gates really offered young thug 9 million to stop rapping ?\\\midrule
+			& Redbox is Hiring Kiosk Ambassadors! http://fb.me/1c5WGQIy2\\\midrule
+			& Samsung Pays Apple \$1 Billion Sending 30 Trucks Full of 5 Cents Coins: http://en.paperblog.com/samsung-pays-apple-1-billion-sending-30-trucks-full-of-5-cents-coins-294795/ ... Comments: http://news.ycombinator.com/item?id=4447550\\ \bottomrule
+
+\end{tabular}}
+\caption{Example of False Classification by Single Tweet Model}
+\label{tab:False_label}
 \end{table*}
 
-\newpage
-  \subsection{CNN + LSTM (C-LSTM) Model}  
-  The best accuracy result is C-LSTM model which is invented by zhou \cite{zhou2015c}. The architecture of the model is shown in figure \ref{fig:CNNLSTMde}. Front hidden layer is a CNN which can split the text to different features and the pooling layer group the same type of feature together then the last hidden layer is a LSTM layer. According to his paper C-LSTM achieved the best result for a 2-classification task with 87.8\% accuracy. And in our test it gets 81\% accuracy. 
+\begin{table*}[!h]
+ \centering
+\scalebox{1}{
+\begin{tabular}{@{\textbf{ }}cp{350pt}@{}}
+\toprule
+\textbf{Catalogue} & \textbf{Tweet} \\ \midrule
+News & Congratulations! Mo Yan of this year Nobel Prize!\\\midrule
+ 			& The Writer, the State and the Nobel - New York Times (blog): New York Times (blog)The Writer, the State and the ... http://bit.ly/Wa542Q \\\midrule
+ 			& The incompetent, collapsing EU wins the Nobel Peace Prize? Perhaps next year they could give it to Lance for uniting the world, against him\\ \midrule
+ 			& Just saw a video of a girl swimming with a Burmese Python on Facebook and i'm just sitting here like WTF?!? O.O\\\midrule
+			& FIFA Partner, Wanted in World Cup Ticket Scam, Is On the Run: SAO PAULO, Brazil -- FIFA partner Ray Whelan gav... http://on.mash.to/1njwnGx\\\midrule
+			& Dolphins 'deserve human rights' http://bbc.in/yFU3og \\\midrule
+Rumors			& Osama Bin Laden is Still Alive - Edward Snowden http://www.middleeastrising.com/breaking-osama-bin-laden-is-still-alive/ ...\\\midrule
+			& Samsung pays Apple \$1 billion sending  30 trucks full with 5 cents coin! Crazy! \#dirtybutgenius\\\midrule
+			& AMC Announces 'Breaking Bad' To Return For 6th Season; You Won't Believe This Plot Twist http://fb.me/6OYRIMdKx\\\midrule
+			& For Bill Gates to offer Young Thug \$9mill to stop doing music \\\midrule
+			& Redbox Kiosk Ambassadors \#booths http://dragplus.com/post/id/ 34363441 ...\\\midrule
+			& Gabourey Sidibe on Joining American Horror Story: Coven: I Hope I Don't Die! http://owl.li/2wzo2t\\
+ 			\bottomrule
+
+\end{tabular}}
+\caption{Example of Correct Classification by Single Tweet Model}
+\label{tab:True_label}
+\end{table*}
   
-  \begin{figure}
-\centering
-\includegraphics[width=0.8\columnwidth]{images/CNNLSTMdetail.png}
-\caption{The architecture of C-LSTM Interface (source: \cite{zhou2015c})}
-\label{fig:CNNLSTMde}
-\end{figure} 

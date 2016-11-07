@@ -35,6 +35,11 @@ L.~M. Bettencourt, A.~Cintr{\'o}n-Arias, D.~I. Kaiser, and
 \newblock {\em Physica A: Statistical Mechanics and its Applications},
   364:513--536, 2006.
 
+\bibitem{borge2012absence}
+J.~Borge-Holthoefer and Y.~Moreno.
+\newblock Absence of influential spreaders in rumor dynamics.
+\newblock {\em Physical Review E}, 85(2):026116, 2012.
+
 \bibitem{breiman1996bagging}
 L.~Breiman.
 \newblock Bagging predictors.
@@ -142,6 +147,12 @@ Y.~LeCun, B.~Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, W.~Hubbard, and
 \newblock Backpropagation applied to handwritten zip code recognition.
 \newblock {\em Neural computation}, 1(4):541--551, 1989.
 
+\bibitem{levenberg1944method}
+K.~Levenberg.
+\newblock A method for the solution of certain non-linear problems in least
+  squares.
+\newblock {\em Quarterly of applied mathematics}, 2(2):164--168, 1944.
+
 \bibitem{liu2015real}
 X.~Liu, A.~Nourbakhsh, Q.~Li, R.~Fang, and S.~Shah.
 \newblock Real-time rumor debunking on twitter.
@@ -170,6 +181,13 @@ Y.~Matsubara, Y.~Sakurai, B.~A. Prakash, L.~Li, and C.~Faloutsos.
 C.~Matthews.
 \newblock How does one fake tweet cause a stock market crash.
 \newblock {\em Wall Street \& Markets: Time}, 2013.
+
+\bibitem{mcminn2013building}
+A.~J. McMinn, Y.~Moshfeghi, and J.~M. Jose.
+\newblock Building a large-scale corpus for evaluating event detection on
+  twitter.
+\newblock In {\em Proceedings of the 22nd ACM international conference on
+  Information \& Knowledge Management}, pages 409--418. ACM, 2013.
 
 \bibitem{mendoza2010twitter}
 M.~Mendoza, B.~Poblete, and C.~Castillo.
@@ -217,6 +235,12 @@ S.~J. Russell, P.~Norvig, J.~F. Canny, J.~M. Malik, and D.~D. Edwards.
 \newblock {\em Artificial intelligence: a modern approach}, volume~2.
 \newblock Prentice hall Upper Saddle River, 2003.
 
+\bibitem{seo2012identifying}
+E.~Seo, P.~Mohapatra, and T.~Abdelzaher.
+\newblock Identifying rumors and their sources in social networks.
+\newblock In {\em SPIE defense, security, and sensing}, pages 83891I--83891I.
+  International Society for Optics and Photonics, 2012.
+
 \bibitem{srivastava2014dropout}
 N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov.
 \newblock Dropout: a simple way to prevent neural networks from overfitting.
@@ -247,6 +271,12 @@ R.~Thomson, N.~Ito, H.~Suda, F.~Lin, Y.~Liu, R.~Hayasaka, R.~Isochi, and
 \newblock Trusting tweets: The fukushima disaster and information source
   credibility on twitter.
 \newblock {\em Proc. of ISCRAM}, 10, 2012.
+
+\bibitem{tripathy2010study}
+R.~M. Tripathy, A.~Bagchi, and S.~Mehta.
+\newblock A study of rumor control strategies on social networks.
+\newblock In {\em Proceedings of the 19th ACM international conference on
+  Information and knowledge management}, pages 1817--1820. ACM, 2010.
 
 \bibitem{wang2010don}
 A.~H. Wang.

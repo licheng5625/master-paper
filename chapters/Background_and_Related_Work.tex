@@ -1,7 +1,7 @@
 \chapter{Background and Related Work} % (fold)
 \label{cha:Related_Work}
 \section{Twitter}
-Twitter is a mircoblogging service. Now there are more than 140 million active users\footnote{https://blog.Twitter.com/2012/Twitter-turns-six}. User can publish short messages within 140 characters aka tweets.
+Twitter is a microblogging service. Now there are more than 140 million active users\footnote{https://blog.Twitter.com/2012/Twitter-turns-six}. User can publish short messages within 140 characters aka tweets.
 \subsection{Retweet}
 A retweet is re-posting of a tweet by other users. One way of retweet is using RT at the beginning of the tweet which is retweeted. The other way is using "retweet button" which is officially launched by Twitter after 2015. The difference between these two retweet is tweets are retweeted by "retweet button" can't be searched by Twitter's searching interface, but manually retweets with RT keyword can. So in our work retweet means the tweets are retweeted manually. The number of how many times of this tweet has been retweeted is showed behind it.
 
@@ -65,7 +65,7 @@ The supervised learning is the most popular method of ML. It needs a set of inpu
 
 The unsupervised learning needs a set of inputs but no outputs. The algorithm will generate the outputs like clusters or patterns. The unsupervised learning task can be used for example when people can't label the outputs. 
 \subsection{ Decision Tree} % (fold)
-Classification is a supervised data mining technique. Our work can be considered as a classification task. Decision tree is a model we use for base line in the after work. A decision tree uses a tree model of decisions and their possible consequences as shown in figure \ref{fig:detrees}.  DT is an non-parametric supervised learning method used for classification and regression. Because the trees structure is very simple to visualize, the result of DT is easy to understand. But Decision trees are unstable \cite{breiman1996bagging}. But DT is the basic unit of random forest.
+Classification is a supervised data mining technique. Our work can be considered as a classification task. Decision tree is a model we use for base line in the after work. A decision tree uses a tree model of decisions and their possible consequences as shown in figure \ref{fig:detrees}.  DT is an non-parametric supervised learning method used for classification and regression. Because the trees structure is very simple to visualize, so the result of DT is easy to understand. But Decision trees are unstable \cite{breiman1996bagging}. DT is the basic unit of random forest.
 \begin{figure}[!h]
 \center
 \tikzset{
@@ -240,7 +240,7 @@ backwards through the network \cite{rumelhart1988learning}.
 \end{figure}
 \newpage
  \subsection{Convolutional Neural Network} % (fold)
-CNN is a kind of neural network which contains a convolutional layers. First CNN is developed by LeCun et al. developed CNNs \cite{lecun1989backpropagation} for computer vision to resolve the problem of imagines' shift or rotation. With the convolutional layer CNN make that is possible to learn from the local features. Figure \ref{fig:cnn2} is an example p of CNN in application of text classification. The word "wait" and its following word "for" are mapped together into different classes though different convolutional filters. That makes convolutional neural network does not learn from the single word form sentence but from the word and its context. That makes sense because one word can in different context have different meaning. For example "Apple Tree" and "Apple Company", the same apple but contains different meaning. 
+CNN is a kind of neural network which contains a convolutional layers. First CNN is developed by LeCun et al. \cite{lecun1989backpropagation} for computer vision to resolve the problem of imagines' shift or rotation. With the convolutional layer CNN make that is possible to learn from the local features. Figure \ref{fig:cnn2} is an example p of CNN in application of text classification. The word "wait" and its following word "for" are mapped together into different classes though different convolutional filters. That makes convolutional neural network does not learn from the single word form sentence but from the word and its context. That makes sense because one word can in different context have different meaning. For example "Apple Tree" and "Apple Company", the same apple but contains different meaning. 
  Pooling layer often follows after the convolutional layers in CNN models whose mainly task is to down-sample from the output of convolutional layers.  
  
  We use it for for single tweet's creditability score model in the later section \ref{sec:single_nofeature}
@@ -544,46 +544,38 @@ In our work we split the data not equally, we consider an event as a unit.  We u
 
 \section{Levenberg-Marquardt Method} % (fold)
 \label{sec:LM}
+The Levenberg-Marquardt algorithm (LMA), Aka. damped least-squares (DLS) method, is used to solve non-linear least squares problems which usually happen in least squares curve fitting.
 
-\section{Spark } % (fold)
+The algorithm was first published in 1944 by Kenneth Levenberg\cite{levenberg1944method}. 
+
+In our work we use it to fit SpikeM model, SIS and SEIZ models.
+
+ 
 \section{Tensorflow } % (fold)
+TensorFlow\footnote{http://tensorflow.org} is an open source software library for numerical computation using data flow graphs which is used in the single tweet credibility scoring model. It is developed by google. But it still hard for beginner to use and  debug. So we use a high-level neural networks library Keras\footnote{https://keras.io/} which can run on top of TensorFlow. It is much simpler to configure or to implement. 
 
 \section{Related Work } % (fold)
-People research on Twitter for a long time and there are a lots directions  to study this complex social network like event detection\cite{kimmey2015twitter}, spam detection \cite{ahmed2012mcl} \cite{wang2010don} or sentiment detection\cite{barbosa2010robust}. These work are similar with our task rumor detection but still contain many differences.
+People research on Twitter for a long time and there are a lots directions  to study this complex social network like event detection \cite{kimmey2015twitter} of Kimmey and David, spam detection \cite{ahmed2012mcl} \cite{wang2010don} or sentiment detection\cite{barbosa2010robust}. Those works are similar to our task rumor detection but there are  still many differences. In Javier and Yamir's work\cite{borge2012absence} they use the struct of real world blogs network to identify the influential spreaders of rumor events. 
 
-People first studied on rumors in psychology area for years \cite{allport1947psychology} \cite{sunstein2014rumors}.
+People first studied on rumors in psychology area for years \cite{allport1947psychology} \cite{sunstein2014rumors}. They summarized the type of rumors or the sentiment with rumors. They are quite help for rumor analyzing in Twitter. 
+
 But since Twitter becomes an important platform for people sharing and exchanging information including rumors, the detection of misinformation on twitter turns to be a trending researching topic. 
 
-Researcher first began from studying rumor spreading during several special events like natural disasters\cite{oh2010exploration} \cite{tanaka2012transmission}\cite{mendoza2010twitter}  or terrorist attacks \cite{starbird2014rumors}. But these results are not general enough to other types of rumors. Our data includes sports, politic, entertainment, also natural disasters and other kinds of rumors. 
+Researcher first began from studying rumor spreading during several special events like natural disasters\cite{oh2010exploration} \cite{tanaka2012transmission}\cite{mendoza2010twitter}  or terrorist attacks \cite{starbird2014rumors}. In the work of Tanaka et al.  \cite{tanaka2012transmission}, they analyzed the how the psychological factors influence the information transmission via tweets.  But these results are not general enough to other types of rumors. Our data includes sports, politic, entertainment, also natural disasters and other kinds of rumors. 
 
-Carlos Castillo researched the information credibility on Twitter\cite{castillo2011information}\cite{gupta2014tweetcred}. But his work is more about people opinion (trustful or not) to a tweet not the credibility of tweet itself. But it still a good start of resolving problem. Lots of other works are based on Castillo's work \cite{yang2012automatic} \cite{liu2015real} and used different set of features, for example yang \cite{yang2012automatic} add the location of poster and the client type of user (web client or mobile phone) as two important features.
-And 
+Carlos Castillo et al. researched the information credibility on Twitter\cite{castillo2011information}\cite{gupta2014tweetcred}. They hired people to label the tweets as trustful, mostly untrustworthy and untrustworthy. And they trained a SVMRank model to rank the credibility of Tweets.  But his work is based on people's opinion (trustful or not) to a tweet not the credibility of tweet itself. In other words, a false rumor tweet can be trusted by human, but some comments of true news seems not trustful. But it still a good start of researching this problem. Lots of other works are based on Castillo's work \cite{yang2012automatic} \cite{liu2015real} and used different set of features, for example yang \cite{yang2012automatic} added the location of poster and the client type of user (web client or mobile phone) as two important features.
+
+And there are some simulation studies about the propagation of rumor in twitter. The work of Eunsoo et al.  \cite{seo2012identifying} builds a simulation system with random sources. And they use the propagation graph to detect the sources. Rudra et al.'work \cite{tripathy2010study} use the SIS model to discuss the strategies of preventing rumors' spreading on social networks. They are great works but the simulation environment can not compare with the complex of real network.
+
+There are recent researches based on the propagation structure of rumor on Sina Weibo for example work of Liu et al.\cite{wu2015false}. They use the unique feature of Sina Weibo to study the propagation pattern of rumors and achieved good results. But unfortunately Twitter doesn't give us such detail of propagation process like Weibo, so these works can help us.  And Liu's work \cite{wu2015false} focused on one type of rumor "the false photos" on social network not the general type of rumors.  
+
+Xiaomo et al. claimed their system is the first real time rumor debunking system on Twitter \cite{liu2015real}. But their work are similar with above other previous works, they use the static features of rumors and ignored the feature's changing over time during the event spreading on the social network, but one feature called "crowd wisdom" is an new idea and we use it in our work.
 
 
+Other researchers used propagation models like SpikeM \cite{kwon2013prominent} Kwon et al. and SEIZ models \cite{jin2013epidemiological} Jin et al. to capture the tweet's volume changing over time, but they didn't use other features into time series model. And these features can't show the effect in the early stage of rumor spreading. We can provide it in the later section \ref{featureanalyzing}. Bao et al. used SPNR model which is an extended SIS model as a strategy to control rumors \cite{bao2013new}. 
 
-There are rencent researches based on the propagation structure of rumor on Sina Weibo\cite{wu2015false}  \cite{bao2013new}, but Twitter doesn't give us such detail of propagation like Weibo, so these works are useless for us. 
+J Ma et al. used Recurrent Neural Networks for rumor detection \cite{madetecting}, they input the tweet of rumor event into RNN time sequentially. Without any other   handcrafted features, they got almost 90\% accuracy.
+As the same disadvantage of all kinds of Neural Networks models, the process of model's training and testing is black box to us, so we can't know the reason why we got this result. In our case we can't get the evidences to convince people why the detected event is more likely to be a rumor or rather than a breaking news. 
 
-Liu's work \cite{wu2015false} focused on one type of rumor "the false photos" on social network not the general type of rumors.  
-
-Xiaomo claimed their system is the first real time rumor debunking system on Twitter \cite{liu2015real}. But their work are similar with above other previous works, they use the static features of rumors and ignored the feature's changing over time during the event spreading on the social network which can be seen in figure \ref{fig:Url5000} and \ref{fig:largecity}. The fraction of tweets containing url with top 5000 domain and the fraction of poster living in large city which are both constantly changing. But one feature called "crowd wisdom" is an new idea and we use it in our work.
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.52\columnwidth]{images/url5000.png}
-\caption{The fraction of tweets containing url with top 5000 domain}
-\label{fig:Url5000}
-\end{figure}
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.52\columnwidth]{images/largecity.png}
-\caption{The fraction of poster living in large city}
-\label{fig:largecity}
-\end{figure}
-
-\newpage
-Other researchers used propagation models like SpikeM \cite{kwon2013prominent} and SEIZ models \cite{jin2013epidemiological} to capture the tweet's volume changing over time, but they didn't use other features into time series model. And these features can't show the effect in the early stage of rumor spreading. We can provide it in the later section \ref{featureanalyzing}.
-
-J Ma used Recurrent Neural Networks for rumor detection \cite{madetecting}, as the same disadvantage of the other Neural Networks models, the process of model's training is black box to us, so we can't know way we got this result. In our case we can't get the evidences to convince people why the detected event is more likely to be a rumor or rather than a breaking news. 
-
-Another work from J Ma used a time series model called Dynamic Series-Time Structure \cite{ma2015detect} to capture the variation of features. But they only used the features of social content and they didn't further explain how the performances of features change over time or how do they improve the performance of the model in first few hours after the events beginning.  We use their Series-Time Structure with our extended data and we will show how do these features change during time.
+Another work from J Ma et al. used a time series model called Dynamic Series-Time Structure \cite{ma2015detect} to capture the variation of features. But they only used the features of social content and they didn't further explain how the performances of features change over time or how do they improve the performance of the model in first few hours after the events beginning.  We use their Series-Time Structure with our extended data and we will show how do these features change during time. 
 

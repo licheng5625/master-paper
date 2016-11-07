@@ -1,73 +1,82 @@
 \BOOKMARK [0][-]{chapter*.1}{Abstract}{}% 1
 \BOOKMARK [0][-]{chapter*.2}{Acknowledgment}{}% 2
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 3
-\BOOKMARK [1][-]{subsection.1.0.1}{Contributions}{chapter.1}% 4
-\BOOKMARK [2][-]{subsection.1.0.2}{Thesis Outline}{subsection.1.0.1}% 5
-\BOOKMARK [0][-]{chapter.2}{Background and Related Work}{}% 6
-\BOOKMARK [1][-]{section.2.1}{Twitter}{chapter.2}% 7
-\BOOKMARK [2][-]{subsection.2.1.1}{Retweet}{section.2.1}% 8
-\BOOKMARK [2][-]{subsection.2.1.2}{Mentions}{section.2.1}% 9
-\BOOKMARK [2][-]{subsection.2.1.3}{Hashtags}{section.2.1}% 10
-\BOOKMARK [2][-]{subsection.2.1.4}{Favorite}{section.2.1}% 11
-\BOOKMARK [2][-]{subsection.2.1.5}{Verified User}{section.2.1}% 12
-\BOOKMARK [2][-]{subsection.2.1.6}{Followers}{section.2.1}% 13
-\BOOKMARK [2][-]{subsection.2.1.7}{Following}{section.2.1}% 14
-\BOOKMARK [2][-]{subsection.2.1.8}{Twitter API}{section.2.1}% 15
-\BOOKMARK [1][-]{section.2.2}{Credibility of Tweets}{chapter.2}% 16
-\BOOKMARK [1][-]{section.2.3}{Definition of Rumor}{chapter.2}% 17
-\BOOKMARK [2][-]{subsection.2.3.1}{Rumor Event}{section.2.3}% 18
-\BOOKMARK [2][-]{subsection.2.3.2}{Time Period of an Event}{section.2.3}% 19
-\BOOKMARK [1][-]{section.2.4}{Machine Learning}{chapter.2}% 20
-\BOOKMARK [2][-]{subsection.2.4.1}{Machine learning Overview}{section.2.4}% 21
-\BOOKMARK [2][-]{subsection.2.4.2}{Decision Tree}{section.2.4}% 22
-\BOOKMARK [2][-]{subsection.2.4.3}{Random Forest \(RF\)}{section.2.4}% 23
-\BOOKMARK [1][-]{section.2.5}{Neural Network}{chapter.2}% 24
-\BOOKMARK [2][-]{subsection.2.5.1}{Convolutional Neural Network}{section.2.5}% 25
-\BOOKMARK [2][-]{subsection.2.5.2}{Recurrent Neural Network}{section.2.5}% 26
-\BOOKMARK [2][-]{subsection.2.5.3}{Long Short-Term Memory}{section.2.5}% 27
-\BOOKMARK [2][-]{subsection.2.5.4}{GRU Cell}{section.2.5}% 28
-\BOOKMARK [2][-]{subsection.2.5.5}{Dropout}{section.2.5}% 29
-\BOOKMARK [1][-]{section.2.6}{K Fold Cross Validation}{chapter.2}% 30
-\BOOKMARK [1][-]{section.2.7}{Levenberg-Marquardt Method}{chapter.2}% 31
-\BOOKMARK [1][-]{section.2.8}{Spark}{chapter.2}% 32
-\BOOKMARK [1][-]{section.2.9}{Tensorflow}{chapter.2}% 33
-\BOOKMARK [1][-]{section.2.10}{Related Work}{chapter.2}% 34
-\BOOKMARK [0][-]{chapter.3}{Data Collection}{}% 35
-\BOOKMARK [0][-]{chapter.4}{Single Tweet's Creditability Scoring Model}{}% 36
-\BOOKMARK [1][-]{section.4.1}{Single Tweet's Creditability Model with handcrafted features}{chapter.4}% 37
-\BOOKMARK [2][-]{subsection.4.1.1}{Features}{section.4.1}% 38
-\BOOKMARK [2][-]{subsection.4.1.2}{Classification Methods}{section.4.1}% 39
-\BOOKMARK [1][-]{section.4.2}{Single Tweet's Creditability Model without handcrafted features}{chapter.4}% 40
-\BOOKMARK [2][-]{subsection.4.2.1}{Data Preparing}{section.4.2}% 41
-\BOOKMARK [2][-]{subsection.4.2.2}{Embedding Layer}{section.4.2}% 42
-\BOOKMARK [2][-]{subsection.4.2.3}{Tested Results}{section.4.2}% 43
-\BOOKMARK [2][-]{subsection.4.2.4}{CNN + LSTM \(C-LSTM\) Model}{section.4.2}% 44
-\BOOKMARK [0][-]{chapter.5}{Time Seriers Rumor Detection Model}{}% 45
-\BOOKMARK [1][-]{section.5.1}{Dynamic Series-Time Structure \(DSTS\)}{chapter.5}% 46
-\BOOKMARK [2][-]{subsection.5.1.1}{Time Stamps Generation}{section.5.1}% 47
-\BOOKMARK [2][-]{subsection.5.1.2}{Dynamic Series-Time Structure \(DSTS\)}{section.5.1}% 48
-\BOOKMARK [1][-]{section.5.2}{Features}{chapter.5}% 49
-\BOOKMARK [2][-]{subsection.5.2.1}{Text Features}{section.5.2}% 50
-\BOOKMARK [2][-]{subsection.5.2.2}{Twitter Features}{section.5.2}% 51
-\BOOKMARK [2][-]{subsection.5.2.3}{User Features}{section.5.2}% 52
-\BOOKMARK [2][-]{subsection.5.2.4}{Epidemiological Modeling Features}{section.5.2}% 53
-\BOOKMARK [2][-]{subsection.5.2.5}{SpikeM model Features}{section.5.2}% 54
-\BOOKMARK [2][-]{subsection.5.2.6}{Crowd Wisdom Features}{section.5.2}% 55
-\BOOKMARK [2][-]{subsection.5.2.7}{CreditScore Features}{section.5.2}% 56
-\BOOKMARK [1][-]{section.5.3}{Classification Models}{chapter.5}% 57
-\BOOKMARK [1][-]{section.5.4}{Experiment Result}{chapter.5}% 58
-\BOOKMARK [2][-]{subsection.5.4.1}{Time Series VS Static Feature}{section.5.4}% 59
-\BOOKMARK [2][-]{subsection.5.4.2}{Feature Analyzing Over Time}{section.5.4}% 60
-\BOOKMARK [2][-]{subsection.5.4.3}{Text Features}{section.5.4}% 61
-\BOOKMARK [2][-]{subsection.5.4.4}{Twitter Features}{section.5.4}% 62
-\BOOKMARK [2][-]{subsection.5.4.5}{User Features}{section.5.4}% 63
-\BOOKMARK [2][-]{subsection.5.4.6}{SpikeM Features and Epidemiological Features}{section.5.4}% 64
-\BOOKMARK [2][-]{subsection.5.4.7}{Credit Score}{section.5.4}% 65
-\BOOKMARK [2][-]{subsection.5.4.8}{Crowd Wisdom}{section.5.4}% 66
-\BOOKMARK [2][-]{subsection.5.4.9}{Machine vs Human}{section.5.4}% 67
-\BOOKMARK [0][-]{chapter.6}{Outlook}{}% 68
-\BOOKMARK [1][-]{section.6.1}{Conclusion}{chapter.6}% 69
-\BOOKMARK [1][-]{section.6.2}{Future Work}{chapter.6}% 70
-\BOOKMARK [0][-]{section.6.2}{Bibliography}{}% 71
-\BOOKMARK [0][-]{table.caption.61}{List of Figures}{}% 72
-\BOOKMARK [0][-]{table.caption.61}{List of Tables}{}% 73
+\BOOKMARK [0][-]{chapter*.4}{Acknowledgment}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
+\BOOKMARK [1][-]{subsection.1.0.1}{Contributions}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.0.2}{Thesis Outline}{subsection.1.0.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Background and Related Work}{}% 7
+\BOOKMARK [1][-]{section.2.1}{Twitter}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.1.1}{Retweet}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.2}{Mentions}{section.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.3}{Hashtags}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.4}{Favorite}{section.2.1}% 12
+\BOOKMARK [2][-]{subsection.2.1.5}{Verified User}{section.2.1}% 13
+\BOOKMARK [2][-]{subsection.2.1.6}{Followers}{section.2.1}% 14
+\BOOKMARK [2][-]{subsection.2.1.7}{Following}{section.2.1}% 15
+\BOOKMARK [2][-]{subsection.2.1.8}{Twitter API}{section.2.1}% 16
+\BOOKMARK [1][-]{section.2.2}{Credibility of Tweets}{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.3}{Definition of Rumor}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.3.1}{Rumor Event}{section.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.2}{Time Period of an Event}{section.2.3}% 20
+\BOOKMARK [1][-]{section.2.4}{Machine Learning}{chapter.2}% 21
+\BOOKMARK [2][-]{subsection.2.4.1}{Machine learning Overview}{section.2.4}% 22
+\BOOKMARK [2][-]{subsection.2.4.2}{Decision Tree}{section.2.4}% 23
+\BOOKMARK [2][-]{subsection.2.4.3}{Random Forest \(RF\)}{section.2.4}% 24
+\BOOKMARK [1][-]{section.2.5}{Neural Network}{chapter.2}% 25
+\BOOKMARK [2][-]{subsection.2.5.1}{Convolutional Neural Network}{section.2.5}% 26
+\BOOKMARK [2][-]{subsection.2.5.2}{Recurrent Neural Network}{section.2.5}% 27
+\BOOKMARK [2][-]{subsection.2.5.3}{Long Short-Term Memory}{section.2.5}% 28
+\BOOKMARK [2][-]{subsection.2.5.4}{GRU Cell}{section.2.5}% 29
+\BOOKMARK [2][-]{subsection.2.5.5}{Dropout}{section.2.5}% 30
+\BOOKMARK [1][-]{section.2.6}{K Fold Cross Validation}{chapter.2}% 31
+\BOOKMARK [1][-]{section.2.7}{Levenberg-Marquardt Method}{chapter.2}% 32
+\BOOKMARK [1][-]{section.2.8}{Tensorflow}{chapter.2}% 33
+\BOOKMARK [1][-]{section.2.9}{Related Work}{chapter.2}% 34
+\BOOKMARK [0][-]{chapter.3}{Single Tweet's Creditability Scoring Model}{}% 35
+\BOOKMARK [1][-]{section.3.1}{Introduce}{chapter.3}% 36
+\BOOKMARK [1][-]{section.3.2}{Related Work}{chapter.3}% 37
+\BOOKMARK [1][-]{section.3.3}{Features}{chapter.3}% 38
+\BOOKMARK [2][-]{subsection.3.3.1}{Text Features}{section.3.3}% 39
+\BOOKMARK [2][-]{subsection.3.3.2}{User Features}{section.3.3}% 40
+\BOOKMARK [2][-]{subsection.3.3.3}{Twitter Features}{section.3.3}% 41
+\BOOKMARK [1][-]{section.3.4}{Classification Models}{chapter.3}% 42
+\BOOKMARK [2][-]{subsection.3.4.1}{Single Tweet's Creditability Model with handcrafted features}{section.3.4}% 43
+\BOOKMARK [2][-]{subsection.3.4.2}{Single Tweet's Creditability Model without handcrafted features}{section.3.4}% 44
+\BOOKMARK [2][-]{subsection.3.4.3}{Experiment setting}{section.3.4}% 45
+\BOOKMARK [1][-]{section.3.5}{Tested Results}{chapter.3}% 46
+\BOOKMARK [1][-]{section.3.6}{Disscution}{chapter.3}% 47
+\BOOKMARK [0][-]{chapter.4}{Time Seriers Rumor Detection Model}{}% 48
+\BOOKMARK [1][-]{section.4.1}{Dynamic Series-Time Structure \(DSTS\)}{chapter.4}% 49
+\BOOKMARK [2][-]{subsection.4.1.1}{Time Stamps Generation}{section.4.1}% 50
+\BOOKMARK [2][-]{subsection.4.1.2}{Dynamic Series-Time Structure \(DSTS\)}{section.4.1}% 51
+\BOOKMARK [1][-]{section.4.2}{Features}{chapter.4}% 52
+\BOOKMARK [2][-]{subsection.4.2.1}{Text Features}{section.4.2}% 53
+\BOOKMARK [2][-]{subsection.4.2.2}{Twitter Features}{section.4.2}% 54
+\BOOKMARK [2][-]{subsection.4.2.3}{User Features}{section.4.2}% 55
+\BOOKMARK [2][-]{subsection.4.2.4}{Epidemiological Modeling Features}{section.4.2}% 56
+\BOOKMARK [2][-]{subsection.4.2.5}{SpikeM model Features}{section.4.2}% 57
+\BOOKMARK [2][-]{subsection.4.2.6}{Crowd Wisdom Features}{section.4.2}% 58
+\BOOKMARK [2][-]{subsection.4.2.7}{CreditScore Features}{section.4.2}% 59
+\BOOKMARK [1][-]{section.4.3}{Classification Models}{chapter.4}% 60
+\BOOKMARK [1][-]{section.4.4}{Experiment Setting}{chapter.4}% 61
+\BOOKMARK [1][-]{section.4.5}{Experiment Result}{chapter.4}% 62
+\BOOKMARK [2][-]{subsection.4.5.1}{Random Forestts VS Static Features}{section.4.5}% 63
+\BOOKMARK [2][-]{subsection.4.5.2}{Feature Analyzing Over Time}{section.4.5}% 64
+\BOOKMARK [2][-]{subsection.4.5.3}{BestSet Features}{section.4.5}% 65
+\BOOKMARK [2][-]{subsection.4.5.4}{Text Features}{section.4.5}% 66
+\BOOKMARK [2][-]{subsection.4.5.5}{Twitter Features}{section.4.5}% 67
+\BOOKMARK [2][-]{subsection.4.5.6}{User Features}{section.4.5}% 68
+\BOOKMARK [2][-]{subsection.4.5.7}{SpikeM Features and Epidemiological Features}{section.4.5}% 69
+\BOOKMARK [2][-]{subsection.4.5.8}{Credit Score}{section.4.5}% 70
+\BOOKMARK [2][-]{subsection.4.5.9}{Crowd Wisdom}{section.4.5}% 71
+\BOOKMARK [2][-]{subsection.4.5.10}{Machine vs Human}{section.4.5}% 72
+\BOOKMARK [1][-]{section.4.6}{Discussion}{chapter.4}% 73
+\BOOKMARK [2][-]{subsection.4.6.1}{Why sentiment doesn't work so well in time series model}{section.4.6}% 74
+\BOOKMARK [2][-]{subsection.4.6.2}{performance of external URLs features}{section.4.6}% 75
+\BOOKMARK [1][-]{section.4.7}{Case Study: Munich Shooting}{chapter.4}% 76
+\BOOKMARK [0][-]{chapter.5}{Outlook}{}% 77
+\BOOKMARK [1][-]{section.5.1}{Conclusion}{chapter.5}% 78
+\BOOKMARK [1][-]{section.5.2}{Future Work}{chapter.5}% 79
+\BOOKMARK [0][-]{section.5.2}{Bibliography}{}% 80
+\BOOKMARK [0][-]{table.caption.71}{List of Figures}{}% 81
+\BOOKMARK [0][-]{table.caption.71}{List of Tables}{}% 82
