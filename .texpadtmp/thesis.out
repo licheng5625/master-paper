@@ -1,6 +1,6 @@
-\BOOKMARK [0][-]{chapter*.1}{Abstract}{}% 1
-\BOOKMARK [0][-]{chapter*.2}{Acknowledgment}{}% 2
-\BOOKMARK [0][-]{chapter*.4}{Acknowledgment}{}% 3
+\BOOKMARK [0][-]{chapter*.2}{Abstract}{}% 1
+\BOOKMARK [0][-]{chapter*.3}{Acknowledgment}{}% 2
+\BOOKMARK [0][-]{chapter*.5}{Acknowledgment}{}% 3
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
 \BOOKMARK [1][-]{subsection.1.0.1}{Contributions}{chapter.1}% 5
 \BOOKMARK [2][-]{subsection.1.0.2}{Thesis Outline}{subsection.1.0.1}% 6
@@ -58,25 +58,4 @@
 \BOOKMARK [2][-]{subsection.4.2.6}{Crowd Wisdom Features}{section.4.2}% 58
 \BOOKMARK [2][-]{subsection.4.2.7}{CreditScore Features}{section.4.2}% 59
 \BOOKMARK [1][-]{section.4.3}{Classification Models}{chapter.4}% 60
-\BOOKMARK [1][-]{section.4.4}{Experiment Setting}{chapter.4}% 61
-\BOOKMARK [1][-]{section.4.5}{Experiment Result}{chapter.4}% 62
-\BOOKMARK [2][-]{subsection.4.5.1}{Random Forestts VS Static Features}{section.4.5}% 63
-\BOOKMARK [2][-]{subsection.4.5.2}{Feature Analyzing Over Time}{section.4.5}% 64
-\BOOKMARK [2][-]{subsection.4.5.3}{BestSet Features}{section.4.5}% 65
-\BOOKMARK [2][-]{subsection.4.5.4}{Text Features}{section.4.5}% 66
-\BOOKMARK [2][-]{subsection.4.5.5}{Twitter Features}{section.4.5}% 67
-\BOOKMARK [2][-]{subsection.4.5.6}{User Features}{section.4.5}% 68
-\BOOKMARK [2][-]{subsection.4.5.7}{SpikeM Features and Epidemiological Features}{section.4.5}% 69
-\BOOKMARK [2][-]{subsection.4.5.8}{Credit Score}{section.4.5}% 70
-\BOOKMARK [2][-]{subsection.4.5.9}{Crowd Wisdom}{section.4.5}% 71
-\BOOKMARK [2][-]{subsection.4.5.10}{Machine vs Human}{section.4.5}% 72
-\BOOKMARK [1][-]{section.4.6}{Discussion}{chapter.4}% 73
-\BOOKMARK [2][-]{subsection.4.6.1}{Why sentiment doesn't work so well in time series model}{section.4.6}% 74
-\BOOKMARK [2][-]{subsection.4.6.2}{performance of external URLs features}{section.4.6}% 75
-\BOOKMARK [1][-]{section.4.7}{Case Study: Munich Shooting}{chapter.4}% 76
-\BOOKMARK [0][-]{chapter.5}{Outlook}{}% 77
-\BOOKMARK [1][-]{section.5.1}{Conclusion}{chapter.5}% 78
-\BOOKMARK [1][-]{section.5.2}{Future Work}{chapter.5}% 79
-\BOOKMARK [0][-]{section.5.2}{Bibliography}{}% 80
-\BOOKMARK [0][-]{table.caption.71}{List of Figures}{}% 81
-\BOOKMARK [0][-]{table.caption.71}{List of Tables}{}% 82
+\BOOKMARK 
