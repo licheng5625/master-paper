@@ -4,10 +4,9 @@
 
 \section{Conclusion}
 \vspace{-2mm}
-With the developing of social media. Twitter becomes an important platform for exchanging information. But the problem of the low credibility of tweet bothers all the users of Twitter. Without the complex process of verification like traditional media, Twitter users can easily publish breaking news or their opines, but they also can produce many rumors. Our work is using the temporal features to detecting rumor on Twitter. But at the first few hours after the beginning of the events, the tweet volume is limited and there is no propagation features yet, so we can only focus on the information of each single tweets. So we develop a single tweet credibility scoring model. We follow the Zhou's idea using neural network for short text classification task which get 81\% accuracy. We use the output of single tweet credibility scoring model as a new feature CreditScore which is the best feature in our experiment and it can improve the performance of our time series model $RF_{ts}$. 
+With the developing of social media, Twitter becomes an important platform for exchanging information. But the problem of the low information credibility has troubled all users of Twitter. Without the complex process of verification like traditional media, Twitter users can easily publish breaking news or their opinions, but they also can produce many rumors. Our work is using the temporal features to detecting rumor on Twitter. But at the first few hours after the beginning of the events, the tweets' volume is limited and there is no propagation features yet, so we can only focus on the information of each single tweets. So we develop a single tweet credibility scoring model. We follow the idea of zhou et al. which uses neural network to resolve short text classification task which gets 81\% accuracy. We use the output of single tweet credibility scoring model as a new feature CreditScore which is the best feature in our experiment and it can improve the performance of our time series model $TS-RF$. 
 
-And we analyze the performance of each features over 48 hours. The CreditScore is the feature and ContainNews is the second. Sentiment features are useless after 25 hours. And the crowd wisdom starts effect only after 24 hours. And there is no obvious difference of the verified users' behavior in a rumor event or a news event. Famous people is not guarantee of truth. Features of propagation models no matter SpikeM, SIS or SEIZ are not good enough. Because we limited the time period of events within 48 hours, the propagation pattern is still not so obvious. Comparing the previous work their time period of an event is more than one month. But our model has better timeliness.
-
+And we analyze the performance of each features over 48 hours. The CreditScore is the at least the second best feature in all case over time and ContainNews is the second good feature. Sentiment features are useless after 25 hours. And the CrowdWisdom feature starts effect only after 24 hours. And there is no obvious difference of the verified users' behavior in a rumor event or a news event. Famous people are not guarantees of truth. Features of propagation models, no matter SpikeM, SIS or SEIZ are not ideal. Because we limited the time period of events within 48 hours, the propagation pattern is still not so clear. 
 
 
 \section{Future Work} % (fold)
@@ -15,12 +14,12 @@ And we analyze the performance of each features over 48 hours. The CreditScore i
 
  In the future work we can do following works:
   \begin{itemize}
-   \item Because of limitation of time, we crawled only 260 events in twitter. We can extend it in the future. 
+   \item Because of limitation of time, we crawled only 260 events in Twitter. We can extend it in the future. 
 	
 
- \item The tweets are labeled as a whole event for single tweet credibility scoring model. But in the news event there are rumors or low credibility tweets, on other hand in rumor there are also denying tweet or high credibility tweets. We can manually label every single tweet.
- \item The time period in our experiment is constant 48 hours and the interval time is 1 hour. In the future work we can make the time period variable length according to the events' duration. 
- \item Because of limitation of time and ability, I test only several parameters' combination of neural network.  
+ \item The tweets of a event are all labeled as rumor or news for single tweet credibility scoring model. But in the news event there are rumors or low credibility tweets, on other hand in rumor there are also denying tweet or high credibility tweets. In the future, we can manually label every single tweet to increase the ground truth. 
+ \item The time period in our experiment is constant 48 hours and the interval time is 1 hour. In the future work we can use dynamic time period with variable length of time intervals.
+  \item Because of limitation of time and ability, we test only several parameters' combination of neural network. We can optimize the models with more parameters' combination.
   \end{itemize}
 
 % section future_work (end)

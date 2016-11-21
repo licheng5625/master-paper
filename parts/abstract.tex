@@ -1,16 +1,8 @@
 
 \chapter{Abstract}
  
-In this thesis, we propose a approach of detection of rumors in Twitter. 
+In this thesis, we extensively study the task of rumor detection in Twitter. Twitter is a microblogging service which is already used by millions of users. Users can publish and exchange information with short tweets through all kinds of Twitter clients: website, mobile phone or email. These advantages make Twitter an ideal media for spreading breaking news and false rumors.Therefore, automatic detecting rumors in social media has recently become a trending topic. Early research mostly focused on the rumors during one or several specific events like earthquake or terrorist attack. But in our work, we study on the general types of impact rumors. Additionally most previous works for rumor detection are modeled with static features, like the content of tweets or propagation features, and they ignored the fact which those features can change with the development of the event by time.
 
-Twitter is a microblogging service that which is already used by millions users. Users can publish and exchange information with short tweets whenever and wherever. This advantage makes Twitter an ideal media for spreading breaking news and false rumors.  
-
-So automatic detecting rumors on social media has become a trending topic. But early researches mostly focused on rumors during one or several events like earthquake or terrorist attack \cite{oh2010exploration} \cite{tanaka2012transmission}\cite{starbird2014rumors}. But in our work, we study on the general rumors.
-
-And most previous work for rumor detection modeled on static features like the content of tweets or propagation features, but they ignored that those features can change during the information's propagation over time.
-
-We build up a system with random forest and the Dynamic Series-Time Structure (DSTS) \cite{ma2015detect} using the temporal features and their varieties over time. And we test the Spike Model \cite{kwon2013prominent}, SIS Model and SEIZ Model  \cite{jin2013epidemiological} as temporal features in our model. To improve the time series model's performance at early stage of the event, we develop a single tweet's credibility scoring model with zhou's CNN+LSTM model \cite{zhou2015c} which can predict a single tweet whether is rumor related or not with 81.20\% accuracy. Finally our time series rumor detecting model gets 90\% accuracy within 48 hours. 
-
-As far as we know, we are the first research about the performances of features changing over time like the sentiment features are useless after 25 hours.    
+We build up a system with Random Forest and the dynamic model proposed by Ma et al.~\cite{ma2015detect} called Dynamic Series-Time Structure (DSTS) with the temporal features and their varieties over time which is named TS-RF. We adapt a series of mathematical epidemiological models (i.e., SpikeM, SIS and SEIZ) to model the propagation patterns of rumors and add them as temporal features for TS-RF. To improve the time series model's performance at early stage of the events, we develop a single tweet's credibility scoring model with CNN+LSTM, which can predict a single tweet as rumor related or news related, with 81.20\% accuracy. The output of the single tweet's credibility scoring model which we called CreditScore, is a novel and then is shown to be the best feature for time series model TS-RF in our extensive experiments. Overall, our time series rumor detecting model (TS-RF) reaches over 90\% accuracy and out-performs state-of-the-art models (e.g., DSTS) in the study of 48 hours. Last but not least, to the best of our knowledge, we are the first work to evaluate the temporal fluctuations performance of rumor features over time.
 
 
