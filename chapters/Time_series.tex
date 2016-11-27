@@ -620,7 +620,7 @@ Same reason as in the single tweet's Creditability, we test the time series mode
 
  
   \subsection{Experiment Result} 
- In this subsection, we will present the experiment results. We test all models by using 10-fold cross validation with same shuffled sequence, the experiment result is shown in the Table \ref{tab:time_result} and \ref{tab:Credit_time_result}. Time Series Random Forest (TS-RF) is Random Forest with 9 selected time series features in Section \ref{featusele}, $TS-MLP_{all}$ is time series data structure with MLP, $TS-SVM$ is the baseline from Ma et al. work \cite{ma2015detect}, $TS-SVM_{all}$ is $TS-SVM$ with all features which I mentioned above, $TS-SVM_{Credit}$ is $TS-SVM$ with CreditScore, $TS-SVM_{SpikeM}$ is $TS-SVM$ with epidemiological features.
+ In this subsection, we will present the experiment results. We test all models by using 10-fold cross validation with same shuffled sequence, the experiment result is shown in the Table \ref{tab:time_result}. Time Series Random Forest (TS-RF) is Random Forest with 9 selected time series features in Section \ref{featusele}, $TS-MLP_{all}$ is time series data structure with MLP, $TS-SVM$ is the baseline from Ma et al. work \cite{ma2015detect}, $TS-SVM_{all}$ is $TS-SVM$ with all features which I mentioned above, $TS-SVM_{Credit}$ is $TS-SVM$ with CreditScore, $TS-SVM_{SpikeM}$ is $TS-SVM$ with epidemiological features.
   
   As shown in the Table \ref{tab:time_result}, our model TS-RF has best performance in all case over time and CreditScore can significantly improve the performance of time series model in the first 24 hours of event. For example in the first hour, it improve the accuracy of the model from 0.65 of $TS-SVM$ to 0.71 of $TS-SVM_{Credit}$. And it is at least the second best feature in all case over time.
  
@@ -703,7 +703,7 @@ Firstly, we compare our time series model with the normal static feature model. 
 \centering
 \begin{tabular}{|c|c c |c|}
 \hline
-Hour & TS-RF & Static model & Difference \\ \hline
+Hour & TS-RF & Static RF & Difference \\ \hline
 1    & 0.82              & 0.78         & 0.03       \\
 6    & 0.86              & 0.8          & 0.06       \\
 12   & 0.87              & 0.83         & 0.04       \\
@@ -715,14 +715,14 @@ Hour & TS-RF & Static model & Difference \\ \hline
 48   & 0.89              & 0.87         & 0.02      \\\hline
 
 \end{tabular}
-\caption{Accuracy: Time Series VS Static Features}
+\caption{Accuracy: TS-RF VS Static RF}
 \label{TVSF}
 \end{table}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\columnwidth]{images/Vsstatic.png}
-\caption{Accuracy: Time Series VS Static Features}
+\caption{Accuracy: TS-RF VS Static RF}
 \label{fig:TVSF}
 \end{figure}
 
@@ -736,7 +736,7 @@ Hour & TS-RF & Static model & Difference \\ \hline
  \begin{figure}[!h]
 \centering
 \includegraphics[width=\columnwidth]{images/allfeatures.png}
-\caption{Accuracy: Time Series VS Static Features}
+\caption{Accuracy of Different Groups of Features}
 \label{fig:allfeature}
 \end{figure}
  
@@ -861,7 +861,7 @@ $Q_a$  			& 44 & 47& 47 & 21 & 38& 40& 44&41&33&38.04\\
  \begin{figure}[!h]
 \centering
 \includegraphics[width=\columnwidth]{images/WCVSAF.png}
-\caption{Accuracy: Time Series VS Static Features}
+\caption{Accuracy:Performance of Model with CreditScore VS Accuracy:Performance of Model without CreditScore}
 \label{fig:WCVSAF}
 \end{figure}
 
@@ -914,7 +914,7 @@ But some of the rumors have a long duration, the website may report it several m
   \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\columnwidth]{images/mutipikehiding.png}
-\caption{Tweet Volume Of Rumor about Tupac Shakur}
+\caption{Tweet Volume of Rumor about Tupac Shakur}
 \label{fig:Multipike}
 \end{figure}   
    
@@ -924,13 +924,13 @@ The result is shown in Table \ref{tab:Human_confit_rumor}. On average the editor
      \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\columnwidth]{images/Timestamphummanearlist.png}
-\caption{The Earliest Time Stamp Of Human Confirming Rumor}
+\caption{The Earliest Time Stamp of Human Confirming Rumor}
 \label{fig:ealiset_rumo}
 \end{figure} 
   \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\columnwidth]{images/Timestamphummanlatest.png}
-\caption{The Lastest Time Stamp Of Human Confirming Rumor}
+\caption{The Lastest Time Stamp of Human Confirming Rumor}
 \label{fig:lastest_rumo}
 \end{figure} 
   \begin{table*}[!h]

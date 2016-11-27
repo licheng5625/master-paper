@@ -1,0 +1,311 @@
+\begin{thebibliography}{10}
+
+\bibitem{ahmed2012mcl}
+F.~Ahmed and M.~Abulaish.
+\newblock An mcl-based approach for spam profile detection in online social
+  networks.
+\newblock In {\em 2012 IEEE 11th International Conference on Trust, Security
+  and Privacy in Computing and Communications}, pages 602--608. IEEE, 2012.
+
+\bibitem{allport1947psychology}
+G.~W. Allport and L.~Postman.
+\newblock The psychology of rumor.
+\newblock 1947.
+
+\bibitem{bao2013new}
+Y.~Bao, C.~Yi, Y.~Xue, and Y.~Dong.
+\newblock A new rumor propagation model and control strategy on social
+  networks.
+\newblock In {\em Proceedings of the 2013 IEEE/ACM International Conference on
+  Advances in Social Networks Analysis and Mining}, pages 1472--1473. ACM,
+  2013.
+
+\bibitem{barbosa2010robust}
+L.~Barbosa and J.~Feng.
+\newblock Robust sentiment detection on twitter from biased and noisy data.
+\newblock In {\em Proceedings of the 23rd International Conference on
+  Computational Linguistics: Posters}, pages 36--44. Association for
+  Computational Linguistics, 2010.
+
+\bibitem{bettencourt2006power}
+L.~M. Bettencourt, A.~Cintr{\'o}n-Arias, D.~I. Kaiser, and
+  C.~Castillo-Ch{\'a}vez.
+\newblock The power of a good idea: Quantitative modeling of the spread of
+  ideas from epidemiological models.
+\newblock {\em Physica A: Statistical Mechanics and its Applications},
+  364:513--536, 2006.
+
+\bibitem{borge2012absence}
+J.~Borge-Holthoefer and Y.~Moreno.
+\newblock Absence of influential spreaders in rumor dynamics.
+\newblock {\em Physical Review E}, 85(2):026116, 2012.
+
+\bibitem{breiman1996bagging}
+L.~Breiman.
+\newblock Bagging predictors.
+\newblock {\em Machine learning}, 24(2):123--140, 1996.
+
+\bibitem{breiman2001random}
+L.~Breiman.
+\newblock Random forests.
+\newblock {\em Machine learning}, 45(1):5--32, 2001.
+
+\bibitem{breiman1984classification}
+L.~Breiman, J.~Friedman, C.~J. Stone, and R.~A. Olshen.
+\newblock {\em Classification and regression trees}.
+\newblock CRC press, 1984.
+
+\bibitem{castillo2011information}
+C.~Castillo, M.~Mendoza, and B.~Poblete.
+\newblock Information credibility on twitter.
+\newblock In {\em Proceedings of the 20th international conference on World
+  wide web}, pages 675--684. ACM, 2011.
+
+\bibitem{cho2014learning}
+K.~Cho, B.~Van~Merri{\"e}nboer, C.~Gulcehre, D.~Bahdanau, F.~Bougares,
+  H.~Schwenk, and Y.~Bengio.
+\newblock Learning phrase representations using rnn encoder-decoder for
+  statistical machine translation.
+\newblock {\em arXiv preprint arXiv:1406.1078}, 2014.
+
+\bibitem{gupta2014tweetcred}
+A.~Gupta, P.~Kumaraguru, C.~Castillo, and P.~Meier.
+\newblock Tweetcred: Real-time credibility assessment of content on twitter.
+\newblock In {\em International Conference on Social Informatics}, pages
+  228--243. Springer, 2014.
+
+\bibitem{heverin2010microblogging}
+T.~Heverin and L.~Zach.
+\newblock {\em Microblogging for Crisis Communication: Examination of Twitter
+  Use in Response to a 2009 Violent Crisis in the Seattle-Tacoma, Washington,
+  Area}.
+\newblock ISCRAM, 2010.
+
+\bibitem{hochreiter1997long}
+S.~Hochreiter and J.~Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural computation}, 9(8):1735--1780, 1997.
+
+\bibitem{java2007we}
+A.~Java, X.~Song, T.~Finin, and B.~Tseng.
+\newblock Why we twitter: understanding microblogging usage and communities.
+\newblock In {\em Proceedings of the 9th WebKDD and 1st SNA-KDD 2007 workshop
+  on Web mining and social network analysis}, pages 56--65. ACM, 2007.
+
+\bibitem{jin2013epidemiological}
+F.~Jin, E.~Dougherty, P.~Saraf, Y.~Cao, and N.~Ramakrishnan.
+\newblock Epidemiological modeling of news and rumors on twitter.
+\newblock In {\em Proceedings of the 7th Workshop on Social Network Mining and
+  Analysis}, page~8. ACM, 2013.
+
+\bibitem{joulin2016bag}
+A.~Joulin, E.~Grave, P.~Bojanowski, and T.~Mikolov.
+\newblock Bag of tricks for efficient text classification.
+\newblock {\em arXiv preprint arXiv:1607.01759}, 2016.
+
+\bibitem{kim2014convolutional}
+Y.~Kim.
+\newblock Convolutional neural networks for sentence classification.
+\newblock {\em arXiv preprint arXiv:1408.5882}, 2014.
+
+\bibitem{kimmey2015twitter}
+D.~Kimmey.
+\newblock Twitter event detection.
+\newblock 2015.
+
+\bibitem{kohut2008internet}
+A.~Kohut and M.~Remez.
+\newblock Internet overtakes newspapers as news outlet.
+\newblock {\em Pew Research Centre}, 2008.
+
+\bibitem{kwak2010twitter}
+H.~Kwak, C.~Lee, H.~Park, and S.~Moon.
+\newblock What is twitter, a social network or a news media?
+\newblock In {\em Proceedings of the 19th international conference on World
+  wide web}, pages 591--600. ACM, 2010.
+
+\bibitem{kwon2013aspects}
+S.~Kwon, M.~Cha, K.~Jung, W.~Chen, and Y.~Wang.
+\newblock Aspects of rumor spreading on a microblog network.
+\newblock In {\em International Conference on Social Informatics}, pages
+  299--308. Springer, 2013.
+
+\bibitem{kwon2013prominent}
+S.~Kwon, M.~Cha, K.~Jung, W.~Chen, and Y.~Wang.
+\newblock Prominent features of rumor propagation in online social media.
+\newblock In {\em 2013 IEEE 13th International Conference on Data Mining},
+  pages 1103--1108. IEEE, 2013.
+
+\bibitem{lai2015recurrent}
+S.~Lai, L.~Xu, K.~Liu, and J.~Zhao.
+\newblock Recurrent convolutional neural networks for text classification.
+\newblock In {\em AAAI}, pages 2267--2273, 2015.
+
+\bibitem{lecun1989backpropagation}
+Y.~LeCun, B.~Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, W.~Hubbard, and
+  L.~D. Jackel.
+\newblock Backpropagation applied to handwritten zip code recognition.
+\newblock {\em Neural computation}, 1(4):541--551, 1989.
+
+\bibitem{levenberg1944method}
+K.~Levenberg.
+\newblock A method for the solution of certain non-linear problems in least
+  squares.
+\newblock {\em Quarterly of applied mathematics}, 2(2):164--168, 1944.
+
+\bibitem{liu2015real}
+X.~Liu, A.~Nourbakhsh, Q.~Li, R.~Fang, and S.~Shah.
+\newblock Real-time rumor debunking on twitter.
+\newblock In {\em Proceedings of the 24th ACM International on Conference on
+  Information and Knowledge Management}, pages 1867--1870. ACM, 2015.
+
+\bibitem{madetecting}
+J.~Ma, W.~Gao, P.~Mitra, S.~Kwon, B.~J. Jansen, K.-F. Wong, and M.~Cha.
+\newblock Detecting rumors from microblogs with recurrent neural networks.
+
+\bibitem{ma2015detect}
+J.~Ma, W.~Gao, Z.~Wei, Y.~Lu, and K.-F. Wong.
+\newblock Detect rumors using time series of social context information on
+  microblogging websites.
+\newblock In {\em Proceedings of the 24th ACM International on Conference on
+  Information and Knowledge Management}, pages 1751--1754. ACM, 2015.
+
+\bibitem{conf/kdd/MatsubaraSPLF12}
+Y.~Matsubara, Y.~Sakurai, B.~A. Prakash, L.~Li, and C.~Faloutsos.
+\newblock Rise and fall patterns of information diffusion: model and
+  implications.
+\newblock In Q.~Yang, D.~Agarwal, and J.~Pei, editors, {\em KDD}, pages 6--14.
+  ACM, 2012.
+
+\bibitem{matthews2013does}
+C.~Matthews.
+\newblock How does one fake tweet cause a stock market crash.
+\newblock {\em Wall Street \& Markets: Time}, 2013.
+
+\bibitem{mcminn2013building}
+A.~J. McMinn, Y.~Moshfeghi, and J.~M. Jose.
+\newblock Building a large-scale corpus for evaluating event detection on
+  twitter.
+\newblock In {\em Proceedings of the 22nd ACM international conference on
+  Information \& Knowledge Management}, pages 409--418. ACM, 2013.
+
+\bibitem{mendoza2010twitter}
+M.~Mendoza, B.~Poblete, and C.~Castillo.
+\newblock Twitter under crisis: can we trust what we rt?
+\newblock In {\em Proceedings of the first workshop on social media analytics},
+  pages 71--79. ACM, 2010.
+
+\bibitem{mills2009web}
+A.~Mills, R.~Chen, J.~Lee, and H.~Raghav~Rao.
+\newblock Web 2.0 emergency applications: How useful can twitter be for
+  emergency response?
+\newblock {\em Journal of Information Privacy and Security}, 5(3):3--26, 2009.
+
+\bibitem{oh2010exploration}
+O.~Oh, K.~H. Kwon, and H.~R. Rao.
+\newblock An exploration of social media in extreme events: Rumor theory and
+  twitter during the haiti earthquake 2010.
+\newblock In {\em ICIS}, page 231, 2010.
+
+\bibitem{olah2015understanding}
+C.~Olah.
+\newblock Understanding lstm networks.
+\newblock {\em Net: http://colah. github.
+  io/posts/2015-08-Understanding-LSTMs}, 2015.
+
+\bibitem{pascanu2013difficulty}
+R.~Pascanu, T.~Mikolov, and Y.~Bengio.
+\newblock On the difficulty of training recurrent neural networks.
+\newblock {\em ICML (3)}, 28:1310--1318, 2013.
+
+\bibitem{qazvinian2011rumor}
+V.~Qazvinian, E.~Rosengren, D.~R. Radev, and Q.~Mei.
+\newblock Rumor has it: Identifying misinformation in microblogs.
+\newblock In {\em Proceedings of the Conference on Empirical Methods in Natural
+  Language Processing}, pages 1589--1599. Association for Computational
+  Linguistics, 2011.
+
+\bibitem{rumelhart1988learning}
+D.~E. Rumelhart, G.~E. Hinton, and R.~J. Williams.
+\newblock Learning representations by back-propagating errors.
+\newblock {\em Cognitive modeling}, 5(3):1, 1988.
+
+\bibitem{russell2003artificial}
+S.~J. Russell, P.~Norvig, J.~F. Canny, J.~M. Malik, and D.~D. Edwards.
+\newblock {\em Artificial intelligence: a modern approach}, volume~2.
+\newblock Prentice hall Upper Saddle River, 2003.
+
+\bibitem{seo2012identifying}
+E.~Seo, P.~Mohapatra, and T.~Abdelzaher.
+\newblock Identifying rumors and their sources in social networks.
+\newblock In {\em SPIE defense, security, and sensing}, pages 83891I--83891I.
+  International Society for Optics and Photonics, 2012.
+
+\bibitem{srivastava2014dropout}
+N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov.
+\newblock Dropout: a simple way to prevent neural networks from overfitting.
+\newblock {\em Journal of Machine Learning Research}, 15(1):1929--1958, 2014.
+
+\bibitem{starbird2014rumors}
+K.~Starbird, J.~Maddock, M.~Orand, P.~Achterman, and R.~M. Mason.
+\newblock Rumors, false flags, and digital vigilantes: Misinformation on
+  twitter after the 2013 boston marathon bombing.
+\newblock {\em iConference 2014 Proceedings}, 2014.
+
+\bibitem{sunstein2014rumors}
+C.~R. Sunstein.
+\newblock {\em On rumors: How falsehoods spread, why we believe them, and what
+  can be done}.
+\newblock Princeton University Press, 2014.
+
+\bibitem{tanaka2012transmission}
+Y.~Tanaka, Y.~Sakamoto, and T.~Matsuka.
+\newblock Transmission of rumor and criticism in twitter after the great japan
+  earthquake.
+\newblock In {\em Annual Meeting of the Cognitive Science Society}, page 2387,
+  2012.
+
+\bibitem{thomson2012trusting}
+R.~Thomson, N.~Ito, H.~Suda, F.~Lin, Y.~Liu, R.~Hayasaka, R.~Isochi, and
+  Z.~Wang.
+\newblock Trusting tweets: The fukushima disaster and information source
+  credibility on twitter.
+\newblock {\em Proc. of ISCRAM}, 10, 2012.
+
+\bibitem{tripathy2010study}
+R.~M. Tripathy, A.~Bagchi, and S.~Mehta.
+\newblock A study of rumor control strategies on social networks.
+\newblock In {\em Proceedings of the 19th ACM international conference on
+  Information and knowledge management}, pages 1817--1820. ACM, 2010.
+
+\bibitem{wang2010don}
+A.~H. Wang.
+\newblock Don't follow me: Spam detection in twitter.
+\newblock In {\em Security and Cryptography (SECRYPT), Proceedings of the 2010
+  International Conference on}, pages 1--10. IEEE, 2010.
+
+\bibitem{wu2015false}
+K.~Wu, S.~Yang, and K.~Q. Zhu.
+\newblock False rumors detection on sina weibo by propagation structures.
+\newblock In {\em 2015 IEEE 31st International Conference on Data Engineering},
+  pages 651--662. IEEE, 2015.
+
+\bibitem{yang2012automatic}
+F.~Yang, Y.~Liu, X.~Yu, and M.~Yang.
+\newblock Automatic detection of rumor on sina weibo.
+\newblock In {\em Proceedings of the ACM SIGKDD Workshop on Mining Data
+  Semantics}, page~13. ACM, 2012.
+
+\bibitem{zhao2015enquiring}
+Z.~Zhao, P.~Resnick, and Q.~Mei.
+\newblock Enquiring minds: Early detection of rumors in social media from
+  enquiry posts.
+\newblock In {\em Proceedings of the 24th International Conference on World
+  Wide Web}, pages 1395--1405. ACM, 2015.
+
+\bibitem{zhou2015c}
+C.~Zhou, C.~Sun, Z.~Liu, and F.~Lau.
+\newblock A c-lstm neural network for text classification.
+\newblock {\em arXiv preprint arXiv:1511.08630}, 2015.
+
+\end{thebibliography}
